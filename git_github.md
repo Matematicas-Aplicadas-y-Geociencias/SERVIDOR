@@ -44,7 +44,8 @@ Luego se **inicia sesión**:
 gh auth login
 ```
 Saldrán varias opciones a escoger. Se tiene la opción de iniciar sesión a través del buscador. Lo importante aquí es seguir los pasos.Al final, todo el proceso de inicio de sesión se ve así:
-![Ejemplo](terminal1.png)
+
+![Figura1|697](images/figura1.png)
 
 ### Clonación de SERVIDOR en local
 Se crea una nueva carpeta (en la raíz de preferencia) donde contendrá los diferentes servidores que se utilicen. Luego se entrega a la misma carpeta:
@@ -54,12 +55,16 @@ cd repositorios/
 ```
 Dentro de la página de SERVIDOR en Github, le damos clic al botón verde que dice "Code"
 
-![[Pasted image 20260616181604 1.png]]
+
+![Figura2](figura2.png)
+
 
 Se abre una ventana que ofrece dos opciones de clonación (vistas en clase): 
 1. HTTPS
 2. GitHub CLI
-![[Pasted image 20260616181942.png|404]]
+
+![Figura3|561](images/figura3.png)
+
 La primera forma se copia la URL y en la terminal se ejecuta lo siguiente:
 ```
 git clone "URL copiado de HTTPS"
@@ -69,7 +74,9 @@ La segunda forma se copia y pega el contenido de GitHub CLI y se ejecuta directa
 git clone https://github.com/Matematicas-Aplicadas-y-Geociencias/SERVIDOR.git
 ```
 En cualquier de los dos casos, sale lo siguiente:
-![[Pasted image 20260616184445.png]]
+
+![Figura4](images/figura4.png)
+
 Esto crea una **carpeta** con todo lo contenido del reservorio de SERVIDOR en Github.
 
 ## Uso del reservorio SERVIDOR
@@ -88,7 +95,8 @@ Para revisar el **status** del SERVIDOR tras el nuevo cambio, se ejecuta lo sigu
 git status
 ```
 Aparece lo siguiente:
-![[Pasted image 20260616184315.png]]
+
+![Figura5](images/figura5.png)
 
 Existen tres áreas donde pueden "estar" nuestras modificaciones y/o nuevos archivos:
 1. **Directorio de trabajo**
@@ -103,49 +111,59 @@ Si queremos mover todo lo realizado, se utiliza un punto:
 git add .
 ```
 Volvemos a revisar el status y aparece lo siguiente:
-![[Pasted image 20260616190207.png]]
+
+![Figura6](images/figura6.png)
 
 Podemos modificar el archivo con ***vim***. Una vez hecho la modificación, revisamos de nuevo el status y aparece lo siguiente:
-![[Pasted image 20260616185931.png]]
+
+![Figura7](images/figura7.png)
 
 Para que los cambios realizados al archivo ejemplo.py estén en el **área de stage**, usamos de nuevo el comando ***git add***. Aparece lo siguiente:
-![[Pasted image 20260616190618.png]]
+
+![Figura8](images/figura8.png)
 
 Por último, para mover el archivo ejemplo.py al **commit**:
 ```
 git commit
 ```
 Se abrirá un archivo donde podemos poner **detalles** de los cambios realizados. Una vez guardados los cambios aparece lo siguiente:
-![[Pasted image 20260616190752.png]]
+
+![Figura9](images/figura9.png)
 
 Si revisamos de nuevo el status:
-![[Pasted image 20260616191010.png]]
+
+![Figura10](images/figura10.png)
 
 Si queremos ver un **registro** de todos los cambios hechos en el repositorio:
 ```
 git log
 ```
-![[Pasted image 20260616191323.png]]
+
+![Figura11](images/figura11.png)
+
  Los código alfanuméricos largos en color café son números **hash**, y son identificadores únicos de cada cambio realizado. 
 
 Para **subir** los cambios a la nube:
 ```
 git push origin main
 ```
-![[Pasted image 20260616191922.png]]
+
+![Figura12](images/figura12.png)
  
  Para **bajar** los cambios hechos por otras personas:
 ```
  git pull
 ```
-![[Pasted image 20260616192027.png]]
+
+![Figura13](images/figura13.png)
 
 Para regresar a un commit anterior o cambiar de ramas:
 ```
 git checkout "insertar número hash"
 ```
 Ejemplo:
-![[Pasted image 20260616193024.png]]
+
+![Figura14](images/figura14.png)
 
 Si queremos ver un archivo sin editarlo, usamos el comando ***cat***:
 ```
@@ -163,18 +181,20 @@ git log --oneline --graph --decorate
 ```
 **NOTA**: las ramas se ven en la terminal como la imagen de abajo, pero girado hacia la izquierda.
 
-![[Pasted image 20260616181604 1.png|665]]
+![Figura15](images/figura15.png)
 
 Para ver en cuál rama estamos:
 ```
 git branch
 ```
+
 Para la creación de ramas, primero vamos al reservorio de SERVIDOR en la web de Github y creamos un nuevo "**Issue**", lo asignamos a nosotros, guardamos y le damos clic a crear rama. Copiamos el **código** y lo ejecutamos en la terminal. Por ejemplo, para la nueva rama "crear nuevo programa en python":
 ```
 git fetch origin
 git checkout 1-crear-nuevo-programa-en-python
 ```
-![[Pasted image 20260616200707.png]]
+
+![Figura16](images/figura16.png)
 
 Al ejecutarlo, automáticamente nos cambia a la nueva rama, lo que se puede corroborar con ***git branch***. Una vez se hagan las ediciones correspondientes, se sube la rama al repositorio:
 ```
@@ -182,7 +202,7 @@ git push origin 1-crear-nuevo-programa-en-python
 ```
 ==**IMPORTANTE**: Después de este paso hay que ir al reservorio web y hacer un "**Pull request**" dirigido al profesor, quien revisará los cambios y decidirá si la rama se incluirá al main. Si acepta, podemos bajar el reservorio ya actualizado y las ramas se verían así:==
 
-![[Pasted image 20260616201247.png|697]]
+![Figura17](images/figura17.png)
 
 Para **eliminar** una rama:
 ```
