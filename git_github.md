@@ -44,7 +44,8 @@ Luego se **inicia sesión**:
 gh auth login
 ```
 Saldrán varias opciones a escoger. Se tiene la opción de iniciar sesión a través del buscador. Lo importante aquí es seguir los pasos.Al final, todo el proceso de inicio de sesión se ve así:
-![[Pasted image 20260616184757.png]]
+![Ejemplo](terminal1.png)
+
 ### Clonación de SERVIDOR en local
 Se crea una nueva carpeta (en la raíz de preferencia) donde contendrá los diferentes servidores que se utilicen. Luego se entrega a la misma carpeta:
 ```
