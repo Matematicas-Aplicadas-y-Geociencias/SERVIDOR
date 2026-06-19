@@ -45,7 +45,11 @@ gh auth login
 ```
 Saldrán varias opciones a escoger. Se tiene la opción de iniciar sesión a través del buscador. Lo importante aquí es seguir los pasos.Al final, todo el proceso de inicio de sesión se ve así:
 
-![Figura1|697](images/figura1.png)
+<div align="center">
+		<img src="images/terminal_login_github.png" height="130"/>
+</div>
+
+![Figura1|697](terminal_login_github.png)
 
 ### Clonación de SERVIDOR en local
 Se crea una nueva carpeta (en la raíz de preferencia) donde contendrá los diferentes servidores que se utilicen. Luego se entrega a la misma carpeta:

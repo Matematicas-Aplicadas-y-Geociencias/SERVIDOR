@@ -1,0 +1,8 @@
+site_name: SERVIDOR
+theme:
+  name: cinder
+  header_layout:
+    - nav
+nav:
+  - Home: index.md
+  - Github: git_github.md

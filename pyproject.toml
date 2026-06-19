@@ -1,0 +1,11 @@
+[project]
+name = "servidor"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "mkdocs>=1.6.1",
+    "mkdocs-cinder>=1.2.0",
+    "mkdocs-landing>=0.0.8",
+]
