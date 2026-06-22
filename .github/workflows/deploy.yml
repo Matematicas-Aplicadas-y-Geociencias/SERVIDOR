@@ -1,0 +1,54 @@
+name: Deploy MkDocs to GitHub Pages
+
+on:
+  push:
+    branches: ["main"] # Cambia "main" por "master" si tu rama principal se llama así
+  workflow_dispatch: # Permite ejecutar el workflow manualmente desde la pestaña Actions
+
+# Permisos necesarios para desplegar en GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Permite solo una ejecución simultánea
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          # Instala MkDocs y el tema Material (o cualquier otro plugin que uses)
+          pip install mkdocs mkdocs-cinder
+          # Si tienes un requirements.txt, puedes usar: pip install -r requirements.txt
+
+      - name: Build MkDocs site
+        run: mkdocs build
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'site' # La carpeta por defecto que genera MkDocs
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
