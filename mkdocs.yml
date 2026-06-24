@@ -1,8 +1,18 @@
 site_name: SERVIDOR
 theme:
   name: cinder
+  color_mode: dark
   header_layout:
     - nav
 nav:
-  - Home: index.md
+  - Inicio: index.md
+  - Manuales:
+      - Introducción: manuales/index.md
+      - Instalación de WRF: manuales/wrf.md
+      - Instalación de GeoClaw: manuales/geoclaw.md 
+  - APIs: apis.md
   - Github: git_github.md
+extra_css:
+  - css/extra.css
+extra_javascript:
+   - js/copy-button.js

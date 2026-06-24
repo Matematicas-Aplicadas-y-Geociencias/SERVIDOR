@@ -1,0 +1,46 @@
+/* Contenedor del código en el tema Cinder */
+pre {
+  position: relative !important;
+  padding-top: 10px !important; /* Restaura el espacio estándar de Cinder */
+}
+
+/* Botón flotando directamente sobre la primera línea */
+.copy-code-button {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fcfdff; /*#b5b5b5;*/
+  background-color: rgba(40, 40, 40, 0.85); /* Fondo semitransparente para que no tape bruscamente el código */
+  border: 1px solid #444444;
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 10; /* Asegura que el botón quede siempre por encima del texto */
+  transition: all 0.2s ease;
+}
+
+/* Al pasar el cursor sobre el botón */
+.copy-code-button:hover {
+  color: #269abc; /* Azul de Cinder */
+  background-color: #1f1f1f;
+  border-color: #269abc;
+}
+
+/* Estilo cuando el copiado fue exitoso */
+.copy-code-button.copied {
+  border-color: #28a745;
+  background-color: rgba(40, 167, 69, 0.2);
+}
+
+/* Asegura el tamaño correcto del icono SVG */
+.copy-code-button svg {
+  display: block;
+  pointer-events: none;
+  width: 14px;
+  height: 14px;
+}
+
