@@ -55,7 +55,7 @@ cd repositorios/
 Dentro de la página de SERVIDOR en Github, le damos clic al botón verde que dice "Code"
 
 
-![Figura2](figura2.png)
+![Figura2](images/figura2.png)
 
 
 Se abre una ventana que ofrece dos opciones de clonación (vistas en clase): 
