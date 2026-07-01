@@ -1,4 +1,7 @@
 # Bienvenido a SERVIDOR!
+<div class="alert alert-warning" role="alert">
+  🚧 <strong>Sitio en construcción</strong> — Este contenido está en desarrollo y puede cambiar.
+</div>
 
 El Servicio de Repositorio Visual e Instalación de Datos Oceánicos y Atmosféricos (SERVIDOR) es una plataforma digital diseñada para ayudar a los estudiantes de las ciencias de la Tierra en la obtención de datos globales de variables climáticas, oceanográficas y atmosféricas, así como la instalación de modelos computacionales útiles para el estudio de fenómenos como marea de tormenta, huracanes, nortes, contaminación atmosférica, entre muchos otros. El objetivo principal es ser una herramienta para la experimentación de  una gran variedad de aplicaciones que se le puede dar a los conocimientos adquiridos durante la licenciatura.  
 

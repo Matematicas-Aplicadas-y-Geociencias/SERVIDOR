@@ -44,3 +44,63 @@ pre {
   height: 14px;
 }
 
+/* Salida de terminal */
+.terminal-output {
+    background-color: #300a24; /* morado oscuro clásico de Ubuntu */
+    border-radius: 8px;
+    margin: 1em 0;
+    padding: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+}
+
+/* Barra de título estilo ventana */
+.terminal-output::before {
+    content: "Salida terminal";
+    display: block;
+    background-color: #4a1e3d;
+    color: #e6e6e6;
+    font-family: "Ubuntu", "DejaVu Sans", sans-serif;
+    font-size: 0.75em;
+    padding: 6px 12px;
+    text-align: center;
+    position: relative;
+}
+
+/* Los tres puntitos de control (izquierda, estilo GNOME/Ubuntu) */
+.terminal-output::after {
+    content: "";
+    position: absolute;
+}
+
+.terminal-output pre {
+    margin: 0;
+    padding: 14px 16px;
+    background-color: #300a24;
+    color: #ffffff;
+    font-family: "Ubuntu Mono", "Courier New", Consolas, monospace;
+    font-size: 0.9em;
+    white-space: pre-wrap;
+    overflow-x: auto;
+    line-height: 1.4;
+}
+
+.terminal-output .user {
+    color: #8ae234; /* verde Ubuntu */
+    font-weight: bold;
+}
+
+.terminal-output .path {
+    color: #729fcf; /* azul */
+    font-weight: bold;
+}
+
+.terminal-output .timestamp {
+    color: #1a3e7d;
+    font-weight: bold;
+}
+
+.terminal-output .warn {
+    color: #a1653d;
+    font-weight: bold;
+}

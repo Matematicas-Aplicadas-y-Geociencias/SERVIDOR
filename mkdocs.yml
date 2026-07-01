@@ -10,7 +10,7 @@ nav:
       - Introducción: manuales/index.md
       - Instalación de WRF: manuales/wrf.md
       - Instalación de GeoClaw: manuales/geoclaw.md 
-  - APIs: apis.md
+  - APIs: apis/apis.md
   - Github: git_github.md
 extra_css:
   - css/extra.css

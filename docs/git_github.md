@@ -1,10 +1,29 @@
 # Seminario de Git y Github
+
+<!--
+Correcciones:
+- Uniformizar el tamaño de las imágenes
+- Traducir la imagen que tiene inglés al español
+- Mejorar la redacción (escribir en tercera persona)
+- Investigar cómo poner salidas de terminal con css y html en vez de las imágenes
+-->
+
+<div class="alert alert-warning" role="alert">
+  🚧 <strong>Sitio en construcción</strong> — Este contenido está en desarrollo y puede cambiar.
+</div>
+
 ### Configuración de Git desde la terminal
 
 Revisar si está instalado git en el dispositivo:
 ```
 git --version
 ```
+<div class="terminal-output" markdown="0">
+<pre>
+git version 2.43.0
+</pre>
+</div>
+
 Ver las **configuraciones** de git en el dispositivo (nombre, correo, editor de texto):
 ```
 git config -l
@@ -27,7 +46,7 @@ git config --global core.editor "nombre del editor"
 git config --global init.defaultBranch main
 ```
 ### Instalación de Github CLI 
-Sirve para conectar la computadora con el repositorio en la nube. Los comandos para instalarlo se obtuvieron de https://github.com/cli/cli/blob/trunk/docs/install_linux.md#debian.
+Sirve para conectar la computadora con el repositorio en la nube. Los comandos para instalarlo se obtuvieron de [github cli](https://github.com/cli/cli/blob/trunk/docs/install_linux.md#debian).
 ```
 (type -p wget >/dev/null || (sudo apt update && sudo apt install wget -y)) \
 	&& sudo mkdir -p -m 755 /etc/apt/keyrings \
@@ -45,17 +64,34 @@ gh auth login
 ```
 Saldrán varias opciones a escoger. Se tiene la opción de iniciar sesión a través del buscador. Lo importante aquí es seguir los pasos.Al final, todo el proceso de inicio de sesión se ve así:
 
-![Figura1|697](images/terminal_login_github.png)
+<div class="terminal-output">
+<pre><span class="user">?</span> Where do you use GitHub? <span class="path">GitHub.com</span>
+<span class="user">?</span> What is your preferred protocol for Git operations on this host? <span class="path">HTTPS</span>
+Authenticate Git with your GitHub credentials? <span class="path">Yes</span>
+<span class="user">?</span> How would you like to authenticate GitHub CLI? <span class="path">Login with a web browser</span>
+
+<span class="warn">!</span> First copy your one-time code: <strong>XAXX-XXDX</strong>
+Press <strong>Enter</strong> to open https://github.com/login/device in your browser...
+Gtk-<span class="user">Message</span>: <span class="timestamp">10:49:06.718</span>: Not loading module "atk-bridge": The functionality is provided by GTK natively. Please try to not load it.
+<span class="user">✓</span> Authentication complete.
+- gh config set -h github.com git_protocol https
+<span class="user">✓</span> Configured git protocol
+<span class="user">✓</span> Logged in as <strong>nombre-usuario</strong>
+</pre>
+</div>
+
 ### Clonación de SERVIDOR en local
 Se crea una nueva carpeta (en la raíz de preferencia) donde contendrá los diferentes servidores que se utilicen. Luego se entrega a la misma carpeta:
+
 ```
 mkdir repositorios
 cd repositorios/
 ```
+
 Dentro de la página de SERVIDOR en Github, le damos clic al botón verde que dice "Code"
 
 
-![Figura2](images/figura2.png)
+![Figura2](images/descargar_repositorio.gif)
 
 
 Se abre una ventana que ofrece dos opciones de clonación (vistas en clase): 
