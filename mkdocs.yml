@@ -6,10 +6,11 @@ theme:
     - nav
 nav:
   - Inicio: index.md
-  - Manuales:
+  - Manuales de instalación:
       - Introducción: manuales/index.md
-      - Instalación de WRF: manuales/wrf.md
-      - Instalación de GeoClaw: manuales/geoclaw.md 
+      - Entornos virtuales de Python: manuales/entornos.md
+      - WRF: manuales/wrf.md
+      - GeoClaw: manuales/geoclaw.md 
   - APIs: apis/apis.md
   - Github: git_github.md
 extra_css:
