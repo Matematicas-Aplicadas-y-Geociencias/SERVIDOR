@@ -162,3 +162,61 @@ pre {
 .win-terminal .win-prompt {
   color: #e0e0e0;
 }
+
+.auto-carousel .carousel-inner img {
+  display: block;
+  margin: 0 auto;
+}
+
+.auto-carousel {
+  max-width: 700px;
+  margin: 20px auto;
+}
+
+.auto-carousel .carousel-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 8%;
+}
+
+.auto-carousel .carousel-control span {
+  position: relative;
+  top: 0;
+}
+
+.auto-carousel .carousel-caption {
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 6px;
+  padding: 10px 15px;
+}
+
+.auto-carousel .carousel-caption {
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 6px;
+  padding: 8px 15px;
+  bottom: 25px;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+  width: fit-content;
+  max-width: 85%;
+}
+
+.auto-carousel .carousel-indicators {
+  bottom: 0;
+  z-index: 20; /* asegura que los puntos queden siempre visibles, encima del caption */
+}
+
+.auto-carousel .carousel-indicators li {
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid #000;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+}
+
+.auto-carousel .carousel-indicators .active {
+  background-color: #000;
+  border: 1px solid #fff;
+}
