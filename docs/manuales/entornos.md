@@ -21,13 +21,13 @@ El primer paso consiste en instalar ***Miniforge***. Escoge tu sistema operativo
     <br>Sigue las indicaciones de la ventana de instalación, tomando en cuenta la opción de <b>"Create shorcuts"</b> (Crear accesos directos) esté seleccionada. Si necesitas que conda sea accesible desde cualquier terminal que abras en Windows (Ej. Powershell), puedes considera seleccionar la opción <b>"Add installation to my PATH environment variable"</b> (Agregar instalación a mi variable de entorno PATH). Esta última no está seleccionada por defecto debido a la posibilidad de conflictos graves con otro software.
     
     <div class="auto-carousel" data-images='[
-  {"src": "/images/menu_instalacion_miniforge_1.png", "title": "Paso 1", "desc": "Dale clic en \"Next\"."},
-  {"src": "/images/menu_instalacion_miniforge_2.png", "title": "Paso 2", "desc": "Dale clic en <br>\"I agree\"."},
-  {"src": "/images/menu_instalacion_miniforge_3.png", "title": "Paso 3", "desc": "Selecciona la opción <br>\"Just Me (recommended)\"."},
-  {"src": "/images/menu_instalacion_miniforge_4.png", "title": "Paso 4", "desc": "Dale clic en \"Next\"."},
-  {"src": "/images/menu_instalacion_miniforge_5.png", "title": "Paso 5", "desc": "Selecciona la opción \"Add installation to my PATH environment variable\" y dale clic en \"Install\"."},
-  {"src": "/images/menu_instalacion_miniforge_6.png", "title": "Paso 6", "desc": "Espera que se complete la instalación y dale clic en \"Next\"."},
-  {"src": "/images/menu_instalacion_miniforge_7.png", "title": "Paso 7", "desc": "Dale clic en \"Finish\" para finalizar la instalación."}
+  {"src": "../../images/menu_instalacion_miniforge_1.png", "title": "Paso 1", "desc": "Dale clic en \"Next\"."},
+  {"src": "../../images/menu_instalacion_miniforge_2.png", "title": "Paso 2", "desc": "Dale clic en <br>\"I agree\"."},
+  {"src": "../../images/menu_instalacion_miniforge_3.png", "title": "Paso 3", "desc": "Selecciona la opción <br>\"Just Me (recommended)\"."},
+  {"src": "../../images/menu_instalacion_miniforge_4.png", "title": "Paso 4", "desc": "Dale clic en \"Next\"."},
+  {"src": "../../images/menu_instalacion_miniforge_5.png", "title": "Paso 5", "desc": "Selecciona la opción \"Add installation to my PATH environment variable\" y dale clic en \"Install\"."},
+  {"src": "../../images/menu_instalacion_miniforge_6.png", "title": "Paso 6", "desc": "Espera que se complete la instalación y dale clic en \"Next\"."},
+  {"src": "../../images/menu_instalacion_miniforge_7.png", "title": "Paso 7", "desc": "Dale clic en \"Finish\" para finalizar la instalación."}
 ]'></div>
 
 
