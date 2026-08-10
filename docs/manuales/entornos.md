@@ -2,9 +2,9 @@
   🚧 <strong>Sitio en construcción</strong> — Este contenido está en desarrollo y puede cambiar.
 </div>
 
-<h1>Entornos virtuales de Python</h1>
+# Entornos virtuales de Python
 
-<h2>Conda con Mamba</h2>
+## Conda con Mamba
 
 Para ello se requiere instalar ***Miniforge***. Escoge el sistema operativo de tu computadora para instalarlo correctamente:
 
@@ -56,6 +56,8 @@ Para ello se requiere instalar ***Miniforge***. Escoge el sistema operativo de t
     </div>
   </div>
 
+  <!-- SECCION LINUX -->
+  
   <div role="tabpanel" class="tab-pane" id="linux">
   
     <p>Desde una ventana de terminal, descarga el instalador apropiado para la arquitectura de tu computadora usando los comandos <b>curl</b> o <b>wget</b> o tu programa favorito.</p>
@@ -70,6 +72,97 @@ Para ello se requiere instalar ***Miniforge***. Escoge el sistema operativo de t
     <pre><code>bash Miniforge3-$(uname)-$(uname -m).sh</code></pre>
   
     <p>La instalación interactiva le pedirá inicializar conda con su shell. Este es típicamente el flujo de trabajo recomendado.</p>
+  
+    <div class="terminal-output" markdown="0">
+    <pre>
+Welcome to Miniforge3 26.3.2-3
+
+In order to continue the installation process, please review the license
+agreement.
+Please, press ENTER to continue
+>>></pre>
+    </div>
+
+  Presiona la tecla ENTER y aparecerán los términos de licencia. Para ir hasta el final del texto presiona la tecla de flecha hacia  abajo y aparecerá lo siguiente:
+
+  <div class="terminal-output" markdown="0">
+
+  <pre>
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+Do you accept the license terms? [yes|no]
+>>></pre>
+</div>
+
+<div class="terminal-output" markdown="0">
+<pre>
+Miniforge3 will now be installed into this location:
+/home/angel/miniforge3
+
+  - Press ENTER to confirm the location
+  - Press CTRL-C to abort the installation
+  - Or specify a different location below
+
+[/home/angel/miniforge3] >>></pre>
+</div>
+
+
+<div class="terminal-output" markdown="0">
+<pre>
+Transaction finished
+
+installation finished.
+Do you wish to update your shell profile to automatically initialize conda?
+This will activate conda on startup and change the command prompt when activated.
+If you'd prefer that conda's base environment not be activated on startup,
+   run the following command when conda is activated:
+
+conda config --set auto_activate_base false
+
+Note: You can undo this later by running `conda init --reverse $SHELL`
+
+Proceed with initialization? [yes|no]
+[no] >>></pre>
+</div>
+
+<div class="terminal-output" markdown="0">
+
+<pre>
+==> For changes to take effect, close and re-open your current shell. <==
+
+Running `shell init`, which:
+ - modifies RC file: "/home/angel/.bashrc"
+ - generates config for root prefix: "/home/angel/miniforge3"
+ - sets mamba executable to: "/home/angel/miniforge3/bin/mamba"
+The following has been added in your "/home/angel/.bashrc" file
+
+# >>> mamba initialize >>>                                            
+# !! Contents within this block are managed by 'mamba shell init' !!  
+export MAMBA_EXE='/home/angel/miniforge3/bin/mamba';                  
+export MAMBA_ROOT_PREFIX='/home/angel/miniforge3';                    
+__mamba_setup="$("$MAMBA_EXE" shell hook --shell bash --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"                                     
+if [ $? -eq 0 ]; then                                                 
+    eval "$__mamba_setup"                                             
+else                                                                  
+    alias mamba="$MAMBA_EXE"  # Fallback on help from mamba activate  
+fi                                                                    
+unset __mamba_setup                                                   
+# <<< mamba initialize <<<                                            
+                                                                      
+Thank you for installing Miniforge3!</pre>
+</div>
+
+
 
     <p>Verifica que se haya instalado correctamente ejecutando en la terminal lo siguiente:</p>
 
@@ -77,5 +170,22 @@ Para ello se requiere instalar ***Miniforge***. Escoge el sistema operativo de t
   </div> 
 </div>
 
+## Creación del ambiente virtual
+
+Abre una terminal (en linux) o el miniforge (en Windows) y ejecuta lo siguiente, cambiando "myenv" por el nombre que prefieras para tu ambiente:
+
+<pre><code>conda create -n myenv python=3.10</code></pre>
+
+donde <b>conda</b> es el gestor de paquetes, <b>create</b> indica la creación del ambiente, <b>-n</b> le asigna un nombre al entorno, <b>myenv</b> es el nombre como tal (lo puedes cambiar al que prefieras) y <b>python=3.10</b> es la versión de  python que se usará dentro del entorno.
+
+Para activar el ambiente, utiliza el siguiente comando cambiando "myenv" por el nombre de tu ambiente:
+
+<pre><code>conda activate myenv</code></pre>
+
+Notarás que cambió el nombre base por el nombre de tu ambiente. Eso significa que la activación se realizó exitosamente y que te encuentras dentro del ambiente. 
+
+Un comando útil es el que te indica cuáles ambientes has creado en tu dispositivo (por si olvidas el nombre de tu ambiente):
+
+<pre><code>conda env list</code></pre>
 
 La información de este manual la puedes encontrar [aquí](https://mamba.readthedocs.io/en/latest/installation/mamba-installation.html).
