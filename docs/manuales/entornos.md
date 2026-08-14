@@ -6,7 +6,9 @@
 
 ## Conda con Mamba
 
-Para ello se requiere instalar ***Miniforge***. Escoge el sistema operativo de tu computadora para instalarlo correctamente:
+### Instalación a través de Miniforge
+
+Escoge el sistema operativo de tu computadora para instalarlo correctamente:
 
 <ul class="nav nav-tabs" role="tablist">
   <li role="presentation" class="active"><a href="#windows" aria-controls="windows" role="tab" data-toggle="tab">Windows</a></li>
@@ -83,7 +85,7 @@ Please, press ENTER to continue
 >>></pre>
     </div>
 
-  Presiona la tecla ENTER y aparecerán los términos de licencia. Para ir hasta el final del texto presiona la tecla de flecha hacia  abajo y aparecerá lo siguiente:
+  Presiona la tecla ENTER. Aparecerán los términos de licencia. Échale un ojo a los términos avanzando en el texto con la tecla ENTER (o ve hasta el final con la tecla de flecha hacia abajo). Al final aparecerá lo siguiente:
 
   <div class="terminal-output" markdown="0">
 
@@ -104,17 +106,21 @@ Do you accept the license terms? [yes|no]
 >>></pre>
 </div>
 
+Para continuar, acepta los términos y condiciones escribiendo <b>yes</b> y presionando ENTER (o escribe <b>no</b> si no estás de acuerdo y nos vemos otro día en otro tutorial). 
+
 <div class="terminal-output" markdown="0">
 <pre>
 Miniforge3 will now be installed into this location:
-/home/angel/miniforge3
+/home/tu-nombre-de-usuario/miniforge3
 
   - Press ENTER to confirm the location
   - Press CTRL-C to abort the installation
   - Or specify a different location below
 
-[/home/angel/miniforge3] >>></pre>
+[/home/tu-nombre-de-usuario/miniforge3] >>></pre>
 </div>
+
+Por lo general el programa se instala dentro de tu cuenta personal. Te recomendamos dejarlo ahí de modo que la instalación se realice sólo en tu cuenta (evitando que se instale en otras cuentas dentro de tu dispositivo). Presiona ENTER para confirmar dicha ubicación.  
 
 
 <div class="terminal-output" markdown="0">
@@ -134,6 +140,8 @@ Note: You can undo this later by running `conda init --reverse $SHELL`
 Proceed with initialization? [yes|no]
 [no] >>></pre>
 </div>
+
+El programa te preguntará si quieres activar conda y el ambiente <b>base</b> automáticamente al abrir una terminal (más adelante te explicaremos para qué sirve dicho ambiente). Le decimos que sí escribiendo <b>yes</b> y presionando ENTER.
 
 <div class="terminal-output" markdown="0">
 
@@ -162,21 +170,41 @@ unset __mamba_setup
 Thank you for installing Miniforge3!</pre>
 </div>
 
+Para finalizar la instalación, cierra y abre de nuevo la terminal actual. Aparecerá <b>(base)</b> al inicio de la línea de comandos. 
 
+
+<div class="terminal-output" markdown="0">
+
+<pre>
+(base) <span class="user">tu-usuario@tu-dispotivo</span>:<span class="timestamp">~</span>$
+</pre>
+</div>
+
+<p>La regla de oro es no instalar nada dentro del ambiente <b>(base)</b>, sino crear un ambiente destinado para la tarea que quieras realizar (más adelante te explicamos cómo crearlo).</p>
 
     <p>Verifica que se haya instalado correctamente ejecutando en la terminal lo siguiente:</p>
 
     <pre><code>conda --version && mamba --version</code></pre>
   </div> 
+
+Si aparece algo similar a la imagen de abajo, significa que se instaló correctamente.
+
+<div class="terminal-output" markdown="0">
+<pre>
+conda 26.3.2
+2.5.0
+</pre>
 </div>
 
-## Creación del ambiente virtual
+</div>
 
-Abre una terminal (en linux) o el miniforge (en Windows) y ejecuta lo siguiente, cambiando "myenv" por el nombre que prefieras para tu ambiente:
+### Creación del ambiente virtual
+
+Abre una terminal (en linux) o el miniforge (en Windows) y ejecuta lo siguiente, cambiando <b>myenv</b> por el nombre que prefieras para tu ambiente:
 
 <pre><code>conda create -n myenv python=3.10</code></pre>
 
-donde <b>conda</b> es el gestor de paquetes, <b>create</b> indica la creación del ambiente, <b>-n</b> le asigna un nombre al entorno, <b>myenv</b> es el nombre como tal (lo puedes cambiar al que prefieras) y <b>python=3.10</b> es la versión de  python que se usará dentro del entorno.
+Explicación: <b>conda</b> es el gestor de paquetes, <b>create</b> indica la creación del ambiente, <b>-n</b> le asigna un nombre al entorno, <b>myenv</b> es el nombre como tal (lo puedes cambiar al que prefieras) y <b>python=3.10</b> es la versión de  python que se usará dentro del entorno.
 
 Para activar el ambiente, utiliza el siguiente comando cambiando "myenv" por el nombre de tu ambiente:
 
