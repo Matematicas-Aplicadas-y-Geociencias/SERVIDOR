@@ -220,3 +220,49 @@ pre {
   background-color: #000;
   border: 1px solid #fff;
 }
+
+/*POWERSHELL DE WINDOWS */
+
+.powershell-output {
+    background-color: #012456; /* azul oscuro clásico de PowerShell */
+    border-radius: 8px;
+    margin: 1em 0;
+    padding: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+}
+
+/* Barra de título estilo ventana */
+.powershell-output::before {
+    content: "Windows PowerShell";
+    display: block;
+    background-color: #01193d;
+    color: #ffffff;
+    font-family: "Segoe UI", "Consolas", sans-serif;
+    font-size: 0.75em;
+    padding: 6px 12px;
+    text-align: left;
+    padding-left: 14px;
+}
+
+.powershell-output pre {
+    margin: 0;
+    padding: 14px 16px;
+    background-color: #012456;
+    color: #ffffff;
+    font-family: "Cascadia Code", "Consolas", "Courier New", monospace;
+    font-size: 0.9em;
+    white-space: pre-wrap;
+    overflow-x: auto;
+    line-height: 1.4;
+}
+
+/* Prompt estilo "PS C:\ruta>" */
+.powershell-output .ps-prompt {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.powershell-output .ps-path {
+    color: #55c1ff; /* celeste, como se ve en PowerShell */
+}
