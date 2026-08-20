@@ -260,7 +260,7 @@ Executing transaction: done
 </pre>
 </div>
 
-¡Listo! Haz creado un nuevo ambiente.
+¡Listo! Haz creado un ambiente con conda.
 
 ### Activación de ambiente
 
@@ -306,6 +306,7 @@ Aparecerán la lista de ambientes en el lado izquierdo. El ***asterisco*** indic
 
 ## UV
 
+### Instalación 
 
 <ul class="nav nav-tabs" role="tablist">
   <li role="presentation" class="active"><a href="#windows2" aria-controls="windows" role="tab" data-toggle="tab">Windows</a></li>
@@ -313,23 +314,46 @@ Aparecerán la lista de ambientes en el lado izquierdo. El ***asterisco*** indic
 </ul>
 
 <div class="tab-content">
+
+  <!--SECCION WINDOWS-->
   
   <div role="tabpanel" class="tab-pane active" id="windows2">
     
-  <p>Descarga el instalador desde la página oficial y ejecútalo:</p>
-    <div class="terminal-output">
-    <pre>1. Ve a https://ejemplo.com/download
-2. Descarga <strong>instalador.exe</strong>
-3. Haz doble clic para ejecutar el instalador
-4. Sigue el asistente de instalación</pre>
+    <p>Desde inicio, abre el Powershell y ejecuta lo siguiente:</p>
+
+    <pre><code>powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"</code></pre>
+
+  <p>El sistema descargará e instala UV:</p>
+  
+    <div class="powershell-output">
+
+  <pre>downloading uv 0.12.5 (x86_64-pc-windows-msvc)                                                               
+installing to C:\Users\tu-usuario\.local\bin                                                                                  
+  uv.exe                                                                                                                  
+  uvx.exe                                                                                                                 
+  uvw.exe
+everything's installed!    
+
+To add C:\Users\tu-usuario\.local\bin to your PATH, either restart your shell or run:
+
+  set Path=C:\Users\tu-usuario\.local\bin;%Path%   (cmd)                                                                       
+  $env:Path = "C:\Users\tu-usuario\.local\bin;$env:Path"   (powershell)</pre>
     </div>
+
+  <p>Cierra y abre el powershell para finalizar la instalación.</p>
+
   </div>
+
+  
+  <!--SECCION LINUX-->
 
   <div role="tabpanel" class="tab-pane" id="linux2">
 
-    Realiza la descarga e instalación a través de este comando:
+    <p>Abre una terminal y ejecuta lo siguiente:</p>
     
     <pre><code>curl -LsSf https://astral.sh/uv/install.sh | sh</code></pre>
+    
+    <p>El sistema descargará e instalará UV:</p>
     
     <div class="terminal-output" markdown="0">
 
@@ -353,7 +377,31 @@ To add $HOME/.local/share/../bin to your PATH, either restart your shell or run:
 
 </div>
 
+### Creación de ambiente virtual
 
-Hasta aquí termina este manual. Si deseas cononcer más información, puedes consultar la fuente oficial [aquí](https://mamba.readthedocs.io/en/latest/installation/mamba-installation.html).
+Abre una terminal (en linux) o el PowerShell (en Windows) y ejecuta lo siguiente, cambiando <b>myenv</b> por el nombre que prefieras para tu ambiente:
 
+<pre><code>uv init myenv --python=3.10</code></pre>
+
+Se creará una <b>carpeta</b> llamada como tu ambiente (en este caso, myenv). Cambia a dicha carpeta con el comando <b>cd</b> y el nombre de tu ambiente. Ahí dentro ejecuta los siguiente:
+
+<pre><code>uv sync</code></pre>
+
+<p>El comando <b>sync</b> crea y actualiza el ambiente, descargando las dependencias especificadas en el archivo <b>pyproyect.toml</b>. Es nuestro caso sólo descargará el lenguaje python que especificamos en el paso anterior.</p>
+
+<div class="terminal-output" markdown="0">
+
+<pre>Ussing CPython 3.10.21 
+Creating virtual environment at: .venv 
+Resolved 1 package in 188ms 
+      Built myenv @ file:///C:/Users/tu-usuario/myenv              
+Prepared 1 package in 290ms
+Installed 1 package in 346ms 
+ + myenv==0.1.0 (from file:///C:/Users/tu-usuario/myenv)</pre>
+
+</div>
+
+¡Listo! Haz creado un ambiente con UV.
+
+Hasta aquí termina este manual. Si deseas cononcer más información, puedes consultar la fuentes oficiales de [mamba](https://mamba.readthedocs.io/en/latest/installation/mamba-installation.html) y [UV](https://docs.astral.sh/uv/#installation).
 
