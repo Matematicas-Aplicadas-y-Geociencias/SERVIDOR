@@ -8,7 +8,7 @@
 
 ### Instalación a través de Miniforge
 
-Escoge el sistema operativo de tu computadora para instalarlo correctamente:
+Escoge el sistema operativo de tu computadora:
 
 <ul class="nav nav-tabs" role="tablist">
   <li role="presentation" class="active"><a href="#windows1" aria-controls="windows" role="tab" data-toggle="tab">Windows</a></li>
@@ -19,7 +19,7 @@ Escoge el sistema operativo de tu computadora para instalarlo correctamente:
 
   <div role="tabpanel" class="tab-pane active" id="windows1">
     
-    <p> Verifica si la versión de tu sistema operativo es Windows 10 o superior. Una vez hecho esto, descarga el instalador de miniforge y ejecútalo: <a href="https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe"> Miniforge3-Windows-x86_64.exe</a>.</p>
+    <p> Verifica si la versión de tu sistema operativo es Windows 10 o superior. Si es así, descarga el instalador de miniforge y ejecútalo: <a href="https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe"> Miniforge3-Windows-x86_64.exe</a>.</p>
 
     <p>Sigue las indicaciones de la ventana de instalación como se muestra a continuación:</p>
     
@@ -40,21 +40,10 @@ Escoge el sistema operativo de tu computadora para instalarlo correctamente:
 
     <p>Si te aparece algo similar a la imagen de abajo, siginifica que se instaló exitosamente.</p>
 
-    <div class="win-terminal">
-      <div class="win-titlebar">
-        <span class="win-titlebar-text">Miniforge Prompt</span>
-        <div class="win-buttons">
-          <div class="win-btn">&#8212;</div>
-          <div class="win-btn">&#9633;</div>
-          <div class="win-btn close">&#10005;</div>
-        </div>
-      </div>
-      <div class="win-body">
-        <span class="win-prompt">(base) C:\Users\Usuario&gt;</span> conda --version
-        conda 24.9.2
-        <span class="win-prompt">(base) C:\Users\Usuario&gt;</span> mamba --version
-        mamba 1.5.8
-      </div>
+    <div class="miniforge-output">
+    <pre>
+conda 26.3.2
+2.5.0</pre>
     </div>
   </div>
 
@@ -194,15 +183,15 @@ conda 26.3.2
   </div>
 </div>
 
-### Creación del ambiente virtual
+### Creación del ambiente virtual con Conda
 
-Abre una terminal (en linux) o el miniforge (en Windows) y ejecuta lo siguiente, cambiando <b>myenv</b> por el nombre que prefieras para tu ambiente:
+Abre el miniforge (en Windows) o una terminal (en linux) y ejecuta lo siguiente, cambiando <b>myenv</b> por el nombre que prefieras para tu ambiente:
 
 <pre><code>conda create -n myenv python=3.10</code></pre>
 
 Explicación: <b>conda</b> es el gestor de paquetes, <b>create</b> indica la creación del ambiente, <b>-n</b> le asigna un nombre al entorno, <b>myenv</b> es el nombre como tal (lo puedes cambiar al que prefieras) y <b>python=3.10</b> es la versión de  python que se usará dentro del entorno.
 
-<div class="terminal-output" markdown="0">
+<div class="miniforge-output">
 
 <pre>
 The following NEW packages will be INSTALLED:
@@ -241,7 +230,7 @@ Proceed ([y]/n)?</pre>
 
 <p>El sistema descargará los paquetes y te preguntará si deseas instalarlos. Escribe <b>y</b> y presiona ENTER.</p> Aparecerá lo siguiente:
 
-<div class="terminal-output" markdown="0">
+<div class="miniforge-output">
 
 <pre>
 Downloading and Extracting Packages:
@@ -262,9 +251,9 @@ Executing transaction: done
 
 ¡Listo! Haz creado un ambiente con conda.
 
-### Activación de ambiente
+### Activación de ambiente con Conda
 
-Para activar el ambiente, utiliza el siguiente comando cambiando <b>myenv</b> por el nombre de tu ambiente:
+Utiliza el siguiente comando, cambiando <b>myenv</b> por el nombre de tu ambiente:
 
 <pre><code>conda activate myenv</code></pre>
 
@@ -290,7 +279,7 @@ Un comando útil es el que te indica cuáles ambientes has creado en tu disposit
 
 <pre><code>conda env list</code></pre>
 
-<div class="terminal-output" markdown="0">
+<div class="miniforge-output">
 
 <pre>
 # conda environments:
@@ -303,6 +292,16 @@ myenv                   /home/tu-usuario/miniforge3/env/myenv
 </div>
 
 Aparecerán la lista de ambientes en el lado izquierdo. El ***asterisco*** indica en cuál ambiente te encuentras. En mi caso, estoy en el ambiente ***base***.
+
+### ¡Prueba Conda!
+
+Descarga el siguiente script de Python: <a href="/files/probar_entorno.py" download>probar_entorno.py</a>.
+
+Activa el ambiente que creaste (Ver sección [Activación de ambiente](#activacion-de-ambiente)) y corre el script <b>probar_entorno.py</b> con el siguiente comando:
+
+<pre><code>python probar_entorno.py</code></pre>
+
+
 
 ## UV
 
@@ -377,7 +376,7 @@ To add $HOME/.local/share/../bin to your PATH, either restart your shell or run:
 
 </div>
 
-### Creación de ambiente virtual
+### Creación de ambiente virtual con UV
 
 Abre una terminal (en linux) o el PowerShell (en Windows) y ejecuta lo siguiente, cambiando <b>myenv</b> por el nombre que prefieras para tu ambiente:
 
@@ -389,7 +388,7 @@ Se creará una <b>carpeta</b> llamada como tu ambiente (en este caso, myenv). Ca
 
 <p>El comando <b>sync</b> crea y actualiza el ambiente, descargando las dependencias especificadas en el archivo <b>pyproyect.toml</b>. Es nuestro caso sólo descargará el lenguaje python que especificamos en el paso anterior.</p>
 
-<div class="terminal-output" markdown="0">
+<div class="powershell-output">
 
 <pre>Ussing CPython 3.10.21 
 Creating virtual environment at: .venv 
@@ -403,5 +402,13 @@ Installed 1 package in 346ms
 
 ¡Listo! Haz creado un ambiente con UV.
 
-Hasta aquí termina este manual. Si deseas cononcer más información, puedes consultar la fuentes oficiales de [mamba](https://mamba.readthedocs.io/en/latest/installation/mamba-installation.html) y [UV](https://docs.astral.sh/uv/#installation).
+## ¡Pónlo a prueba!
+
+Descarga el siguiente script de Python: <a href="/files/probar_entorno.py" download>probar_entorno.py</a>.
+
+### Mamba con conda
+
+
+Hasta aquí termina este manual. Si deseas cononcer más información, puedes consultar la fuentes oficiales de <a href="https://mamba.readthedocs.io/en/latest/installation/mamba-installation.html" target="_blank" rel="noopener noreferrer">mamba</a> y <a href=" https://docs.astral.sh/uv/#installation
+" target="_blank" rel="noopener noreferrer">UV</a>.
 
