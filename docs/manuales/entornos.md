@@ -295,7 +295,7 @@ Aparecerán la lista de ambientes en el lado izquierdo. El ***asterisco*** indic
 
 ### ¡Prueba Conda!
 
-Descarga el siguiente script de Python: <a href="/files/probar_entorno.py" download>probar_entorno.py</a>.
+Descarga el siguiente script de Python: <a href="../../files/probar_entorno.py" download>probar_entorno.py</a>.
 
 Activa el ambiente que creaste (Ver sección [Activación de ambiente](#activacion-de-ambiente)) y corre el script <b>probar_entorno.py</b> con el siguiente comando:
 
@@ -404,7 +404,7 @@ Installed 1 package in 346ms
 
 ## ¡Pónlo a prueba!
 
-Descarga el siguiente script de Python: <a href="/files/probar_entorno.py" download>probar_entorno.py</a>.
+Descarga el siguiente script de Python: <a href="../../files/probar_entorno.py" download>probar_entorno.py</a>.
 
 ### Mamba con conda
 
