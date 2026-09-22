@@ -465,17 +465,29 @@ Aparecerán la lista de ambientes en el lado izquierdo. El <b>asterisco</b> indi
 
 ### ¡Prueba Conda!
 
-Descarga el siguiente script de Python: <a href="../../files/probar_entorno.py" download>probar_entorno.py</a>.
+<ul class="nav nav-tabs" role="tablist">
+  <li role="presentation" class="active"><a href="#windows_prueba_conda" aria-controls="windows" role="tab" data-toggle="tab">Windows</a></li>
+  <li role="presentation"><a href="#linux_prueba_conda" aria-controls="linux" role="tab" data-toggle="tab">Linux</a></li>
+</ul>
 
-Activa el ambiente que creaste (Ver sección [Activación de ambiente](#activacion-de-ambiente)) y corre el script <b>probar_entorno.py</b> dentro de la carpeta donde lo guardaste con el siguiente comando:
 
-<pre><code>python probar_entorno.py</code></pre>
+<div class="tab-content">
 
-El script verifica si ambiente en el que te encuentras funciona correctamente. Si te aparece algo parecido a lo siguiente, ¡felicidades!, acabas de correr tu primer código en python con el ambiente que recién creaste a través de Conda.</p>
+  <!-- SECCION WINDOWS-->
 
-<div class="miniforge-output">
+  <div role="tabpanel" class="tab-pane active" id="windows_prueba_conda">
+  
+    Descarga el siguiente script de Python: <a href="../../files/probar_entorno.py" download>probar_entorno.py</a>.
 
-<pre>
+    Activa el ambiente que creaste y corre el script <b>probar_entorno.py</b> dentro de la carpeta donde lo guardaste con el siguiente comando:
+
+    <pre><code>python probar_entorno.py</code></pre>
+
+    El script verifica si ambiente en el que te encuentras funciona correctamente. Si te aparece algo parecido a lo siguiente, ¡felicidades!, acabas de correr tu primer código en python con el ambiente que recién creaste a través de Conda.</p>
+
+    <div class="powershell-output">
+
+    <pre>
 ============================================================
 
  _   _       _         __  __                 _       _ 
@@ -489,13 +501,43 @@ El script verifica si ambiente en el que te encuentras funciona correctamente. S
 ✓ Instalación de ambiente virtual verificada correctamente
 
 Estatus del ambiente: entorno myenv funciona correctamente
-Versión de Python: 3.10.20
+Versión de Python: 3.10.20</pre>
+    </div>
+  </div>
+
+
+  <!-- SECCION LINUX -->
+
+  <div role="tabpanel" class="tab-pane" id="linux_prueba_conda">
+  
+   Descarga el siguiente script de Python: <a href="../../files/probar_entorno.py" download>probar_entorno.py</a>.
+
+    Activa el ambiente que creaste y corre el script <b>probar_entorno.py</b> dentro de la carpeta donde lo guardaste con el siguiente comando:
+
+    <pre><code>python probar_entorno.py</code></pre>
+
+    El script verifica si ambiente en el que te encuentras funciona correctamente. Si te aparece algo parecido a lo siguiente, ¡felicidades!, acabas de correr tu primer código en python con el ambiente que recién creaste a través de Conda.</p>
+
+    <div class="terminal-output" markdown="0">
+
+    <pre>
+============================================================
+
+ _   _       _         __  __                 _       _ 
+| | | | ___ | | __ _   |  \/  |_   _ _ __   __| | ___ | |
+| |_| |/ _ \| |/ _` |  | |\/| | | | | '_ \ / _` |/ _ \| |
+|  _  | (_) | | (_| |  | |  | | |_| | | | | (_| | (_) |_|
+|_| |_|\___/|_|\__,_|  |_|  |_|\__,_|_| |_|\__,_|\___/(_)
 
 ============================================================
-SERVIDOR ENES Mérida, UNAM
-============================================================
 
-</pre>
+✓ Instalación de ambiente virtual verificada correctamente
+
+Estatus del ambiente: entorno myenv funciona correctamente
+Versión de Python: 3.10.20</pre>
+    </div>
+  </div>
+
 </div>
 
 ## UV
