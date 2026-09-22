@@ -19,11 +19,11 @@ def obtener_ambiente():
     # Conda
     env = os.environ.get("CONDA_DEFAULT_ENV")
     if env:
-        return "entorno " + env + " funciona correctamente"
+        return "entorno " + env + " funciona correctamente."
     # uv / venv / virtualenv (todos usan VIRTUAL_ENV)
     venv_path = os.environ.get("VIRTUAL_ENV")
     if venv_path:
-        return os.path.basename(venv_path.rstrip("/\\")) + " entorno UV funciona correctamente"
+        return os.path.basename(venv_path.rstrip("/\\")) + " entorno UV funciona correctamente."
     return "base / sistema"
 
 banner = r"""
@@ -40,7 +40,7 @@ print_left(linea, CYAN)
 print_left(banner, GREEN + BOLD)
 print_left(linea, CYAN)
 print()
-print_left("✓ Instalación de ambiente virtual verificada correctamente", GREEN + BOLD)
+print_left("✓ Instalación de ambiente virtual verificada correctamente.", GREEN + BOLD)
 print()
 print_left(f"Estatus del ambiente: {obtener_ambiente()}", CYAN + BOLD)
 print_left(f"Versión de Python: {platform.python_version()}", CYAN + BOLD)

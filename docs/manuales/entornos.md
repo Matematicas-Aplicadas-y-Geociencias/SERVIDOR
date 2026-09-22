@@ -34,7 +34,7 @@ Escoge el sistema operativo de tu computadora:
     ]'>
     </div>
 
-    <p>La forma más conveniente y probada de usar el software instalado (como los comandos <b>conda</b> y <b>mamba</b>) es a través del <b>"Miniforge Prompt"</b> instalado en el menú de inicio. Abre la aplicación y ejecuta los siguiente:</p>
+    <p>Para verificar que la instalación se realizó exitosamente, abre la aplicación <b>Miniforge Prompt</b> desde el menú de inicio y ejecuta lo siguiente:</p>
 
     <pre><code>conda --version && mamba --version</code></pre>
 
@@ -185,16 +185,27 @@ conda 26.3.2
 
 ### Creación del ambiente virtual con Conda
 
-Abre el miniforge (en Windows) o una terminal (en linux) y ejecuta lo siguiente, cambiando <b>myenv</b> por el nombre que prefieras para tu ambiente:
+<ul class="nav nav-tabs" role="tablist">
+  <li role="presentation" class="active"><a href="#windows_creacion" aria-controls="windows" role="tab" data-toggle="tab">Windows</a></li>
+  <li role="presentation"><a href="#linux_creacion" aria-controls="linux" role="tab" data-toggle="tab">Linux</a></li>
+</ul>
 
-<pre><code>conda create -n myenv python=3.10</code></pre>
 
-Explicación: <b>conda</b> es el gestor de paquetes, <b>create</b> indica la creación del ambiente, <b>-n</b> le asigna un nombre al entorno, <b>myenv</b> es el nombre como tal (lo puedes cambiar al que prefieras) y <b>python=3.10</b> es la versión de  python que se usará dentro del entorno.
+ <!-- SECCION WINDOWS-->
 
-<div class="miniforge-output">
+<div class="tab-content">
 
-<pre>
-The following NEW packages will be INSTALLED:
+  <div role="tabpanel" class="tab-pane active" id="windows_creacion">
+  
+  <p>Abre el miniforge y ejecuta lo siguiente, cambiando <b>myenv</b> por el nombre que prefieras para tu ambiente:</p>
+
+  <pre><code>conda create -n myenv python=3.10</code></pre>
+
+  <p>Explicación: <b>conda</b> es el gestor de paquetes, <b>create</b> indica la creación del ambiente, <b>-n</b> le asigna un nombre al entorno, <b>myenv</b> es el nombre como tal (lo puedes cambiar al que prefieras) y <b>python=3.10</b> es la versión de  python que se usará dentro del entorno.</p>
+
+  <div class="miniforge-output">
+
+  <pre>The following NEW packages will be INSTALLED:
 
   _openmp_mutex      conda-forge/linux-64::_openmp_mutex-4.5-20_gnu 
   bzip2              conda-forge/linux-64::bzip2-1.0.8-hda65f42_10 
@@ -228,9 +239,9 @@ The following NEW packages will be INSTALLED:
 Proceed ([y]/n)?</pre>
 </div>
 
-<p>El sistema descargará los paquetes y te preguntará si deseas instalarlos. Escribe <b>y</b> y presiona ENTER.</p> Aparecerá lo siguiente:
+  <p>El sistema descargará los paquetes y te preguntará si deseas instalarlos. Escribe <b>y</b> y presiona ENTER.</p> Aparecerá lo siguiente:
 
-<div class="miniforge-output">
+  <div class="miniforge-output">
 
 <pre>
 Downloading and Extracting Packages:
@@ -249,11 +260,126 @@ Executing transaction: done
 </pre>
 </div>
 
-¡Listo! Haz creado un ambiente con conda.
+<p>Listo! Haz creado un ambiente con conda.</p>
+
+
+  </div>
+
+
+ <!-- SECCION LINUX -->
+  
+  <div role="tabpanel" class="tab-pane" id="linux_creacion">
+
+    <p>Abre una terminal y ejecuta lo siguiente, cambiando <b>myenv</b> por el nombre que prefieras para tu ambiente:</p>
+
+  <pre><code>conda create -n myenv python=3.10</code></pre>
+
+  <p>Explicación: <b>conda</b> es el gestor de paquetes, <b>create</b> indica la creación del ambiente, <b>-n</b> le asigna un nombre al entorno, <b>myenv</b> es el nombre como tal (lo puedes cambiar al que prefieras) y <b>python=3.10</b> es la versión de  python que se usará dentro del entorno.</p>
+
+  <div class="terminal-output" markdown="0">
+
+  <pre>The following NEW packages will be INSTALLED:
+
+  _openmp_mutex      conda-forge/linux-64::_openmp_mutex-4.5-20_gnu 
+  bzip2              conda-forge/linux-64::bzip2-1.0.8-hda65f42_10 
+  ca-certificates    conda-forge/noarch::ca-certificates-2026.7.22-hbd8a1cb_0 
+  icu                conda-forge/linux-64::icu-78.3-py310h44b86e0_2 
+  ld_impl_linux-64   conda-forge/linux-64::ld_impl_linux-64-2.46.1-default_hbd61a6d_102 
+  libexpat           conda-forge/linux-64::libexpat-2.8.1-hecca717_1 
+  libffi             conda-forge/linux-64::libffi-3.7.0-h3435931_0 
+  libgcc             conda-forge/linux-64::libgcc-16.1.0-ha9f2e26_1 
+  libgomp            conda-forge/linux-64::libgomp-16.1.0-he0feb66_1 
+  liblzma            conda-forge/linux-64::liblzma-5.8.3-hb03c661_1 
+  libnsl             conda-forge/linux-64::libnsl-2.0.1-hb9d3cd8_1 
+  libsqlite          conda-forge/linux-64::libsqlite-3.53.4-h13e7031_1 
+  libstdcxx          conda-forge/linux-64::libstdcxx-16.1.0-h934c35e_1 
+  libuuid            conda-forge/linux-64::libuuid-2.42.2-h5347b49_0 
+  libxcrypt          conda-forge/linux-64::libxcrypt-4.4.38-h280c20c_0 
+  libzlib            conda-forge/linux-64::libzlib-1.3.2-h25fd6f3_3 
+  ncurses            conda-forge/linux-64::ncurses-6.6-hdb14827_1 
+  openssl            conda-forge/linux-64::openssl-3.6.3-h35e630c_1 
+  packaging          conda-forge/noarch::packaging-26.3-pyhc364b38_0 
+  pip                conda-forge/noarch::pip-26.2.1-pyh8b19718_0 
+  python             conda-forge/linux-64::python-3.10.20-h267e890_1_cpython 
+  readline           conda-forge/linux-64::readline-8.3-hd6e31c0_1 
+  setuptools         conda-forge/noarch::setuptools-84.0.0-pyh332efcf_0 
+  tk                 conda-forge/linux-64::tk-8.6.13-noxft_hd70dff1_3 
+  tzdata             conda-forge/noarch::tzdata-2026c-h151e31d_0 
+  wheel              conda-forge/noarch::wheel-0.48.0-pyhd8ed1ab_0 
+  zstd               conda-forge/linux-64::zstd-1.5.7-hb78ec9c_7 
+
+
+Proceed ([y]/n)?</pre>
+</div>
+
+  <p>El sistema descargará los paquetes y te preguntará si deseas instalarlos. Escribe <b>y</b> y presiona ENTER.</p> Aparecerá lo siguiente:
+
+  <div class="terminal-output" markdown="0">
+
+<pre>
+Downloading and Extracting Packages:
+
+Preparing transaction: done                                                          
+Verifying transaction: done                                                          
+Executing transaction: done                                                          
+#                                                                                    
+# To activate this environment, use                                                  
+#                                                                                    
+#     $ conda activate myenv                                                         
+#                                                                                    
+# To deactivate an active environment, use                                           
+#                                                                                    
+#     $ conda deactivate 
+</pre>
+</div>
+
+<p>Listo! Haz creado un ambiente con conda.</p> 
+  </div>
+
+</div>
+
 
 ### Activación de ambiente con Conda
 
-Utiliza el siguiente comando, cambiando <b>myenv</b> por el nombre de tu ambiente:
+<ul class="nav nav-tabs" role="tablist">
+  <li role="presentation" class="active"><a href="#windows_activacion" aria-controls="windows" role="tab" data-toggle="tab">Windows</a></li>
+  <li role="presentation"><a href="#linux_activacion" aria-controls="linux" role="tab" data-toggle="tab">Linux</a></li>
+</ul>
+
+
+<div class="tab-content">
+
+ <!-- SECCION WINDOWS-->
+
+  <div role="tabpanel" class="tab-pane active" id="windows_activacion">
+    
+  Utiliza el siguiente comando, cambiando <b>myenv</b> por el nombre de tu ambiente:
+
+  <pre><code>conda activate myenv</code></pre>
+
+  <div class="miniforge-output">
+
+  <pre>
+(myenv) <span class="user">tu-usuario@tu-dispotivo</span>:<span class="timestamp">~</span>$</pre>
+    </div>
+
+
+<p>Notarás que cambió el nombre base por el nombre de tu ambiente. Eso significa que la activación se realizó exitosamente y que te encuentras dentro del ambiente. Una vez activado un ambiente, puedes cambiar a otro usando este mismo comando.</p>
+
+<p><b>OJO:</b> Si abres otra terminal o ventana, te aparecerá el ambiente base por defecto, dado que el ambiente sólo se activa en la terminal o ventana donde la activaste. Si quieres usar el ambiente en la nueva ventana, debes activarlo de nuevo.</p>   
+
+
+<p>Si deseas desactivar el ambiente y regresar al ambiente base utiliza el comando <b>deactivate</b>:</p>
+
+<pre><code>conda deactivate</code></pre>
+  </div>  
+
+
+ <!-- SECCION LINUX -->
+
+  <div role="tabpanel" class="tab-pane" id="linux_activacion">
+  
+  Utiliza el siguiente comando, cambiando <b>myenv</b> por el nombre de tu ambiente:
 
 <pre><code>conda activate myenv</code></pre>
 
@@ -264,7 +390,7 @@ Utiliza el siguiente comando, cambiando <b>myenv</b> por el nombre de tu ambient
     </div>
 
 
-Notarás que cambió el nombre base por el nombre de tu ambiente. Eso significa que la activación se realizó exitosamente y que te encuentras dentro del ambiente. Una vez activado un ambiente, puedes cambiar a otro usando este mismo comando.
+<p>Notarás que cambió el nombre base por el nombre de tu ambiente. Eso significa que la activación se realizó exitosamente y que te encuentras dentro del ambiente. Una vez activado un ambiente, puedes cambiar a otro usando este mismo comando.</p>
 
 <p><b>OJO:</b> Si abres otra terminal o ventana, te aparecerá el ambiente base por defecto, dado que el ambiente sólo se activa en la terminal o ventana donde la activaste. Si quieres usar el ambiente en la nueva ventana, debes activarlo de nuevo.</p>   
 
@@ -272,9 +398,26 @@ Notarás que cambió el nombre base por el nombre de tu ambiente. Eso significa 
 <p>Si deseas desactivar el ambiente y regresar al ambiente base utiliza el comando <b>deactivate</b>:</p>
 
 <pre><code>conda deactivate</code></pre>
+  </div>
+
+</div>
+
+
 
 ### Lista de ambientes
 
+<ul class="nav nav-tabs" role="tablist">
+  <li role="presentation" class="active"><a href="#windows_lista" aria-controls="windows" role="tab" data-toggle="tab">Windows</a></li>
+  <li role="presentation"><a href="#linux_lista" aria-controls="linux" role="tab" data-toggle="tab">Linux</a></li>
+</ul>
+
+
+ <!-- SECCION WINDOWS-->
+
+<div class="tab-content">
+
+  <div role="tabpanel" class="tab-pane active" id="windows_lista">
+  
 Un comando útil es el que te indica cuáles ambientes has creado en tu dispositivo (por si olvidas el nombre de tu ambiente):
 
 <pre><code>conda env list</code></pre>
@@ -291,17 +434,69 @@ myenv                   /home/tu-usuario/miniforge3/env/myenv
 </pre>
 </div>
 
-Aparecerán la lista de ambientes en el lado izquierdo. El ***asterisco*** indica en cuál ambiente te encuentras. En mi caso, estoy en el ambiente ***base***.
+Aparecerán la lista de ambientes en el lado izquierdo. El <b>asterisco</b> indica en cuál ambiente te encuentras. En mi caso, estoy en el ambiente <b>base</b>.
+
+  </div>
+
+
+ <!-- SECCION LINUX -->
+
+  <div role="tabpanel" class="tab-pane" id="linux_lista">
+ Un comando útil es el que te indica cuáles ambientes has creado en tu dispositivo (por si olvidas el nombre de tu ambiente):
+
+<pre><code>conda env list</code></pre>
+
+<div class="terminal-output" markdown="0">
+
+<pre>
+# conda environments:
+#
+# * -> active
+# + -> frozen
+base                *   /home/tu-usuario/miniforge3
+myenv                   /home/tu-usuario/miniforge3/env/myenv
+</pre>
+</div>
+
+Aparecerán la lista de ambientes en el lado izquierdo. El <b>asterisco</b> indica en cuál ambiente te encuentras. En mi caso, estoy en el ambiente <b>base</b>. 
+  </div>
+
+</div>
 
 ### ¡Prueba Conda!
 
 Descarga el siguiente script de Python: <a href="../../files/probar_entorno.py" download>probar_entorno.py</a>.
 
-Activa el ambiente que creaste (Ver sección [Activación de ambiente](#activacion-de-ambiente)) y corre el script <b>probar_entorno.py</b> con el siguiente comando:
+Activa el ambiente que creaste (Ver sección [Activación de ambiente](#activacion-de-ambiente)) y corre el script <b>probar_entorno.py</b> dentro de la carpeta donde lo guardaste con el siguiente comando:
 
 <pre><code>python probar_entorno.py</code></pre>
 
+El script verifica si ambiente en el que te encuentras funciona correctamente. Si te aparece algo parecido a lo siguiente, ¡felicidades!, acabas de correr tu primer código en python con el ambiente que recién creaste a través de Conda.</p>
 
+<div class="miniforge-output">
+
+<pre>
+============================================================
+
+ _   _       _         __  __                 _       _ 
+| | | | ___ | | __ _   |  \/  |_   _ _ __   __| | ___ | |
+| |_| |/ _ \| |/ _` |  | |\/| | | | | '_ \ / _` |/ _ \| |
+|  _  | (_) | | (_| |  | |  | | |_| | | | | (_| | (_) |_|
+|_| |_|\___/|_|\__,_|  |_|  |_|\__,_|_| |_|\__,_|\___/(_)
+
+============================================================
+
+✓ Instalación de ambiente virtual verificada correctamente
+
+Estatus del ambiente: entorno myenv funciona correctamente
+Versión de Python: 3.10.20
+
+============================================================
+SERVIDOR ENES Mérida, UNAM
+============================================================
+
+</pre>
+</div>
 
 ## UV
 
@@ -318,7 +513,7 @@ Activa el ambiente que creaste (Ver sección [Activación de ambiente](#activaci
   
   <div role="tabpanel" class="tab-pane active" id="windows2">
     
-    <p>Desde inicio, abre el Powershell y ejecuta lo siguiente:</p>
+    <p>Desde inicio, abre la aplicación <b>Powershell</b> desde el menú de inicio y ejecuta lo siguiente:</p>
 
     <pre><code>powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"</code></pre>
 
@@ -378,7 +573,19 @@ To add $HOME/.local/share/../bin to your PATH, either restart your shell or run:
 
 ### Creación de ambiente virtual con UV
 
-Abre una terminal (en linux) o el PowerShell (en Windows) y ejecuta lo siguiente, cambiando <b>myenv</b> por el nombre que prefieras para tu ambiente:
+<ul class="nav nav-tabs" role="tablist">
+  <li role="presentation" class="active"><a href="#windows_creacion_uv" aria-controls="windows" role="tab" data-toggle="tab">Windows</a></li>
+  <li role="presentation"><a href="#linux_creacion_uv" aria-controls="linux" role="tab" data-toggle="tab">Linux</a></li>
+</ul>
+
+
+ <!-- SECCION WINDOWS-->
+
+<div class="tab-content">
+
+  <div role="tabpanel" class="tab-pane active" id="windows_creacion_uv">
+  
+  Abre el PowerShell y ejecuta lo siguiente, cambiando <b>myenv</b> por el nombre que prefieras para tu ambiente:
 
 <pre><code>uv init myenv --python=3.10</code></pre>
 
@@ -401,14 +608,118 @@ Installed 1 package in 346ms
 </div>
 
 ¡Listo! Haz creado un ambiente con UV.
-
-## ¡Pónlo a prueba!
-
-Descarga el siguiente script de Python: <a href="../../files/probar_entorno.py" download>probar_entorno.py</a>.
-
-### Mamba con conda
+  </div>
 
 
-Hasta aquí termina este manual. Si deseas cononcer más información, puedes consultar la fuentes oficiales de <a href="https://mamba.readthedocs.io/en/latest/installation/mamba-installation.html" target="_blank" rel="noopener noreferrer">mamba</a> y <a href=" https://docs.astral.sh/uv/#installation
+ <!-- SECCION LINUX -->
+
+  <div role="tabpanel" class="tab-pane" id="linux_creacion_uv">
+  
+  Abre una terminal y ejecuta lo siguiente, cambiando <b>myenv</b> por el nombre que prefieras para tu ambiente:
+
+  <pre><code>uv init myenv --python=3.10</code></pre>
+
+  Se creará una <b>carpeta</b> llamada como tu ambiente (en este caso, myenv). Cambia a dicha carpeta con el comando <b>cd</b> y el nombre de tu ambiente. Ahí dentro ejecuta los siguiente:
+
+  <pre><code>uv sync</code></pre>
+
+  <p>El comando <b>sync</b> crea y actualiza el ambiente, descargando las dependencias especificadas en el archivo <b>pyproyect.toml</b>. Es nuestro caso sólo descargará el lenguaje python que especificamos en el paso anterior.</p>
+
+  <div class="terminal-output" markdown="0">
+
+<pre>Ussing CPython 3.10.21 
+Creating virtual environment at: .venv 
+Resolved 1 package in 188ms 
+      Built myenv @ file:///C:/Users/tu-usuario/myenv              
+Prepared 1 package in 290ms
+Installed 1 package in 346ms 
+ + myenv==0.1.0 (from file:///C:/Users/tu-usuario/myenv)</pre>
+
+</div>
+
+  ¡Listo! Haz creado un ambiente con UV.
+
+  </div>
+
+</div>
+
+
+### ¡Prueba UV!
+
+
+<ul class="nav nav-tabs" role="tablist">
+  <li role="presentation" class="active"><a href="#windows_prueba_uv" aria-controls="windows" role="tab" data-toggle="tab">Windows</a></li>
+  <li role="presentation"><a href="#linux_prueba_uv" aria-controls="linux" role="tab" data-toggle="tab">Linux</a></li>
+</ul>
+
+
+<div class="tab-content">
+
+  <!-- SECCION WINDOWS-->
+
+  <div role="tabpanel" class="tab-pane active" id="windows_prueba_uv">
+  
+    Descarga el siguiente script de Python (<a href="../../files/probar_entorno.py" download>probar_entorno.py</a>) y guárdalo dentro de la carpeta con el nombre de tu ambiente. Muévete a dicha carpeta y corre el script con el siguiente comando:
+
+    <pre><code>uv run probar_entorno.py</code></pre>
+
+    El script verifica si ambiente en el que te encuentras funciona correctamente. Si te aparece algo parecido a lo siguiente, ¡felicidades!, acabas de correr tu primer código en python con el ambiente que recién creaste a través de Conda.</p>
+
+    <div class="powershell-output">
+
+    <pre>
+============================================================
+
+ _   _       _         __  __                 _       _ 
+| | | | ___ | | __ _   |  \/  |_   _ _ __   __| | ___ | |
+| |_| |/ _ \| |/ _` |  | |\/| | | | | '_ \ / _` |/ _ \| |
+|  _  | (_) | | (_| |  | |  | | |_| | | | | (_| | (_) |_|
+|_| |_|\___/|_|\__,_|  |_|  |_|\__,_|_| |_|\__,_|\___/(_)
+
+============================================================
+
+✓ Instalación de ambiente virtual verificada correctamente
+
+Estatus del ambiente: entorno myenv funciona correctamente
+Versión de Python: 3.10.20</pre>
+    </div>
+  </div>
+
+
+  <!-- SECCION LINUX -->
+
+  <div role="tabpanel" class="tab-pane" id="linux_prueba_uv">
+  
+    Descarga el siguiente script de Python (<a href="../../files/probar_entorno.py" download>probar_entorno.py</a>) y guárdalo dentro de la carpeta con el nombre de tu ambiente. Muévete a dicha carpeta y corre el script con el siguiente comando:
+
+    <pre><code>uv run probar_entorno.py</code></pre>
+
+    El script verifica si ambiente en el que te encuentras funciona correctamente. Si te aparece algo parecido a lo siguiente, ¡felicidades!, acabas de correr tu primer código en python con el ambiente que recién creaste a través de Conda.</p>
+
+    <div class="terminal-output" markdown="0">
+
+    <pre>
+============================================================
+
+ _   _       _         __  __                 _       _ 
+| | | | ___ | | __ _   |  \/  |_   _ _ __   __| | ___ | |
+| |_| |/ _ \| |/ _` |  | |\/| | | | | '_ \ / _` |/ _ \| |
+|  _  | (_) | | (_| |  | |  | | |_| | | | | (_| | (_) |_|
+|_| |_|\___/|_|\__,_|  |_|  |_|\__,_|_| |_|\__,_|\___/(_)
+
+============================================================
+
+✓ Instalación de ambiente virtual verificada correctamente
+
+Estatus del ambiente: entorno myenv funciona correctamente
+Versión de Python: 3.10.20</pre>
+    </div>
+  </div>
+
+</div>
+
+
+Hasta aquí termina este manual. Si deseas cononcer más información, puedes consultar las fuentes oficiales de <a href="https://mamba.readthedocs.io/en/latest/installation/mamba-installation.html" target="_blank" rel="noopener noreferrer">mamba</a> y <a href=" https://docs.astral.sh/uv/#installation
 " target="_blank" rel="noopener noreferrer">UV</a>.
+
 
