@@ -197,11 +197,24 @@ conda 26.3.2
 
   <div role="tabpanel" class="tab-pane active" id="windows_creacion">
   
-  <p>Abre el miniforge y ejecuta lo siguiente, cambiando <b>myenv</b> por el nombre que prefieras para tu ambiente:</p>
+  <p> </p>
+  
+  <p>Abre el <b>miniforge</b> y ejecuta lo siguiente, cambiando <code>myenv</code> por el nombre que prefieras para tu ambiente:</p>
 
   <pre><code>conda create -n myenv python=3.10</code></pre>
 
-  <p>Explicación: <b>conda</b> es el gestor de paquetes, <b>create</b> indica la creación del ambiente, <b>-n</b> le asigna un nombre al entorno, <b>myenv</b> es el nombre como tal (lo puedes cambiar al que prefieras) y <b>python=3.10</b> es la versión de  python que se usará dentro del entorno.</p>
+  <h4>Explicación</h4>  
+
+  <p>El término <code>conda</code> se utiliza al principio de la línea de comandos para realizar cualquier acción relacionada con el gestor de paquetes <b>Conda</b>. Dado que vamos a crear un ambiente, utilizamos el comando <code>create</code> y el parámetro <code>-n</code> para asignarle un nombre en particular. En mi caso lo nombré <code>myenv</code>, pero lo puedes cambiar al que prefieras. Te recomiendo asignarle un nombre relacionado con la tarea que vas a llevar a cabo en dicho ambiente. Por último, especificamos la <b>versión de Python</b> que se utilizará dentro del ambiente. Se recomienda usar una versión igual o mayor a la 3.9 (Figura 1). En mi caso seleccioné la 3.10 con <code>python=3.10</code>.</p>
+
+  <p> </p>
+  
+  <figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
+    <img src="../../images/tabla_versiones_python.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura 1. Estado de los lanzamientos de Python a la fecha 24/09/2026. Para la fecha actual, ve a la <a href="https://www.python.org/downloads/" target="_blank" rel="noopener noreferrer">fuente oficial</a>.</figcaption>
+  </figure>
+
+  <p> </p>
 
   <div class="miniforge-output">
 
@@ -239,7 +252,7 @@ conda 26.3.2
 Proceed ([y]/n)?</pre>
 </div>
 
-  <p>El sistema descargará los paquetes y te preguntará si deseas instalarlos. Escribe <b>y</b> y presiona ENTER.</p> Aparecerá lo siguiente:
+  <p>El sistema te mostrará los paquetes que se descargarán e instalarán. Para proceder escribe <b>y</b> y presiona ENTER.</p> Aparecerá lo siguiente:
 
   <div class="miniforge-output">
 
@@ -270,13 +283,22 @@ Executing transaction: done
   
   <div role="tabpanel" class="tab-pane" id="linux_creacion">
 
-    <p>Abre una terminal y ejecuta lo siguiente, cambiando <b>myenv</b> por el nombre que prefieras para tu ambiente:</p>
+    <p> </p>
 
-  <pre><code>conda create -n myenv python=3.10</code></pre>
+    <p>Abre una <b>terminal</b> y ejecuta lo siguiente, cambiando <code>myenv</code> por el nombre que prefieras para tu ambiente:</p>
 
-  <p>Explicación: <b>conda</b> es el gestor de paquetes, <b>create</b> indica la creación del ambiente, <b>-n</b> le asigna un nombre al entorno, <b>myenv</b> es el nombre como tal (lo puedes cambiar al que prefieras) y <b>python=3.10</b> es la versión de  python que se usará dentro del entorno.</p>
+    <pre><code>conda create -n myenv python=3.10</code></pre>
 
-  <div class="terminal-output" markdown="0">
+    <h4>Explicación</h4>  
+  
+    <p>El término <code>conda</code> se utiliza al principio de la línea de comandos para realizar cualquier acción relacionada con el gestor de paquetes <b>Conda</b>. Dado que vamos a crear un ambiente, utilizamos el comando <code>create</code> y el parámetro <code>-n</code> para asignarle un nombre en particular. En mi caso lo nombré <code>myenv</code>, pero lo puedes cambiar al que prefieras. Te recomiendo asignarle un nombre relacionado con la tarea que vas a llevar a cabo en dicho ambiente. Por último, especificamos la <b>versión de Python</b> que se utilizará dentro del ambiente. Se recomienda usar una versión igual o mayor a la 3.9 (Figura 1). En mi caso seleccioné la 3.10 con <code>python=3.10</code>.</p>
+
+    <figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
+    <img src="../../images/tabla_versiones_python.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura 1. Estado de los lanzamientos de Python a la fecha 24/09/2026. Para la fecha actual, ve a la <a href="https://www.python.org/downloads/" target="_blank" rel="noopener noreferrer">fuente oficial</a>.</figcaption>
+    </figure>
+
+    <div class="terminal-output" markdown="0">
 
   <pre>The following NEW packages will be INSTALLED:
 
@@ -312,7 +334,7 @@ Executing transaction: done
 Proceed ([y]/n)?</pre>
 </div>
 
-  <p>El sistema descargará los paquetes y te preguntará si deseas instalarlos. Escribe <b>y</b> y presiona ENTER.</p> Aparecerá lo siguiente:
+  <p>El sistema te mostrará los paquetes que se descargarán e instalarán. Para proceder escribe <b>y</b> y presiona ENTER.</p> Aparecerá lo siguiente:
 
   <div class="terminal-output" markdown="0">
 
@@ -352,8 +374,10 @@ Executing transaction: done
  <!-- SECCION WINDOWS-->
 
   <div role="tabpanel" class="tab-pane active" id="windows_activacion">
-    
-  Utiliza el siguiente comando, cambiando <b>myenv</b> por el nombre de tu ambiente:
+   
+  <p> </p>
+
+  <p>Utiliza el comando <code>activate</code>, cambiando <code>myenv</code> por el nombre de tu ambiente:</p>
 
   <pre><code>conda activate myenv</code></pre>
 
@@ -369,7 +393,7 @@ Executing transaction: done
 <p><b>OJO:</b> Si abres otra terminal o ventana, te aparecerá el ambiente base por defecto, dado que el ambiente sólo se activa en la terminal o ventana donde la activaste. Si quieres usar el ambiente en la nueva ventana, debes activarlo de nuevo.</p>   
 
 
-<p>Si deseas desactivar el ambiente y regresar al ambiente base utiliza el comando <b>deactivate</b>:</p>
+<p>Si deseas desactivar el ambiente y regresar al ambiente base utiliza el comando <code>deactivate</b>:</code>
 
 <pre><code>conda deactivate</code></pre>
   </div>  
@@ -379,11 +403,13 @@ Executing transaction: done
 
   <div role="tabpanel" class="tab-pane" id="linux_activacion">
   
-  Utiliza el siguiente comando, cambiando <b>myenv</b> por el nombre de tu ambiente:
+  <p> </p>
+  
+  <p>Utiliza el siguiente comando, cambiando <b>myenv</b> por el nombre de tu ambiente:</p>
 
-<pre><code>conda activate myenv</code></pre>
+  <pre><code>conda activate myenv</code></pre>
 
-<div class="terminal-output" markdown="0">
+  <div class="terminal-output" markdown="0">
 
     <pre>
 (myenv) <span class="user">tu-usuario@tu-dispotivo</span>:<span class="timestamp">~</span>$</pre>
@@ -418,13 +444,15 @@ Executing transaction: done
 
   <div role="tabpanel" class="tab-pane active" id="windows_lista">
   
-Un comando útil es el que te indica cuáles ambientes has creado en tu dispositivo (por si olvidas el nombre de tu ambiente):
+  <p> </p>
+  
+  <p>Un comando útil es el que te indica cuáles ambientes has creado en tu dispositivo (por si olvidas el nombre de tu ambiente):</p>
 
-<pre><code>conda env list</code></pre>
+  <pre><code>conda env list</code></pre>
 
-<div class="miniforge-output">
+  <div class="miniforge-output">
 
-<pre>
+  <pre>
 # conda environments:
 #
 # * -> active
@@ -463,6 +491,158 @@ Aparecerán la lista de ambientes en el lado izquierdo. El <b>asterisco</b> indi
 
 </div>
 
+### Instalación de librerías con Conda
+
+<ul class="nav nav-tabs" role="tablist">
+  <li role="presentation" class="active"><a href="#windows_instalacion" aria-controls="windows" role="tab" data-toggle="tab">Windows</a></li>
+  <li role="presentation"><a href="#linux_instalacion" aria-controls="linux" role="tab" data-toggle="tab">Linux</a></li>
+</ul>
+
+
+ <!-- SECCION WINDOWS-->
+
+<div class="tab-content">
+
+  <div role="tabpanel" class="tab-pane active" id="windows_instalacion">
+  
+    <p> </p>
+
+    <p>Dentro de tu ambiente, ejecuta el comando <code>install</code> junto con el nombre de la librería que desees instalar, por ejemplo, <code>matplotlib</code>, una librería de Python que sirve para crear visualizaciones de datos en forma de gráficos 2D y 3D de alta calidad:</p>
+
+    <pre><code>conda install matplotlib</code></pre>
+
+    <div class="miniforge-output">
+    <pre>The following NEW packages will be INSTALLED:
+
+  python_abi         conda-forge/noarch::python_abi-3.10-9_cp310 
+  qhull              conda-forge/linux-64::qhull-2020.2-h434a139_5 
+  qt6-main           conda-forge/linux-64::qt6-main-6.11.2-pl5321h9df5c37_0 
+  six                conda-forge/noarch::six-1.17.0-pyhe01879c_1 
+  tornado            conda-forge/linux-64::tornado-6.5.8-py310h7c4b9e2_0 
+  unicodedata2       conda-forge/linux-64::unicodedata2-17.0.1-py310h7c4b9e2_0 
+  wayland            conda-forge/linux-64::wayland-1.26.0-hc1c935e_2 
+  xcb-util           conda-forge/linux-64::xcb-util-0.4.1-h4f16b4b_2 
+  xcb-util-cursor    conda-forge/linux-64::xcb-util-cursor-0.1.6-hb03c661_0 
+  xcb-util-image     conda-forge/linux-64::xcb-util-image-0.4.0-hb711507_2 
+  xcb-util-keysyms   conda-forge/linux-64::xcb-util-keysyms-0.4.1-hb711507_0 
+  xcb-util-renderut~ conda-forge/linux-64::xcb-util-renderutil-0.3.10-hb711507_0 
+  xcb-util-wm        conda-forge/linux-64::xcb-util-wm-0.4.2-hb711507_0 
+  xkeyboard-config   conda-forge/linux-64::xkeyboard-config-2.48-h280c20c_0 
+  xorg-libice        conda-forge/linux-64::xorg-libice-1.1.2-h280c20c_0 
+  xorg-libsm         conda-forge/linux-64::xorg-libsm-1.2.6-h0d788c3_1 
+  xorg-libx11        conda-forge/linux-64::xorg-libx11-1.8.13-he1eb515_1 
+  xorg-libxau        conda-forge/linux-64::xorg-libxau-1.0.12-h7cc23a3_2 
+  xorg-libxcomposite conda-forge/linux-64::xorg-libxcomposite-0.4.7-hb03c661_0 
+  xorg-libxcursor    conda-forge/linux-64::xorg-libxcursor-1.2.3-hb9d3cd8_0 
+  xorg-libxdamage    conda-forge/linux-64::xorg-libxdamage-1.1.6-hb9d3cd8_0 
+  xorg-libxdmcp      conda-forge/linux-64::xorg-libxdmcp-1.1.5-h7cc23a3_2 
+  xorg-libxext       conda-forge/linux-64::xorg-libxext-1.3.7-h7cc23a3_1 
+  xorg-libxfixes     conda-forge/linux-64::xorg-libxfixes-6.0.2-h7cc23a3_1 
+  xorg-libxi         conda-forge/linux-64::xorg-libxi-1.8.3-h7cc23a3_1 
+  xorg-libxrandr     conda-forge/linux-64::xorg-libxrandr-1.5.5-h7cc23a3_1 
+  xorg-libxrender    conda-forge/linux-64::xorg-libxrender-0.9.12-hb03c661_1 
+  xorg-libxtst       conda-forge/linux-64::xorg-libxtst-1.2.5-h7cc23a3_4 
+  xorg-libxxf86vm    conda-forge/linux-64::xorg-libxxf86vm-1.1.7-hb03c661_0 
+  xorg-xorgproto     conda-forge/linux-64::xorg-xorgproto-2025.1-hebe6cf0_3 
+  zlib-ng            conda-forge/linux-64::zlib-ng-2.3.3-hce19668_1 
+
+The following packages will be UPDATED:
+
+  openssl                                  3.6.3-h35e630c_1 --> 3.6.4-h781a0a9_0 
+
+
+Proceed ([y]/n)?</pre>
+    </div>
+    
+    <p>El sistema te mostrarán los paquetes que se descargarán, instalarán y/o actualizarán. Para proceder escribe <b>y</b> y presiona ENTER.</p>
+
+    <div class="miniforge-output">
+    <pre>
+Downloading and Extracting Packages:
+    
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done</pre>
+    </div>
+  
+  <p>¡Listo! Haz instalado tu primera paquetería en tu nuevo ambiente.</p>
+
+  </div>
+
+
+ <!-- SECCION LINUX -->
+
+  <div role="tabpanel" class="tab-pane" id="linux_instalacion">
+
+  <p> </p>
+
+    <p>Dentro de tu ambiente, ejecuta el comando <code>install</code> junto con el nombre de la librería que desees instalar, por ejemplo, <code>matplotlib</code>, una librería de Python que sirve para crear visualizaciones de datos en forma de gráficos 2D y 3D de alta calidad:</p>
+
+    <pre><code>conda install matplotlib</code></pre>
+
+    <div class="terminal-output" markdown="0">
+    <pre>The following NEW packages will be INSTALLED:
+
+  python_abi         conda-forge/noarch::python_abi-3.10-9_cp310 
+  qhull              conda-forge/linux-64::qhull-2020.2-h434a139_5 
+  qt6-main           conda-forge/linux-64::qt6-main-6.11.2-pl5321h9df5c37_0 
+  six                conda-forge/noarch::six-1.17.0-pyhe01879c_1 
+  tornado            conda-forge/linux-64::tornado-6.5.8-py310h7c4b9e2_0 
+  unicodedata2       conda-forge/linux-64::unicodedata2-17.0.1-py310h7c4b9e2_0 
+  wayland            conda-forge/linux-64::wayland-1.26.0-hc1c935e_2 
+  xcb-util           conda-forge/linux-64::xcb-util-0.4.1-h4f16b4b_2 
+  xcb-util-cursor    conda-forge/linux-64::xcb-util-cursor-0.1.6-hb03c661_0 
+  xcb-util-image     conda-forge/linux-64::xcb-util-image-0.4.0-hb711507_2 
+  xcb-util-keysyms   conda-forge/linux-64::xcb-util-keysyms-0.4.1-hb711507_0 
+  xcb-util-renderut~ conda-forge/linux-64::xcb-util-renderutil-0.3.10-hb711507_0 
+  xcb-util-wm        conda-forge/linux-64::xcb-util-wm-0.4.2-hb711507_0 
+  xkeyboard-config   conda-forge/linux-64::xkeyboard-config-2.48-h280c20c_0 
+  xorg-libice        conda-forge/linux-64::xorg-libice-1.1.2-h280c20c_0 
+  xorg-libsm         conda-forge/linux-64::xorg-libsm-1.2.6-h0d788c3_1 
+  xorg-libx11        conda-forge/linux-64::xorg-libx11-1.8.13-he1eb515_1 
+  xorg-libxau        conda-forge/linux-64::xorg-libxau-1.0.12-h7cc23a3_2 
+  xorg-libxcomposite conda-forge/linux-64::xorg-libxcomposite-0.4.7-hb03c661_0 
+  xorg-libxcursor    conda-forge/linux-64::xorg-libxcursor-1.2.3-hb9d3cd8_0 
+  xorg-libxdamage    conda-forge/linux-64::xorg-libxdamage-1.1.6-hb9d3cd8_0 
+  xorg-libxdmcp      conda-forge/linux-64::xorg-libxdmcp-1.1.5-h7cc23a3_2 
+  xorg-libxext       conda-forge/linux-64::xorg-libxext-1.3.7-h7cc23a3_1 
+  xorg-libxfixes     conda-forge/linux-64::xorg-libxfixes-6.0.2-h7cc23a3_1 
+  xorg-libxi         conda-forge/linux-64::xorg-libxi-1.8.3-h7cc23a3_1 
+  xorg-libxrandr     conda-forge/linux-64::xorg-libxrandr-1.5.5-h7cc23a3_1 
+  xorg-libxrender    conda-forge/linux-64::xorg-libxrender-0.9.12-hb03c661_1 
+  xorg-libxtst       conda-forge/linux-64::xorg-libxtst-1.2.5-h7cc23a3_4 
+  xorg-libxxf86vm    conda-forge/linux-64::xorg-libxxf86vm-1.1.7-hb03c661_0 
+  xorg-xorgproto     conda-forge/linux-64::xorg-xorgproto-2025.1-hebe6cf0_3 
+  zlib-ng            conda-forge/linux-64::zlib-ng-2.3.3-hce19668_1 
+
+The following packages will be UPDATED:
+
+  openssl                                  3.6.3-h35e630c_1 --> 3.6.4-h781a0a9_0 
+
+
+Proceed ([y]/n)?</pre>
+    </div>
+    
+    <p>El sistema te mostrarán los paquetes que se descargarán, instalarán y/o actualizarán. Para proceder escribe <b>y</b> y presiona ENTER.</p>
+
+    <div class="terminal-output" markdown="0">
+    <pre>
+Downloading and Extracting Packages:
+    
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done</pre>
+    </div>
+  
+  <p>¡Listo! Haz instalado tu primera paquetería en tu nuevo ambiente.</p>
+
+
+
+  </div>
+
+</div>
+
+
 ### ¡Prueba Conda!
 
 <ul class="nav nav-tabs" role="tablist">
@@ -476,10 +656,12 @@ Aparecerán la lista de ambientes en el lado izquierdo. El <b>asterisco</b> indi
   <!-- SECCION WINDOWS-->
 
   <div role="tabpanel" class="tab-pane active" id="windows_prueba_conda">
-  
-    Descarga el siguiente script de Python: <a href="../../files/probar_entorno.py" download>probar_entorno.py</a>.
+    
+    <p> </p>  
 
-    Activa el ambiente que creaste y corre el script <b>probar_entorno.py</b> dentro de la carpeta donde lo guardaste con el siguiente comando:
+    <p>Descarga el siguiente script de Python (<a href="../../files/probar_entorno.py" download>probar_entorno.py</a>).</p>
+  
+    <p>Primero, activa el ambiente que creaste. Luego en el miniforge, posiciónate dentro de la carpeta donde guardaste el script y córrelo utilizando el comando <code>python</code>:</p>
 
     <pre><code>python probar_entorno.py</code></pre>
 
@@ -510,10 +692,11 @@ Versión de Python: 3.10.20</pre>
 
   <div role="tabpanel" class="tab-pane" id="linux_prueba_conda">
   
-   Descarga el siguiente script de Python: <a href="../../files/probar_entorno.py" download>probar_entorno.py</a>.
+   <p> </p>  
 
-    Activa el ambiente que creaste y corre el script <b>probar_entorno.py</b> dentro de la carpeta donde lo guardaste con el siguiente comando:
-
+    <p>Descarga el siguiente script de Python (<a href="../../files/probar_entorno.py" download>probar_entorno.py</a>).</p>
+  
+    <p>Primero, activa el ambiente que creaste. Luego en el miniforge, posiciónate dentro de la carpeta donde guardaste el script y córrelo utilizando el comando <code>python</code>:</p>
     <pre><code>python probar_entorno.py</code></pre>
 
     El script verifica si ambiente en el que te encuentras funciona correctamente. Si te aparece algo parecido a lo siguiente, ¡felicidades!, acabas de correr tu primer código en python con el ambiente que recién creaste a través de Conda.</p>
