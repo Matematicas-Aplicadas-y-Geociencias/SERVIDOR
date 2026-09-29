@@ -1,6 +1,7 @@
 site_name: SERVIDOR
 theme:
   name: cinder
+  custom_dir: overrides
   color_mode: dark
   header_layout:
     - nav
@@ -17,3 +18,10 @@ extra_css:
   - css/extra.css
 extra_javascript:
    - js/copy-button.js
+
+plugins:
+  - search
+  - git-revision-date-localized:
+      type: date
+      locale: es
+      fallback_to_build_date: true
