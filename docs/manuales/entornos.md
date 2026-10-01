@@ -12,7 +12,7 @@ Escoge el sistema operativo de tu computadora:
 
 <ul class="nav nav-tabs" role="tablist">
   <li role="presentation" class="active"><a href="#windows1" aria-controls="windows" role="tab" data-toggle="tab">Windows</a></li>
-  <li role="presentation"><a href="#linux1" aria-controls="linux" role="tab" data-toggle="tab">Linux</a></li>
+  <li role="presentation"><a href="#linux1" aria-controls="linux" role="tab" data-toggle="tab">Linux/Mac</a></li>
 </ul>
 
 <div class="tab-content">
@@ -187,7 +187,7 @@ conda 26.3.2
 
 <ul class="nav nav-tabs" role="tablist">
   <li role="presentation" class="active"><a href="#windows_creacion" aria-controls="windows" role="tab" data-toggle="tab">Windows</a></li>
-  <li role="presentation"><a href="#linux_creacion" aria-controls="linux" role="tab" data-toggle="tab">Linux</a></li>
+  <li role="presentation"><a href="#linux_creacion" aria-controls="linux" role="tab" data-toggle="tab">Linux/Mac</a></li>
 </ul>
 
 
@@ -365,7 +365,7 @@ Executing transaction: done
 
 <ul class="nav nav-tabs" role="tablist">
   <li role="presentation" class="active"><a href="#windows_activacion" aria-controls="windows" role="tab" data-toggle="tab">Windows</a></li>
-  <li role="presentation"><a href="#linux_activacion" aria-controls="linux" role="tab" data-toggle="tab">Linux</a></li>
+  <li role="presentation"><a href="#linux_activacion" aria-controls="linux" role="tab" data-toggle="tab">Linux/Mac</a></li>
 </ul>
 
 
@@ -434,7 +434,7 @@ Executing transaction: done
 
 <ul class="nav nav-tabs" role="tablist">
   <li role="presentation" class="active"><a href="#windows_lista" aria-controls="windows" role="tab" data-toggle="tab">Windows</a></li>
-  <li role="presentation"><a href="#linux_lista" aria-controls="linux" role="tab" data-toggle="tab">Linux</a></li>
+  <li role="presentation"><a href="#linux_lista" aria-controls="linux" role="tab" data-toggle="tab">Linux/Mac</a></li>
 </ul>
 
 
@@ -495,7 +495,7 @@ Aparecerán la lista de ambientes en el lado izquierdo. El <b>asterisco</b> indi
 
 <ul class="nav nav-tabs" role="tablist">
   <li role="presentation" class="active"><a href="#windows_instalacion" aria-controls="windows" role="tab" data-toggle="tab">Windows</a></li>
-  <li role="presentation"><a href="#linux_instalacion" aria-controls="linux" role="tab" data-toggle="tab">Linux</a></li>
+  <li role="presentation"><a href="#linux_instalacion" aria-controls="linux" role="tab" data-toggle="tab">Linux/Mac</a></li>
 </ul>
 
 
@@ -647,7 +647,7 @@ Executing transaction: done</pre>
 
 <ul class="nav nav-tabs" role="tablist">
   <li role="presentation" class="active"><a href="#windows_prueba_conda" aria-controls="windows" role="tab" data-toggle="tab">Windows</a></li>
-  <li role="presentation"><a href="#linux_prueba_conda" aria-controls="linux" role="tab" data-toggle="tab">Linux</a></li>
+  <li role="presentation"><a href="#linux_prueba_conda" aria-controls="linux" role="tab" data-toggle="tab">Linux/Mac</a></li>
 </ul>
 
 
@@ -729,7 +729,7 @@ Versión de Python: 3.10.20</pre>
 
 <ul class="nav nav-tabs" role="tablist">
   <li role="presentation" class="active"><a href="#windows2" aria-controls="windows" role="tab" data-toggle="tab">Windows</a></li>
-  <li role="presentation"><a href="#linux2" aria-controls="linux" role="tab" data-toggle="tab">Linux</a></li>
+  <li role="presentation"><a href="#linux2" aria-controls="linux" role="tab" data-toggle="tab">Linux/Mac</a></li>
 </ul>
 
 <div class="tab-content">
@@ -800,7 +800,7 @@ To add $HOME/.local/share/../bin to your PATH, either restart your shell or run:
 
 <ul class="nav nav-tabs" role="tablist">
   <li role="presentation" class="active"><a href="#windows_creacion_uv" aria-controls="windows" role="tab" data-toggle="tab">Windows</a></li>
-  <li role="presentation"><a href="#linux_creacion_uv" aria-controls="linux" role="tab" data-toggle="tab">Linux</a></li>
+  <li role="presentation"><a href="#linux_creacion_uv" aria-controls="linux" role="tab" data-toggle="tab">Linux/Mac</a></li>
 </ul>
 
 
@@ -874,7 +874,7 @@ Installed 1 package in 346ms
 
 <ul class="nav nav-tabs" role="tablist">
   <li role="presentation" class="active"><a href="#windows_prueba_uv" aria-controls="windows" role="tab" data-toggle="tab">Windows</a></li>
-  <li role="presentation"><a href="#linux_prueba_uv" aria-controls="linux" role="tab" data-toggle="tab">Linux</a></li>
+  <li role="presentation"><a href="#linux_prueba_uv" aria-controls="linux" role="tab" data-toggle="tab">Linux/Mac</a></li>
 </ul>
 
 
