@@ -1,4 +1,4 @@
-# Seminario de Git y Github
+# Git y Github
 
 <!--
 Correcciones:
@@ -12,40 +12,106 @@ Correcciones:
   🚧 <strong>Sitio en construcción</strong> — Este contenido está en desarrollo y puede cambiar.
 </div>
 
-### Configuración de Git desde la terminal
+## Instalación de Git
 
-Revisar si está instalado git en el dispositivo:
-```
-git --version
-```
-<div class="terminal-output" markdown="0">
-<pre>
-git version 2.43.0
-</pre>
+<ul class="nav nav-tabs" role="tablist">
+  <li role="presentation" class="active"><a href="#windows_git_install" aria-controls="windows" role="tab" data-toggle="tab">Windows</a></li>
+  <li role="presentation"><a href="#linux_git_install" aria-controls="linux" role="tab" data-toggle="tab">Linux</a></li>
+</ul>
+
+ <!-- SECCION WINDOWS-->
+
+<div class="tab-content">
+
+  <div role="tabpanel" class="tab-pane active" id="windows_git_install">
+    
+    <p> </p>
+
+    <p>Desde en menú de incio, abre el <b>PowerShell</b> con clic derecho y selecciona la opción <b>Ejecutar como administrador</b>. Luego ejecuta el siguiente comando:</p>
+
+    <pre><code>winget install --id Git.Git -e --source winget</code></pre>
+
+    El sistema descargará el ejecutable y te preguntará si quieres abrir la aplicación como adiminstrador. Dale clic en <b>Aceptar</b> y se abrirá la <b>ventana de instalación</b>. Cuando termine de instalar, cierra y abre el <b>PowerShell</b> para que reconozca el comando, y verifica con:
+
+    <pre><code>git --version</code></pre>
+
+    <p>Te aparecerá lo siguiente:</p>
+
+    <div class="powershell-output">
+
+    <pre>git version 2.55.0.windows.5</pre>
+
+    </div> 
+
+    <p>¡Listo! Haz instalado Git en tu computadora.</p>
+
+  </div>
+
+
+ <!-- SECCION LINUX -->
+
+    <div role="tabpanel" class="tab-pane" id="linux_git_install">
+  
+    <p> </p>
+
+    <p>Abre una <b>terminal</b> y ejecuta el siguiente comando:</p>
+
+    <pre><code>sudo apt update
+sudo apt install git</code></pre>
+
+    <p>Verifica si la instalación se realizó exitosamente:</p>
+
+    <pre><code>git --version</code></pre>
+
+    <p>Te aparecerá lo siguiente:</p>
+
+    <div class="terminal-output" markdown="0">
+     <pre>git version 2.43.0</pre>
+    </div>
+  
+    <p>¡Listo! Haz instalado Git en tu computadora.</p>
+
+  </div>
+
 </div>
 
-Ver las **configuraciones** de git en el dispositivo (nombre, correo, editor de texto):
-```
-git config -l
-```
-Si no está configurado, configurar con lo siguiente:
-- Nombre
-```
-git config --global user.name "escribir un nombre de usuario"
-```
-- Correo
-```
-git config --global user.email "escribir correo electrónico"
-```
-- Editor de texto
-```
-git config --global core.editor "nombre del editor"
-```
-- Rama principal (main)
-```
-git config --global init.defaultBranch main
-```
-### Instalación de Github CLI 
+## Configuración de Git
+
+<p>El siguiente paso importante es configurar Git con los datos necesarios para usarlo.</p>
+
+### Nombre de usuario
+
+Se asigna con el siguiente comando, cambiando <code>Tu nombre</code> por el nombre que prefieras para tu usuario:
+
+<pre><code>git config --global user.name "Tu_nombre"
+</code></pre>
+
+### Correo electrónico
+
+Cambia <code>tu@correo.com</code> por el correo de tu preferencia:
+
+<pre><code>git config --global user.email "tu@correo.com"
+</code></pre>
+
+### Editor de texto
+
+Cambia <code>tu_editor</code> por el nombre del editor de texto que sueles usar:
+
+<pre><code>git config --global core.editor "tu_editor"
+</code></pre>
+
+### Rama principal
+
+Vamos a utilizar la rama <code>main</code>:
+
+<pre><code>git config --global init.defaultBranch main
+</code></pre>
+
+Para ver las **configuraciones** de git en el dispositivo (nombre, correo, editor de texto):
+
+<pre><code>git config -l</code></pre>
+
+## Instalación de Github CLI 
 Sirve para conectar la computadora con el repositorio en la nube. Los comandos para instalarlo se obtuvieron de [github cli](https://github.com/cli/cli/blob/trunk/docs/install_linux.md#debian).
 ```
 (type -p wget >/dev/null || (sudo apt update && sudo apt install wget -y)) \
