@@ -55,7 +55,7 @@ conda 26.3.2
   
     <p>Por ejemplo:</p>
 
-    <pre><code>wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh</code></pre>
+    <pre><code>curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"</code></pre>
 
     <p>Luego corre el script con:</p>
 
