@@ -667,7 +667,7 @@ Executing transaction: done</pre>
 
     El script verifica si ambiente en el que te encuentras funciona correctamente. Si te aparece algo parecido a lo siguiente, ¡felicidades!, acabas de correr tu primer código en python con el ambiente que recién creaste a través de Conda.</p>
 
-    <div class="powershell-output">
+    <div class="miniforge-output">
 
     <pre>
 ============================================================
