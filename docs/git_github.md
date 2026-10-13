@@ -12,6 +12,20 @@ Correcciones:
   🚧 <strong>Sitio en construcción</strong> — Este contenido está en desarrollo y puede cambiar.
 </div>
 
+## Introducción
+
+<h3>Git</h3>
+
+<p>Es un <b>sistema de control de versiones</b> de código abierto que <em>registra los cambios en los archivos</em>. Te permite trabajar en tu propia copia de un proyecto, registrar un historial de tus cambios y fusionar tu trabajo con los cambios de otras personas de forma segura y eficiente.</p>
+
+<h3>GitHub</h3>
+
+<p>Es una <b>plataforma</b> que <em>respalda todo tu proceso</em> de desarrollo de software, desde la planificación del trabajo hasta el despliegue y la operación del software.</p>
+
+<h3>Git y GitHub</h3>
+
+<p><b>GitHub</b> se contruye sobre <b>Git</b> alojando tus proyectos de Git, llamados <b>repositorios</b>, en la nube, además de añadir herramientas de planificación y colaboración que facilitan el trabajo en equipos.</p>
+
 ## Instalación de Git
 
 <ul class="nav nav-tabs" role="tablist">
@@ -27,7 +41,7 @@ Correcciones:
     
     <p> </p>
 
-    <p>Desde en menú de incio, abre el <b>PowerShell</b> con clic derecho y selecciona la opción <b>Ejecutar como administrador</b>. Luego ejecuta el siguiente comando:</p>
+    <p>Desde en menú de inicio, abre el <b>PowerShell</b> con clic derecho y selecciona la opción <b>Ejecutar como administrador</b>. Luego ejecuta el siguiente comando:</p>
 
     <pre><code>winget install --id Git.Git -e --source winget</code></pre>
 
@@ -79,28 +93,28 @@ sudo apt install git</code></pre>
 
 <p>El siguiente paso importante es configurar Git con los datos necesarios para usarlo.</p>
 
-### Nombre de usuario
+<h4>Nombre de usuario</h4>
 
 Se asigna con el siguiente comando, cambiando <code>Tu nombre</code> por el nombre que prefieras para tu usuario:
 
 <pre><code>git config --global user.name "Tu_nombre"
 </code></pre>
 
-### Correo electrónico
+<h4>Correo electrónico</h4>
 
 Cambia <code>tu@correo.com</code> por el correo de tu preferencia:
 
 <pre><code>git config --global user.email "tu@correo.com"
 </code></pre>
 
-### Editor de texto
+<h4>Editor de texto</h4>
 
 Cambia <code>tu_editor</code> por el nombre del editor de texto que sueles usar:
 
 <pre><code>git config --global core.editor "tu_editor"
 </code></pre>
 
-### Rama principal
+<h4>Rama principal</h4>
 
 Vamos a utilizar la rama <code>main</code>:
 
@@ -110,6 +124,28 @@ Vamos a utilizar la rama <code>main</code>:
 Para ver las **configuraciones** de git en el dispositivo (nombre, correo, editor de texto):
 
 <pre><code>git config -l</code></pre>
+
+## Creación de repositorio en Github
+
+<p>Primero, crea una cuenta de Github mediante en siguiente enlace: <a href="https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home" target="_blank" rel="noopener noreferrer">crear cuenta de Github</a>. Posteriormente sigue las indicaciones como se muestran a continuación:</p>
+
+ <div class="auto-carousel" data-images='[
+    {"src": "../../images/creacion_repositorio_1.png", "title": "Paso 1", "desc": "Ve a la sección \"Create New\"."},
+    {"src": "../../images/creacion_repositorio_2.png", "title": "Paso 2", "desc": "Dale clic en <br>\"New repository\"."},
+    {"src": "../../images/creacion_repositorio_3.png", "title": "Paso 3", "desc": "Define el nombre de tu repositorio."},
+    {"src": "../../images/creacion_repositorio_4.png", "title": "Paso 4", "desc": "Añade una descripción."},
+    {"src": "../../images/creacion_repositorio_5.png", "title": "Paso 5", "desc": "Escoge la visibilidad."},
+    {"src": "../../images/creacion_repositorio_6.png", "title": "Paso 6", "desc": "Añade un \"READ ME\"."},
+    {"src": "../../images/creacion_repositorio_7.png", "title": "Paso 7", "desc": "Deja \"No.gitignore\" por defecto."},
+    {"src": "../../images/creacion_repositorio_8.png", "title": "Paso 8", "desc": "Selecciona la licencia \"GNU General Public License v3.0\"."},
+    {"src": "../../images/creacion_repositorio_9.png", "title": "Paso 9", "desc": "Dale clic en \"Create repository\"."},
+    {"src": "../../images/creacion_repositorio_10.png", "title": "Paso final", "desc": "¡Listo! Haz creado tu repositorio en GitHub."}
+    ]'>
+</div>
+
+<p>¿Llegaste al paso final? ¡Felicidades! Haz creado tu primer repositorio en GitHub.</p>
+
+
 
 ## Instalación de Github CLI 
 Sirve para conectar la computadora con el repositorio en la nube. Los comandos para instalarlo se obtuvieron de [github cli](https://github.com/cli/cli/blob/trunk/docs/install_linux.md#debian).
