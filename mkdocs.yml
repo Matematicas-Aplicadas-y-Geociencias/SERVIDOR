@@ -7,13 +7,18 @@ theme:
     - nav
 nav:
   - Inicio: index.md
-  - Manuales de instalación:
-      - Introducción: manuales/index.md
-      - Entornos virtuales de Python: manuales/entornos.md
-      - WRF: manuales/wrf.md
-      - GeoClaw: manuales/geoclaw.md 
-  - APIs: apis/apis.md
-  - Github: git_github.md
+  - Herramientas de cómputo:
+      - Entornos virtuales de Python: herramientas_computo/entornos.md
+      - Git y Github: herramientas_computo/git_github.md
+  - Modelos:
+      - WRF: modelos/wrf.md
+      - GeoClaw: modelos/geoclaw.md
+      - Delft3D: modelos/delft3d.md
+  - APIs: 
+      - Copernicus: apis/copernicus.md
+      - ERA5: apis/era5.md
+      - Hycom: apis/hycom.md
+
 extra_css:
   - css/extra.css
 extra_javascript:
