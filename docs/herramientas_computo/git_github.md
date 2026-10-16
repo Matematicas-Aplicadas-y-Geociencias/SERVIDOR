@@ -127,7 +127,7 @@ Para ver las **configuraciones** de git en el dispositivo (nombre, correo, edito
 
 ## Creación de repositorio en Github
 
-<p>Primero, crea una cuenta de Github mediante en siguiente enlace: <a href="https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home" target="_blank" rel="noopener noreferrer">crear cuenta de Github</a>. Posteriormente sigue las indicaciones como se muestran a continuación:</p>
+<p>Primero, crea una cuenta de Github mediante en siguiente enlace: <a href="https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home" target="_blank" rel="noopener noreferrer">crear cuenta de Github</a>. Posteriormente, sigue las indicaciones como se muestran a continuación:</p>
 
  <div class="auto-carousel" data-images='[
     {"src": "../../images/creacion_repositorio_1.png", "title": "Paso 1", "desc": "Ve a la sección \"Create New\"."},
@@ -145,12 +145,61 @@ Para ver las **configuraciones** de git en el dispositivo (nombre, correo, edito
 
 <p>¿Llegaste al paso final? ¡Felicidades! Haz creado tu primer repositorio en GitHub.</p>
 
-
-
 ## Instalación de Github CLI 
-Sirve para conectar la computadora con el repositorio en la nube. Los comandos para instalarlo se obtuvieron de [github cli](https://github.com/cli/cli/blob/trunk/docs/install_linux.md#debian).
-```
-(type -p wget >/dev/null || (sudo apt update && sudo apt install wget -y)) \
+
+<p><b>GitHub CLI</b> te permite usar Github directamente desde la línea de comandos de la terminal o el PowerShell. En particular, conecta la computadora con tu repositorio de Github en la nube.</p>
+
+<!-- CODIGO PARA SECCIONES WINDOWS Y LINUX -->
+
+<ul class="nav nav-tabs" role="tablist">
+  <li role="presentation" class="active"><a href="#windows_githubcli" aria-controls="windows" role="tab" data-toggle="tab">Windows</a></li>
+  <li role="presentation"><a href="#linux_githubcli" aria-controls="linux" role="tab" data-toggle="tab">Linux</a></li>
+</ul>
+
+
+ <!-- SECCION WINDOWS-->
+
+<div class="tab-content">
+
+  <div role="tabpanel" class="tab-pane active" id="windows_githubcli">
+    
+    <p> </p>
+    <p>Abre el <b>PowerShell</b> y ejectua el siguiente comando:</p>
+    
+    <pre><code>winget install --id GitHub.cli --source winget</code></pre>
+
+    El sistema realizará el proceso de instalación. En algún punto te preguntará si quieres permitir que la aplicación realice cambios en tu dispositivo. Le das clic a <b>Sí</b>. Al final debe aparecer "Instalado correctamente".
+
+    <div class="powershell-output">
+
+    <pre>
+Encontrado GitHub CLI [GitHub.cli] Versión 2.102.0 
+
+El propietario de esta aplicación le concede una licencia. 
+
+Microsoft no es responsable, ni tampoco concede ninguna licencia de paquetes de terceros. 
+
+El hash del instalador se verificó correctamente 
+
+Iniciando instalación de paquete... 
+
+Instalado correctamente</pre>
+    </div>
+
+    <p>Por último, cierra y abre el powershell para finalizar la instalación.</p>
+ 
+  </div>
+
+
+ <!-- SECCION LINUX -->
+
+  <div role="tabpanel" class="tab-pane" id="linux_githubcli">
+    
+    <p> </p>
+
+    <p>Abre una <b>terminal</b> y ejecuta el siguiente conjunto de comandos:</p>
+    
+    <pre><code>(type -p wget >/dev/null || (sudo apt update && sudo apt install wget -y)) \
 	&& sudo mkdir -p -m 755 /etc/apt/keyrings \
 	&& out=$(mktemp) && wget -nv -O$out https://cli.github.com/packages/githubcli-archive-keyring.gpg \
 	&& cat $out | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null \
@@ -159,11 +208,18 @@ Sirve para conectar la computadora con el repositorio en la nube. Los comandos p
 	&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
 	&& sudo apt update \
 	&& sudo apt install gh -y
-```
-Luego se **inicia sesión**:
-```
-gh auth login
-```
+    </code></pre>
+  
+  </div>
+
+</div>
+
+## Inicio de sesión con GitHub CLI
+
+Utiliza el comando <code>gh</code> (de GitHub CLI) como sigue:
+
+<pre><code>gh auth login</code></pre>
+
 Saldrán varias opciones a escoger. Se tiene la opción de iniciar sesión a través del buscador. Lo importante aquí es seguir los pasos.Al final, todo el proceso de inicio de sesión se ve así:
 
 <div class="terminal-output">
