@@ -41,7 +41,7 @@ Correcciones:
     
     <p> </p>
 
-    <p>Desde en menú de inicio, abre el <b>PowerShell</b> con clic derecho y selecciona la opción <b>Ejecutar como administrador</b>. Luego ejecuta el siguiente comando:</p>
+    <p>Desde el menú de inicio, abre el <b>PowerShell</b> con clic derecho y selecciona la opción <b>Ejecutar como administrador</b>. Luego ejecuta el siguiente comando:</p>
 
     <pre><code>winget install --id Git.Git -e --source winget</code></pre>
 
@@ -68,10 +68,55 @@ Correcciones:
   
     <p> </p>
 
-    <p>Abre una <b>terminal</b> y ejecuta el siguiente comando:</p>
+    <p>Abre una <b>terminal</b> y ejecuta lo siguiente:</p>
 
     <pre><code>sudo apt update
 sudo apt install git</code></pre>
+
+    <h4>Explicación</h4>    
+
+    <p><code>sudo apt uptate</code> <em>actualiza la lista de paquetes disponibles</em> de todo el sistema, pero no instala ni actualiza ningún programa. En nuestro caso particular, sólo lo usamos para obtener la última versión de git en el sistema. La instalación de git como tal se realiza con <code>sudo apt install git</code>, que al ejecutarlo aparecerá lo siguiente:</p>
+
+    <div class="terminal-output" markdown="0">
+
+    <pre>Leyendo lista de paquetes... Hecho
+Creando árbol de dependencias... Hecho
+Leyendo la información de estado... Hecho
+Se instalarán los siguientes paquetes adicionales:
+  git-man
+Paquetes sugeridos:
+  git-daemon-run | git-daemon-sysvinit git-doc git-email git-gui gitk gitweb
+  git-cvs git-mediawiki git-svn
+Se instalarán los siguientes paquetes NUEVOS:
+  git
+Se actualizarán los siguientes paquetes:
+  git-man
+1 actualizados, 1 nuevos se instalarán, 0 para eliminar y 159 no actualizados.
+Se necesita descargar 4 781 kB de archivos.
+Se utilizarán 22.2 MB de espacio de disco adicional después de esta operación.
+¿Desea continuar? [S/n]</pre>
+    
+    </div>
+
+    <p>El sistema te preguntará si deseas continuar con la instalación de los paquetes enlistados. Escribe <b>s</b> y presiona <b>Enter</b> para confirmar.</p>
+
+    <div class="terminal-output" markdown="0">
+
+    <pre>Des:1 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 git-man all 1:2.43.0-1ubuntu7.4 [1 101 kB]
+Des:2 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 git amd64 1:2.43.0-1ubuntu7.4 [3 681 kB]
+Descargados 4 781 kB en 6s (756 kB/s)                                               
+(Leyendo la base de datos ... 308160 ficheros o directorios instalados actualmente.)
+Preparando para desempaquetar .../git-man_1%3a2.43.0-1ubuntu7.4_all.deb ...
+Desempaquetando git-man (1:2.43.0-1ubuntu7.4) sobre (1:2.43.0-1ubuntu7.3) ...
+Seleccionando el paquete git previamente no seleccionado.
+Preparando para desempaquetar .../git_1%3a2.43.0-1ubuntu7.4_amd64.deb ...
+Desempaquetando git (1:2.43.0-1ubuntu7.4) ...
+Configurando git-man (1:2.43.0-1ubuntu7.4) ...
+Configurando git (1:2.43.0-1ubuntu7.4) ...
+Procesando disparadores para man-db (2.12.0-4build2) ...
+</pre>
+
+    </div>
 
     <p>Verifica si la instalación se realizó exitosamente:</p>
 
@@ -207,8 +252,43 @@ Instalado correctamente</pre>
 	&& sudo mkdir -p -m 755 /etc/apt/sources.list.d \
 	&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
 	&& sudo apt update \
-	&& sudo apt install gh -y
-    </code></pre>
+	&& sudo apt install gh -y</code></pre>
+
+    <p>El sistema te pedirá que escribas tu contraseña del sistema. Una vez la escribas, todo el proceso puede tardar un poco, así que sé paciente. Al final debe salir lo siguiente:</p>
+
+    <div class="terminal-output" markdown="0">
+
+    <pre>Leyendo lista de paquetes... Hecho                                                   
+Creando árbol de dependencias... Hecho
+Leyendo la información de estado... Hecho
+Se instalarán los siguientes paquetes NUEVOS:
+  gh
+0 actualizados, 1 nuevos se instalarán, 0 para eliminar y 103 no actualizados.
+Se necesita descargar 15.1 MB de archivos.
+Se utilizarán 41.5 MB de espacio de disco adicional después de esta operación.
+Des:1 https://cli.github.com/packages stable/main amd64 gh amd64 2.103.0 [15.1 MB]
+Descargados 15.1 MB en 13s (1 181 kB/s)                                              
+Seleccionando el paquete gh previamente no seleccionado.
+(Leyendo la base de datos ... 309045 ficheros o directorios instalados actualmente.)
+Preparando para desempaquetar .../archives/gh_2.103.0_amd64.deb ...
+Desempaquetando gh (2.103.0) ...
+Configurando gh (2.103.0) ...
+Procesando disparadores para man-db (2.12.0-4build2) ...</pre>
+    </div>
+
+    <p>Verifica que la instalación se realizó correctamente:</p>
+
+    <pre><code>gh --version</code></pre>
+
+    <p>Te aparecerá algo parecido a lo siguiente:</p>
+
+    <div class="terminal-output" markdown="0">
+
+    <pre>gh version 2.103.0 (2026-10-21)
+https://github.com/cli/cli/releases/tag/v2.103.0</pre>
+    </div>
+
+    <p>¡Listo! Haz instalado GitHub CLI en tu computadora.</p>
   
   </div>
 
@@ -216,47 +296,194 @@ Instalado correctamente</pre>
 
 ## Inicio de sesión con GitHub CLI
 
-Utiliza el comando <code>gh</code> (de GitHub CLI) como sigue:
+<!-- CODIGO PARA SECCIONES WINDOWS Y LINUX -->
 
-<pre><code>gh auth login</code></pre>
+<ul class="nav nav-tabs" role="tablist">
+  <li role="presentation" class="active"><a href="#windows_sesion_gh" aria-controls="windows" role="tab" data-toggle="tab">Windows</a></li>
+  <li role="presentation"><a href="#linux_sesion_gh" aria-controls="linux" role="tab" data-toggle="tab">Linux</a></li>
+</ul>
 
-Saldrán varias opciones a escoger. Se tiene la opción de iniciar sesión a través del buscador. Lo importante aquí es seguir los pasos.Al final, todo el proceso de inicio de sesión se ve así:
 
-<div class="terminal-output">
-<pre><span class="user">?</span> Where do you use GitHub? <span class="path">GitHub.com</span>
-<span class="user">?</span> What is your preferred protocol for Git operations on this host? <span class="path">HTTPS</span>
-Authenticate Git with your GitHub credentials? <span class="path">Yes</span>
-<span class="user">?</span> How would you like to authenticate GitHub CLI? <span class="path">Login with a web browser</span>
+ <!-- SECCION WINDOWS-->
 
-<span class="warn">!</span> First copy your one-time code: <strong>XAXX-XXDX</strong>
-Press <strong>Enter</strong> to open https://github.com/login/device in your browser...
-Gtk-<span class="user">Message</span>: <span class="timestamp">10:49:06.718</span>: Not loading module "atk-bridge": The functionality is provided by GTK natively. Please try to not load it.
-<span class="user">✓</span> Authentication complete.
+<div class="tab-content">
+
+  <div role="tabpanel" class="tab-pane active" id="windows_sesion_gh">
+  
+    <p> </p>
+
+    <p>Utiliza el comando <code>gh</code> (de GitHub CLI) como sigue:</p>
+
+    <pre><code>gh auth login</code></pre>
+
+    <p>El sistema te preguntará dónde usas GitHub. Selecciona <b>GitHub.com</b> con las teclas de flecha arriba y abajo y presionar Enter.</p>
+
+    <div class="powershell-output">
+
+    <pre>? Where do you use GitHub?  [Use arrows to move, type to filter]
+> GitHub.com
+  Other</pre>
+
+    </div>
+
+    <p>Luego te pregunta cómo te gustaría autentificar tu cuenta de GitHub. Selecciona la opción <b>Login with a web browser</b>.</p>
+
+    <div class="powershell-output">
+
+    <pre>? How would you like to authenticate GitHub CLI?  [Use arrows to move, type to filter]
+> Login with a web browser
+  Paste an authentication token</pre>
+    </div>
+
+    <p>La siguiente opción es sobre el protecolo web preferido para usar Git. Selecciona <b>HTTPS</b>.</p>
+
+    <div class="powershell-output">
+
+    <pre>? What is your preferred protocol for Git operations on this host?  [Use arrows to move, type to filter]
+> HTTPS
+  SSH</pre>
+    </div>
+
+    <p>Posteriormente te pregunta si quieres autentificar Git con tus credenciales de Github. Escribe <b>y</b>.</p>
+
+    <div class="powershell-output">
+
+    <pre>? Authenticate Git with your GitHub credentials? (Y/n) </pre>
+    </div>
+
+    <p>Te mostrará tu código de una sola vez (<b>one-time code</b>): un código alfanumérico de 8 dígitos. Lo vas a necesitar después. Para continuar con el inicio de sesión, presiona Enter.</p>
+
+    <div class="powershell-output">
+
+    <pre>! First copy your one-time code: XAXX-XXDX
+Press Enter to open https://github.com/login/device in your browser...</pre>
+    </div>
+
+    <p>Te redigirá a la <b>página web</b> de inicio de sesión en GitHub. Inicia sesión con los datos que usaste al crear tu repositorio. Una vez hecho esto, te pedirá el <b>código</b> de una sola vez; cópialo desde del PowerShell y pégalo donde te lo solicita. Luego haz clic en <b>Continue</b>.</p>
+
+    <figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
+    <img src="../../images/github_iniciar_sesion.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura 1. Pantalla donde se introduce el código de una sola vez.</figcaption>
+    </figure>
+
+    <p> </p>
+
+    <p>Te saldrá otra pantalla donde se muestra un resumen de todo lo que podrá acceder Github CLI de tu cuenta de GitHub. Para autorizar el acceso le das clic en <b>authorize github</b>. Te saldrá una pantalla con el mensaje "Congratulations, you're all set!"; ciérrala para continuar el proceso. En el PowerShell te aparecerá lo siguiente:</p>
+
+    <div class="powershell-output">
+
+    <pre>✓ Authentication complete.
 - gh config set -h github.com git_protocol https
-<span class="user">✓</span> Configured git protocol
-<span class="user">✓</span> Logged in as <strong>nombre-usuario</strong>
-</pre>
+✓ Configured git protocol
+✓ Logged in as <b>tu-nombre-de-usuario</b></pre>
+    </div>
+
+    <p>¡Listo! Haz iniciado sesión de GitHub en tu línea de comandos.</p>
+
+  </div>
+
+
+ <!-- SECCION LINUX -->
+
+  <div role="tabpanel" class="tab-pane" id="linux_sesion_gh">
+       <p> </p>
+
+    <p>Utiliza el comando <code>gh</code> (de GitHub CLI) como sigue:</p>
+
+    <pre><code>gh auth login</code></pre>
+
+    <p>El sistema te preguntará dónde usas GitHub. Selecciona <b>GitHub.com</b> con las teclas de flecha arriba y abajo y presionar Enter.</p>
+
+    <div class="terminal-output" markdown="0">
+
+    <pre>? Where do you use GitHub?  [Use arrows to move, type to filter]
+> GitHub.com
+  Other</pre>
+
+    </div>
+
+    <p>Luego te pregunta cómo te gustaría autentificar tu cuenta de GitHub. Selecciona la opción <b>Login with a web browser</b>.</p>
+
+    <div class="terminal-output" markdown="0">
+
+    <pre>? How would you like to authenticate GitHub CLI?  [Use arrows to move, type to filter]
+> Login with a web browser
+  Paste an authentication token</pre>
+    </div>
+
+    <p>La siguiente opción es sobre el protecolo web preferido para usar Git. Selecciona <b>HTTPS</b>.</p>
+
+    <div class="terminal-output" markdown="0">
+
+    <pre>? What is your preferred protocol for Git operations on this host?  [Use arrows to move, type to filter]
+> HTTPS
+  SSH</pre>
+    </div>
+
+    <p>Posteriormente te pregunta si quieres autentificar Git con tus credenciales de Github. Escribe <b>y</b>.</p>
+
+    <div class="terminal-output" markdown="0">
+
+    <pre>? Authenticate Git with your GitHub credentials? (Y/n) </pre>
+    </div>
+
+    <p>Te mostrará tu código de una sola vez (<b>one-time code</b>): un código alfanumérico de 8 dígitos. Lo vas a necesitar después. Para continuar con el inicio de sesión, presiona Enter.</p>
+
+    <div class="terminal-output" markdown="0">
+
+    <pre>! First copy your one-time code: XAXX-XXDX
+Press Enter to open https://github.com/login/device in your browser...</pre>
+    </div>
+
+    <p>Te redigirá a la <b>página web</b> de inicio de sesión en GitHub. Inicia sesión con los datos que usaste al crear tu repositorio. Una vez hecho esto, te pedirá el <b>código</b> de una sola vez; cópialo desde del PowerShell y pégalo donde te lo solicita. Luego haz clic en <b>Continue</b>.</p>
+
+    <figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
+    <img src="../../images/github_iniciar_sesion.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura 1. Pantalla donde se introduce el código de una sola vez.</figcaption>
+    </figure>
+
+    <p> </p>
+
+    <p>Te saldrá otra pantalla donde se muestra un resumen de todo lo que podrá acceder Github CLI de tu cuenta de GitHub. Para autorizar el acceso le das clic en <b>authorize github</b>. Te saldrá una pantalla con el mensaje "Congratulations, you're all set!"; ciérrala para continuar el proceso. En el PowerShell te aparecerá lo siguiente:</p>
+
+    <div class="terminal-output" markdown="0">
+
+    <pre>✓ Authentication complete.
+- gh config set -h github.com git_protocol https
+✓ Configured git protocol
+✓ Logged in as <b>tu-nombre-de-usuario</b></pre>
+    </div>
+
+    <p>¡Listo! Haz iniciado sesión de GitHub en tu línea de comandos.</p>   
+  </div>
+
 </div>
 
-### Clonación de SERVIDOR en local
-Se crea una nueva carpeta (en la raíz de preferencia) donde contendrá los diferentes servidores que se utilicen. Luego se entrega a la misma carpeta:
+## Clonación de un repositorio a tu computadora
+
+Crea una nueva carpeta (en la raíz de preferencia) donde contendrá los diferentes servidores que se utilicen. Luego se entrega a la misma carpeta:
 
 ```
 mkdir repositorios
 cd repositorios/
 ```
 
-Dentro de la página de SERVIDOR en Github, le damos clic al botón verde que dice "Code"
+Dentro de la página de SERVIDOR en Github, le damos clic al botón verde que dice "Code".
 
-
-![Figura2](images/descargar_repositorio.gif)
+<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
+    <img src="../../images/descargar_repositorio.gif" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura X. Descripción de figura.</figcaption>
+  </figure>
 
 
 Se abre una ventana que ofrece dos opciones de clonación (vistas en clase): 
 1. HTTPS
 2. GitHub CLI
 
-![Figura3|561](images/figura3.png)
+<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
+    <img src="../../images/figura3.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura X. Descripción de figura.</figcaption>
+  </figure>
 
 La primera forma se copia la URL y en la terminal se ejecuta lo siguiente:
 ```
@@ -268,11 +495,14 @@ git clone https://github.com/Matematicas-Aplicadas-y-Geociencias/SERVIDOR.git
 ```
 En cualquier de los dos casos, sale lo siguiente:
 
-![Figura4](images/figura4.png)
+<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
+    <img src="../../images/figura4.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura X. Descripción de figura.</figcaption>
+  </figure>
 
 Esto crea una **carpeta** con todo lo contenido del reservorio de SERVIDOR en Github.
 
-## Uso del reservorio SERVIDOR
+## Uso del repositorio en local 
 
 Se entra a la carpeta de SERVIDOR y listamos el contenido, debe ser igual a lo visto en la página web de SERVIDOR en Github:
 ```
@@ -289,7 +519,10 @@ git status
 ```
 Aparece lo siguiente:
 
-![Figura5](images/figura5.png)
+<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
+    <img src="../../images/figura5.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura X. Descripción de figura.</figcaption>
+  </figure>
 
 Existen tres áreas donde pueden "estar" nuestras modificaciones y/o nuevos archivos:
 1. **Directorio de trabajo**
@@ -305,15 +538,24 @@ git add .
 ```
 Volvemos a revisar el status y aparece lo siguiente:
 
-![Figura6](images/figura6.png)
+<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
+    <img src="../../images/figura6.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura X. Descripción de figura.</figcaption>
+  </figure>
 
 Podemos modificar el archivo con ***vim***. Una vez hecho la modificación, revisamos de nuevo el status y aparece lo siguiente:
 
-![Figura7](images/figura7.png)
+<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
+    <img src="../../images/figura7.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura X. Descripción de figura.</figcaption>
+  </figure>
 
 Para que los cambios realizados al archivo ejemplo.py estén en el **área de stage**, usamos de nuevo el comando ***git add***. Aparece lo siguiente:
 
-![Figura8](images/figura8.png)
+<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
+    <img src="../../images/figura8.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura X. Descripción de figura.</figcaption>
+  </figure>
 
 Por último, para mover el archivo ejemplo.py al **commit**:
 ```
@@ -321,18 +563,27 @@ git commit
 ```
 Se abrirá un archivo donde podemos poner **detalles** de los cambios realizados. Una vez guardados los cambios aparece lo siguiente:
 
-![Figura9](images/figura9.png)
+<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
+    <img src="../../images/figura9.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura X. Descripción de figura.</figcaption>
+  </figure>
 
 Si revisamos de nuevo el status:
 
-![Figura10](images/figura10.png)
+<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
+    <img src="../../images/figura10.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura X. Descripción de figura.</figcaption>
+  </figure>
 
 Si queremos ver un **registro** de todos los cambios hechos en el repositorio:
 ```
 git log
 ```
 
-![Figura11](images/figura11.png)
+<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
+    <img src="../../images/figura11.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura X. Descripción de figura.</figcaption>
+  </figure>
 
  Los código alfanuméricos largos en color café son números **hash**, y son identificadores únicos de cada cambio realizado. 
 
@@ -341,14 +592,20 @@ Para **subir** los cambios a la nube:
 git push origin main
 ```
 
-![Figura12](images/figura12.png)
+<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
+    <img src="../../images/figura12.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura X. Descripción de figura.</figcaption>
+  </figure>
  
  Para **bajar** los cambios hechos por otras personas:
 ```
  git pull
 ```
 
-![Figura13](images/figura13.png)
+<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
+    <img src="../../images/figura13.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura X. Descripción de figura.</figcaption>
+  </figure>
 
 Para regresar a un commit anterior o cambiar de ramas:
 ```
@@ -356,7 +613,10 @@ git checkout "insertar número hash"
 ```
 Ejemplo:
 
-![Figura14](images/figura14.png)
+<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
+    <img src="../../images/figura14.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura X. Descripción de figura.</figcaption>
+  </figure>
 
 Si queremos ver un archivo sin editarlo, usamos el comando ***cat***:
 ```
@@ -374,7 +634,10 @@ git log --oneline --graph --decorate
 ```
 **NOTA**: las ramas se ven en la terminal como la imagen de abajo, pero girado hacia la izquierda.
 
-![Figura15](images/figura15.png)
+<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
+    <img src="../../images/figura15.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura X. Descripción de figura.</figcaption>
+  </figure>
 
 Para ver en cuál rama estamos:
 ```
@@ -387,7 +650,10 @@ git fetch origin
 git checkout 1-crear-nuevo-programa-en-python
 ```
 
-![Figura16](images/figura16.png)
+<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
+    <img src="../../images/figura16.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura X. Descripción de figura.</figcaption>
+  </figure>
 
 Al ejecutarlo, automáticamente nos cambia a la nueva rama, lo que se puede corroborar con ***git branch***. Una vez se hagan las ediciones correspondientes, se sube la rama al repositorio:
 ```
@@ -395,7 +661,10 @@ git push origin 1-crear-nuevo-programa-en-python
 ```
 ==**IMPORTANTE**: Después de este paso hay que ir al reservorio web y hacer un "**Pull request**" dirigido al profesor, quien revisará los cambios y decidirá si la rama se incluirá al main. Si acepta, podemos bajar el reservorio ya actualizado y las ramas se verían así:==
 
-![Figura17](images/figura17.png)
+<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
+    <img src="../../images/figura17.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura X. Descripción de figura.</figcaption>
+  </figure>
 
 Para **eliminar** una rama:
 ```
