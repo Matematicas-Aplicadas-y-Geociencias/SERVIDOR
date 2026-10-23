@@ -461,46 +461,113 @@ Press Enter to open https://github.com/login/device in your browser...</pre>
 
 ## Clonación de un repositorio a tu computadora
 
-Crea una nueva carpeta (en la raíz de preferencia) donde contendrá los diferentes servidores que se utilicen. Luego se entrega a la misma carpeta:
+<!-- CODIGO PARA SECCIONES WINDOWS Y LINUX -->
 
-```
+<ul class="nav nav-tabs" role="tablist">
+  <li role="presentation" class="active"><a href="#windows_clonacion" aria-controls="windows" role="tab" data-toggle="tab">Windows</a></li>
+  <li role="presentation"><a href="#linux_clonacion" aria-controls="linux" role="tab" data-toggle="tab">Linux</a></li>
+</ul>
+
+
+ <!-- SECCION WINDOWS-->
+
+<div class="tab-content">
+
+  <div role="tabpanel" class="tab-pane active" id="windows_clonacion">
+  
+  <p> </p>
+
+    <p>Primero vamos a crear una carpeta en la raíz llamada <b>repositorios</b>, donde vamos a guardar el repositorio que creamos (y los repositorios futuros):</p> 
+
+    <pre><code>cd
 mkdir repositorios
-cd repositorios/
-```
+cd repositorios/</code></pre>
 
-Dentro de la página de SERVIDOR en Github, le damos clic al botón verde que dice "Code".
+    <p>Ve a tu repositorio en <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a> y sigue los pasos siguientes: </p>
 
-<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
-    <img src="../../images/descargar_repositorio.gif" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
-    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura X. Descripción de figura.</figcaption>
-  </figure>
+    <div class="auto-carousel" data-images='[
+      {"src": "../../images/clonar_repositorio_1.png", "title": "Paso 1", "desc": "Selecciona tu repositorio."},
+      {"src": "../../images/clonar_repositorio_2.png", "title": "Paso 2", "desc": "Dale clic al botón verde que dice <br>\"Code\"."},
+      {"src": "../../images/clonar_repositorio_3.png", "title": "Paso 3: opción 1", "desc": "En la sección HTTPS copia el URL y continúa en la sección Opción 1."},
+      {"src": "../../images/clonar_repositorio_4.png", "title": "Paso 3: opción 2", "desc": "En la sección GitHub CLI copia el comando y continúa en Opción 2."}]'>
+    </div>
+
+    <h4>Opción 1</h4>    
+
+    <p>Ejecuta el siguiente comando, cambiando <code>url_copiado_de_HTTPS</code> por el URL que copiaste:</p>
+
+    <pre><code>git clone url_copiado_de_HTTPS</code></pre>
+
+    <h4>Opción 2</h4>
+    
+    <p>Ejecuta el comando que copiaste y listo.</p>
+
+    <p>En cualquier de las dos opciones, te saldrá algo parecido a esto:</p>
+
+    <div class="powershell-output">
+
+    <pre>Clonando en 'isobit_repositorio_personal'...
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Recibiendo objetos: 100% (4/4), 12.78 KiB | 12.78 MiB/s, listo.</pre>
+    </div>
+
+    <p>¡Felicidades! Haz creado una carpeta con el nombre de tu repositorio que contiene todo el contenido de tu repositorio de GitHub. Para verificar que sí se creo la carpeta, sólo ejecuta el comando <code>ls</code>.</p> 
 
 
-Se abre una ventana que ofrece dos opciones de clonación (vistas en clase): 
-1. HTTPS
-2. GitHub CLI
+  </div>
 
-<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
-    <img src="../../images/figura3.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
-    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura X. Descripción de figura.</figcaption>
-  </figure>
 
-La primera forma se copia la URL y en la terminal se ejecuta lo siguiente:
-```
-git clone "URL copiado de HTTPS"
-```
-La segunda forma se copia y pega el contenido de GitHub CLI y se ejecuta directamente. Para el caso de SERVIDOR:
-```
-git clone https://github.com/Matematicas-Aplicadas-y-Geociencias/SERVIDOR.git
-```
-En cualquier de los dos casos, sale lo siguiente:
+ <!-- SECCION LINUX -->
 
-<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
-    <img src="../../images/figura4.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
-    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura X. Descripción de figura.</figcaption>
-  </figure>
+  <div role="tabpanel" class="tab-pane" id="linux_clonacion">
+  
+    <p> </p>
 
-Esto crea una **carpeta** con todo lo contenido del reservorio de SERVIDOR en Github.
+    <p>Primero vamos a crear una carpeta en la raíz llamada <b>repositorios</b>, donde vamos a guardar el repositorio que creamos (y los repositorios futuros):</p> 
+
+    <pre><code>cd
+mkdir repositorios
+cd repositorios/</code></pre>
+
+    <p>Ve a tu repositorio en <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a> y sigue los pasos siguientes: </p>
+
+    <div class="auto-carousel" data-images='[
+      {"src": "../../images/clonar_repositorio_1.png", "title": "Paso 1", "desc": "Selecciona tu repositorio."},
+      {"src": "../../images/clonar_repositorio_2.png", "title": "Paso 2", "desc": "Dale clic al botón verde que dice <br>\"Code\"."},
+      {"src": "../../images/clonar_repositorio_3.png", "title": "Paso 3: opción 1", "desc": "En la sección HTTPS copia el URL y continúa en la sección Opción 1."},
+      {"src": "../../images/clonar_repositorio_4.png", "title": "Paso 3: opción 2", "desc": "En la sección GitHub CLI copia el comando y continúa en Opción 2."}]'>
+    </div>
+
+    <h4>Opción 1</h4>    
+
+    <p>Ejecuta el siguiente comando, cambiando <code>url_copiado_de_HTTPS</code> por el URL que copiaste:</p>
+
+    <pre><code>git clone url_copiado_de_HTTPS</code></pre>
+
+    <h4>Opción 2</h4>
+    
+    <p>Ejecuta el comando que copiaste y listo.</p>
+
+    <p>En cualquier de las dos opciones, te saldrá algo parecido a esto:</p>
+
+    <div class="terminal-output" markdown="0">
+
+    <pre>Clonando en 'isobit_repositorio_personal'...
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Recibiendo objetos: 100% (4/4), 12.78 KiB | 12.78 MiB/s, listo.</pre>
+    </div>
+
+    <p>¡Felicidades! Haz creado una carpeta con el nombre de tu repositorio que contiene todo el contenido de tu repositorio de GitHub. Para verificar que sí se creo la carpeta, sólo ejecuta el comando <code>ls</code>.</p> 
+
+  </div>
+
+</div>
 
 ## Uso del repositorio en local 
 
