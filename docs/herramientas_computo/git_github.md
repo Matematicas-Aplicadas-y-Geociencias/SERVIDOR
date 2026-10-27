@@ -140,23 +140,23 @@ Procesando disparadores para man-db (2.12.0-4build2) ...
 
 <h4>Nombre de usuario</h4>
 
-Se asigna con el siguiente comando, cambiando <code>Tu nombre</code> por el nombre que prefieras para tu usuario:
+Se asigna con el siguiente comando, cambiando <code>tu nombre</code> por el nombre que prefieras para tu usuario:
 
-<pre><code>git config --global user.name "Tu_nombre"
+<pre><code>git config --global user.name tu_nombre
 </code></pre>
 
 <h4>Correo electrónico</h4>
 
 Cambia <code>tu@correo.com</code> por el correo de tu preferencia:
 
-<pre><code>git config --global user.email "tu@correo.com"
+<pre><code>git config --global user.email tu@correo.com
 </code></pre>
 
 <h4>Editor de texto</h4>
 
 Cambia <code>tu_editor</code> por el nombre del editor de texto que sueles usar:
 
-<pre><code>git config --global core.editor "tu_editor"
+<pre><code>git config --global core.editor tu_editor
 </code></pre>
 
 <h4>Rama principal</h4>
