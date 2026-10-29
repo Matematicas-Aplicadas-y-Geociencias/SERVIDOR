@@ -569,7 +569,50 @@ Recibiendo objetos: 100% (4/4), 12.78 KiB | 12.78 MiB/s, listo.</pre>
 
 </div>
 
-## Uso del repositorio en local 
+## Conceptos básicos de Git 
+
+<p>Antes de iniciar de lleno con Git, es importante conocer los conceptos básicos de su funcionamiento, para que su uso te resulte mucho más fácil en el futuro.</p>
+
+<h4>Capturas</h4>
+
+<p>Git piensa en sus datos como una serie de <em>capturas de un sistema de archivos en miniatura</em> (Fig. 2). Cada vez que haces un <b>commit</b> (salvar el estado de tu proyecto), Git básicamente toma una imagen de cómo lucen todos tus archivos en ese momento y almacena una referencia a esa captura. Para ser eficiente, si un archivo no ha cambiado, Git guarda un enlace al archivo idéntico preexistente, en vez de almacenarlo de nuevo. </p>
+
+<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
+    <img src="../../images/capturas_git.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura 2. Almacenando datos como capturas de un proyecto a través del tiempo. Las figuras con marco punteado representan los archivos que no fueron modificados en cada versión.</figcaption>
+  </figure>
+
+<h4>Casi toda operación es local</h4>
+
+<p>La mayoría de las operaciones en Git necesitan sólo archivos y recursos locales para operar; generalmente no se necesita ninguna información de otra computadora en tu red. Esta característica le concede a Git una <b>velocidad</b> notable. Debido a que tienes el historial completo de tu proyecto justo en tu disco local, la mayoría de las operaciones parecen casi instantáneas.</p>
+
+<h4>A Git no se le escapa nada</h4>
+
+<p>Todo cambio en Git es verificado mediante sumas (<em>checksummed</em>) antes de ser almacenado y luego es referido por esa suma verificada. ¿Qué quiere decir? Significa que a cada cambio se le asigna un <b>hash</b>, una cadena de 40 caracteres hexadesimales calculada a partir del contenido del archivo o la estructura del directorio de Git.</p>
+
+
+<h4>Los tres estados</h4>
+
+<p>Git tiene tres estados principales en los que pueden residir tus archivos:</p>
+
+<ul>
+  <li><b>modified</b> (modificado): significa que has modificado el archivo pero no lo has confirmado en tu base de datos aún.</li>
+  <li><b>staged</b> (indexado): significa que has marcado un archivo modificado en su versión actual para ir al siguiente estado.</li>
+  <li><b>commited</b> (confirmado): significa que los datos están almacenados con seguridad en tu base de datos local.</li>
+
+</ul>
+
+
+<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
+    <img src="../../images/estados_git.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura X. Descripción de figura.</figcaption>
+  </figure>
+
+
+<p>Primero entra a la carpeta con el nombre de tu repositorio, cambiando <code>carpeta_repositorio</code> por el nombre tu carpeta:</p>
+
+
+<pre><code>cd carpeta_repositorio/</code></pre>
 
 Se entra a la carpeta de SERVIDOR y listamos el contenido, debe ser igual a lo visto en la página web de SERVIDOR en Github:
 ```
