@@ -4,11 +4,39 @@
 
 # Entornos virtuales de Python
 
+## Introducción
+
+<p>Cuando trabajas con Python, es muy común usar los <b>entornos o ambientes virtuales</b>. Veamos lo que son y por qué los necesitamos a través de un ejemplo.</p>
+
+<h4>Ejemplo</h4>
+
+<p>Instalas Python en tu sistema y empiezas a trabajar en una tarea que te marcaron donde el objetivo es hacer un análisis estadístico de los terremotos que han ocurrido en México en los últimos 30 años. Tu profesor o profesora te pasa un código en Python para hacerlo, el cual para funcionar requiere que tengas instalada la librería <em>numpy</em> en su versión <em>1.26</em>.</p> 
+
+<p>Ahora, en otra asignatura te asignaron la tarea de analizar las frecuencias principales que componen una señal de nivel del mar, y para ello debes usar otro código en Python que que requiere la misma librería en una versión más reciente, la <em>2.1</em>.</p>
+
+<p>Sin ambientes virtuales, sólo podrías instalar una de las dos versiones de numpy en tu sistema, por lo que un código funcionaría, pero el otro no (Figura 1). Podrías tratar de modificar los códigos para que funcionen con la misma versión, o trabajar con una versión y luego desinstarla e instalar la otra. Quizás puede ser relativamente sencillo al ser sólo dos programas, pero si existe ese dilema con más librerías, tienes tres o cuatro proyectos más, o los códigos tienen cientos de líneas por revisar, la cosa se complica.</p> 
+
+<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
+    <img src="../../images/ejemplo1_ambientes.svg" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura 1. Conflicto de versiones de una librería sin ambientes virtuales.</figcaption>
+  </figure>
+
+<h4>La solución</h4>
+
+<p>Aquí en donde entrar en juego los ambientes virtuales. Un <b>ambiente virtual</b> es un espacio autocontenido, normalmente un directorio, donde se instala un conjunto específico de programas, librerías y dependencias, junto con sus versiones. Está aislado del sistema operativo y de otros ambientes, de modo que proyectos con requisitos distintos puedan coexistir sin conflictos (Figura 2). Su contenido puede describirse en un archivo de especificación para recrearlo después en otro dispositivo, por ejemplo, el archivo <em>environment.yaml</em>.</p>
+
+<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
+    <img src="../../images/ejemplo2_ambientes.svg" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura 2. Representación de un ambiente virtual como espacio autocontenido y aislado.</figcaption>
+  </figure>
+
+<p> </p>
+
+<p>La forma de crear entornos virtuales en nuestra computadora es a través de un <b>gestor</b>, entre los que destacan <b>Conda</b>  y <b>UV</b>. A continuación vamos a ver cómo se crean con cada uno de ellos.</p>
+
 ## Conda con Mamba
 
 ### Instalación a través de Miniforge
-
-Escoge el sistema operativo de tu computadora:
 
 <ul class="nav nav-tabs" role="tablist">
   <li role="presentation" class="active"><a href="#windows1" aria-controls="windows" role="tab" data-toggle="tab">Windows</a></li>
@@ -18,6 +46,8 @@ Escoge el sistema operativo de tu computadora:
 <div class="tab-content">
 
   <div role="tabpanel" class="tab-pane active" id="windows1">
+    
+    <p> </p>
     
     <p> Verifica si la versión de tu sistema operativo es Windows 10 o superior. Si es así, descarga el instalador de miniforge y ejecútalo: <a href="https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe"> Miniforge3-Windows-x86_64.exe</a>.</p>
 
