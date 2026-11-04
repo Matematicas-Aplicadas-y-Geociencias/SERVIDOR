@@ -410,7 +410,7 @@ Executing transaction: done
   <div class="miniforge-output">
 
   <pre>
-(myenv) <span class="user">tu-usuario@tu-dispotivo</span>:<span class="timestamp">~</span>$</pre>
+(myenv) C:\Users\tu-usuario></pre>
     </div>
 
 
