@@ -36,7 +36,7 @@ Correcciones:
 
 <figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
     <img src="../../images/capturas_git.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
-    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura 1. Almacenando datos como capturas de un proyecto a través del tiempo. Las figuras con marco punteado representan los archivos que no fueron modificados en cada versión.</figcaption>
+    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura 2. Almacenando datos como capturas de un proyecto a través del tiempo. Las figuras con marco punteado representan los archivos que no fueron modificados en cada versión.</figcaption>
   </figure>
 
 <h4>Casi toda operación es local</h4>
@@ -54,25 +54,20 @@ Correcciones:
   <li><b>modified</b> (modificado): significa que has modificado el archivo pero no lo has confirmado en tu base de datos aún.</li>
   <li><b>staged</b> (indexado): significa que has marcado un archivo modificado en su versión actual para ir al siguiente estado.</li>
   <li><b>commited</b> (confirmado): significa que los datos están almacenados con seguridad en tu base de datos local.</li>
-</ul>
 
-<p>Esto nos lleva a las tres secciones principales de un proyecto de Git: el <b>directorio de trabajo</b>, el <b>área de stage</b>, y el <b>directorio de Git</b>.</p>
+</ul>
 
 
 <figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
     <img src="../../images/estados_git.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
-    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura 2. Tres estados o secciones de un proyecto de Git.</figcaption>
+    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura 3. Tres estados o secciones de un proyecto de Git.</figcaption>
   </figure>
 
-<p> </p>
+<p>El flujo de trabajo básico de Git va más o menos así:</p>
 
-<p>El flujo de trabajo básico es más o menos así:</p>
-
-<ol>
-  <li><em>Modificas</em> los archivos en el <b>directorio de trabajo</b>.</li>
-  <li><em>Seleccionas</em> sólo esos cambios que quieres que sean parte del siguiente commit, lo cual agrega sólo esos cambios al <b>área de stage</b>.</li>
-  <li>Haces un <em>commit</em>, lo cual toma los archivos como están en el área de stage y almacena esa captura permanentemente a tu <b>directorio Git</b>.</li>
-</ol>
+<oneline>
+  
+</ul>
 
 ## Instalación de Git
 
@@ -197,7 +192,7 @@ Se asigna con el siguiente comando, cambiando <code>tu nombre</code> por el nomb
 
 Cambia <code>tu@correo.com</code> por el correo de tu preferencia:
 
-<pre><code>git config --global user.email tu_correo_electrónico
+<pre><code>git config --global user.email tu@correo.com
 </code></pre>
 
 <h4>Editor de texto</h4>
@@ -618,107 +613,63 @@ Recibiendo objetos: 100% (4/4), 12.78 KiB | 12.78 MiB/s, listo.</pre>
 </div>
 
 
-## ¡Prueba Git!
-
 <p>Primero entra a la carpeta con el nombre de tu repositorio, cambiando <code>carpeta_repositorio</code> por el nombre tu carpeta:</p>
 
 
 <pre><code>cd carpeta_repositorio/</code></pre>
 
-<h4>Revisar el estado de tus archivos</h4>
+Se entra a la carpeta de SERVIDOR y listamos el contenido, debe ser igual a lo visto en la página web de SERVIDOR en Github:
+```
+cd SERVIDOR/
+ls
+```
+Para probar su uso, creamos un archivo llamado "ejemplo.py" con el comando ***touch***:
+```
+touch ejemplo.py
+```
+Para revisar el **status** del SERVIDOR tras el nuevo cambio, se ejecuta lo siguiente:
+```
+git status
+```
+Aparece lo siguiente:
 
-<p>La herramienta principal que usarás para determinar cuáles archivos están en cuál estado es el comando <code>git status</code>:</p>
+<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
+    <img src="../../images/figura5.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura X. Descripción de figura.</figcaption>
+  </figure>
 
-<pre><code>git status</code></pre>
+Existen tres áreas donde pueden "estar" nuestras modificaciones y/o nuevos archivos:
+1. **Directorio de trabajo**
+2. **Área de stage** (stage area)
+3. **Commit**
+Tras hacer la primera modificación, el archivo ejemplo.py se encuentra en el **directorio de trabajo**. Para moverlo al **área de stage**:
+```
+git add ejemplo.py
+```
+Si queremos mover todo lo realizado, se utiliza un punto:
+```
+git add .
+```
+Volvemos a revisar el status y aparece lo siguiente:
 
-<p>Si corres este comando directamente después de clonar tu repositorio de GitHub a tu computadora, deberías ver algo como esto:</p>
+<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
+    <img src="../../images/figura6.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura X. Descripción de figura.</figcaption>
+  </figure>
 
-<div class="terminal-output" markdown="0">
+Podemos modificar el archivo con ***vim***. Una vez hecho la modificación, revisamos de nuevo el status y aparece lo siguiente:
 
-<pre>En la rama main
-Tu rama está actualizada con 'origin/main'.
+<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
+    <img src="../../images/figura7.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura X. Descripción de figura.</figcaption>
+  </figure>
 
-nada para hacer commit, el árbol de trabajo está limpio</pre>
-</div>
+Para que los cambios realizados al archivo ejemplo.py estén en el **área de stage**, usamos de nuevo el comando ***git add***. Aparece lo siguiente:
 
-<p>Esto significa que tienes tu directorio de trabajo limpio, es decir, ninguno de tus archivos han sido modificados.  Por último, el comando te dice en cuál <b>rama</b> estás y te informa que no ha divergido de la misma rama en el servidor. Por ahora la rama por defecto es <code>main</code>. No te preocupes, hablaremos sobre las ramas a detalle más adelante.</p> 
-
-
-Si creamos un archivo en tu proyecto, por ejemplo, uno llamado <b>ejemplo.py</b> con el comando <code>touch</code>:
-
-<pre><code>touch ejemplo.py</code></pre>
-
-<p>Dado que el archivo no existía antes, si corres <code>git status</code>, verás tu archivo no rastreado como sigue:</p>
-
-<div class="terminal-output" markdown="0">
-
-<pre>En la rama main
-Tu rama está actualizada con 'origin/main'.
-
-Archivos sin seguimiento:
-  (usa "git add <archivo>..." para incluirlo a lo que será confirmado)
-	ejemplo.py
-
-sin cambios agregados al commit (usa "git add" y/o "git commit -a")</pre>
-
-</div>
-
-<h4>Rastrear nuevos archivos</h4>
-
-<p>Para rastrear el nuevo archivo que creaste, usa el comando <code>git add</code>:</p>
-
-<pre><code>git add ejemplo.py</code></pre>
-
-<p>Verás que tu nuevo archivo ahora está rastreado y en el área de stage, listo para ser confirmado (commited):</p>
-
-
-<div class="terminal-output" markdown="0">
-
-<pre>En la rama main
-Tu rama está actualizada con 'origin/main'.
-
-Cambios a ser confirmados:
-  (usa "git restore --staged <archivo>..." para sacar del área de stage)
-	nuevos archivos: ejemplo.py</pre>
-
-</div>
-
-
-<h4>Mover archivos modificados al área de stage</h4>
-
-<p>Ahora modifiquemos el archivo que creamos. Para ello, puedes usar tu editor de texto favorito. Como ejemplo, usaremos <b>vim</b>:</p>
-
-<pre><code>vim ejemplo.py</code></pre>
-
-<p>Presiona la tecla <b>I</b> y escribe cualquier cosa (por ejemplo, Hola Mundo). Guarda y cierra el archivo con la combinación <code>Tecla Esc + :wq + Tecla Enter</code>.</p>
-
-Si corres de nuevo el comando <code>git status</code>:
-
-<pre><code>git status ejemplo.py</code></pre>
-
-<p>Obtendrás algo parecido a esto:</p>
-
-<div class="terminal-output" markdown="0">
-
-<pre>En la rama main
-Tu rama está actualizada con 'origin/main'.
-
-Cambios a ser confirmados:
-  (usa "git restore --staged <archivo>..." para sacar del área de stage)
-	nuevos archivos: ejemplo.py
-
-Cambios no rastreados para el commit:
-  (usa "git add <archivo>..." para actualizar lo que será confirmado)
-  (usa "git restore <archivo>..." para descartar los cambios en el directorio de trabajo)
-	modificados:     ejemplo.py</pre>
-
-</div>
-
-<p>El archivo aparece bajo la sección llamada "Cambios no rastreados por el commit", lo cual significa que un archivo que está rastreado ha sido modificado en el directorio de trabajo pero no ha sido movido al área de stage. Para hacerlo, corre de nuevo el comando <code>git add</code>:</p>
-
-<pre><code>git add ejemplo.py</code></pre>
-
-<h4>Confirmar tus cambios</h4>
+<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
+    <img src="../../images/figura8.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura X. Descripción de figura.</figcaption>
+  </figure>
 
 Por último, para mover el archivo ejemplo.py al **commit**:
 ```

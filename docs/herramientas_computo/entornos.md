@@ -535,7 +535,7 @@ Aparecerán la lista de ambientes en el lado izquierdo. El <b>asterisco</b> indi
 
     <p>Dentro de tu ambiente, ejecuta el comando <code>install</code> junto con el nombre de la librería que desees instalar, por ejemplo, <code>matplotlib</code>, una librería de Python que sirve para crear visualizaciones de datos en forma de gráficos 2D y 3D de alta calidad:</p>
 
-    <pre><code>conda install matplotlib</code></pre>
+    <pre><code>mamba install matplotlib</code></pre>
 
     <div class="miniforge-output">
     <pre>The following NEW packages will be INSTALLED:
