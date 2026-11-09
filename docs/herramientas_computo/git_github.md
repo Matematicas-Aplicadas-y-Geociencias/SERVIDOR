@@ -14,39 +14,52 @@ Correcciones:
 
 ## Introducción
 
-<h3>Git</h3>
+<p>¿Quién ha tenido una carpeta con archivos llamados <em>"final"</em>, <em>"final2"</em> y <em>"final_ahora_sí"</em>? Quizás te ha pasado: estás trabajando en un proyecto importante (digamos, un código) y cada vez que le realizas un cambio sustancial, lo respaldas haciendo una copia del mismo, por si necesitas regresar a la versión anterior en caso de que las cosas se rompan o no funcionen.</p> 
 
-<p>Es un <b>sistema de control de versiones</b> de código abierto que <em>registra los cambios en los archivos</em>. Te permite trabajar en tu propia copia de un proyecto, registrar un historial de tus cambios y fusionar tu trabajo con los cambios de otras personas de forma segura y eficiente.</p>
-
-<h3>GitHub</h3>
-
-<p>Es una <b>plataforma</b> que <em>respalda todo tu proceso</em> de desarrollo de software, desde la planificación del trabajo hasta el despliegue y la operación del software.</p>
-
-<h3>Git y GitHub</h3>
-
-<p><b>GitHub</b> se contruye sobre <b>Git</b> alojando tus proyectos de Git, llamados <b>repositorios</b>, en la nube, además de añadir herramientas de planificación y colaboración que facilitan el trabajo en equipos.</p>
-
-## Conceptos básicos de Git 
-
-<p>Antes de iniciar de lleno con Git, es importante conocer los conceptos básicos de su funcionamiento, para que su uso te resulte mucho más fácil en el futuro.</p>
-
-<h4>Capturas</h4>
-
-<p>Git piensa en sus datos como una serie de <em>capturas de un sistema de archivos en miniatura</em> (Fig. 2). Cada vez que haces un <b>commit</b> (salvar el estado de tu proyecto), Git básicamente toma una imagen de cómo lucen todos tus archivos en ese momento y almacena una referencia a esa captura. Para ser eficiente, si un archivo no ha cambiado, Git guarda un enlace al archivo idéntico preexistente, en vez de almacenarlo de nuevo. </p>
+<p>El problema surge cuando dos semanas y 10 copias después, el código ya no corre. Sabes que la versión que servía existe en algún lado, pero no sabes si es <em>"script_bueno.py"</em>, <em>"script_bueno_2.py"</em> o <em>"script_ok_final.py"</em> (Figura 1). Recuerdas que hace una semana decidiste limpiar la carpeta de tu proyecto y borraste las versiones antiguas, y sí, entre ellas estaba aquella función que habías arreglado a las 2 de mañana. No hay papalera que te salve, y nadie recuerda qué se cambio ni cuando. Una tragedia. ¿La solución?</p>
 
 <figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
-    <img src="../../images/capturas_git.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
-    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura 2. Almacenando datos como capturas de un proyecto a través del tiempo. Las figuras con marco punteado representan los archivos que no fueron modificados en cada versión.</figcaption>
+    <img src="../../images/git_problema.svg" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura 1. Sin control de versiones, el proyecto se llena de copias y nadie sabe cuál funciona, qué cambió ni qué se perdió.</figcaption>
   </figure>
 
-<h4>Casi toda operación es local</h4>
+## Git
 
-<p>La mayoría de las operaciones en Git necesitan sólo archivos y recursos locales para operar; generalmente no se necesita ninguna información de otra computadora en tu red. Esta característica le concede a Git una <b>velocidad</b> notable. Debido a que tienes el historial completo de tu proyecto justo en tu disco local, la mayoría de las operaciones parecen casi instantáneas.</p>
+<p>Es un <b>sistema de control de versiones</b> de código abierto que <em>registra los cambios en los archivos</em>. Te permite trabajar en tu propia copia de un proyecto, registrar un historial de tus cambios y fusionar tu trabajo con los cambios de otras personas de forma segura y eficiente (Figura 2).</p>
 
-<h4>A Git no se le escapa nada</h4>
+<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
+    <img src="../../images/git_logo.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura 2. Logo oficial de Git.</figcaption>
+  </figure>
 
-<p>Todo cambio en Git es verificado mediante sumas (<em>checksummed</em>) antes de ser almacenado y luego es referido por esa suma verificada. ¿Qué quiere decir? Significa que a cada cambio se le asigna un <b>hash</b>, una cadena de 40 caracteres hexadesimales calculada a partir del contenido del archivo o la estructura del directorio de Git.</p>
-<h4>Los tres estados</h4>
+### Capturas
+
+<p>Git piensa en sus datos como una serie de <em>capturas de un sistema de archivos en miniatura</em> (Figura 3). Cada vez que haces un <b>commit</b> (salvar el estado de tu proyecto), Git básicamente toma una imagen de cómo lucen todos tus archivos en ese momento y almacena una referencia a esa captura. Para ser eficiente, si un archivo no ha cambiado, Git guarda un enlace al archivo idéntico preexistente, en vez de almacenarlo de nuevo. </p>
+
+<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
+    <img src="../../images/capturas_git_2.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura 3. Almacenando datos como capturas de un proyecto a través del tiempo. Las figuras con marco punteado representan los archivos que no fueron modificados en cada versión.</figcaption>
+  </figure>
+
+### Casi toda operación es local
+
+<p>La mayoría de las operaciones en Git necesitan sólo archivos y recursos locales para operar; generalmente no se necesita ninguna información de otra computadora en tu red. Esta característica le concede a Git una <b>velocidad</b> notable. Debido a que tienes el historial completo de tu proyecto justo en tu disco local, la mayoría de las operaciones parecen casi instantáneas (Figura 4).</p>
+
+<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
+    <img src="../../images/git_operaciones_locales.svg" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura 4. Git conserva el historial completo en tu disco local, por lo que casi todas las operaciones son inmediatas y no dependen de la red.</figcaption>
+  </figure>
+
+### A Git no se le escapa nada
+
+<p>Todo cambio en Git es verificado mediante sumas (<em>checksummed</em>) antes de ser almacenado y luego es referido por esa suma verificada. ¿Qué quiere decir? Significa que a cada cambio se le asigna un <b>hash</b>, una cadena de 40 caracteres hexadesimales calculada a partir del contenido del archivo o la estructura del directorio de Git (Figura 5).</p>
+
+<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
+    <img src="../../images/git_hash.svg" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura 5. Git calcula un hash SHA-1 de 40 caracteres hexadecimales a partir del contenido de cada objeto y lo usa como su identificador.</figcaption>
+  </figure>
+
+### Los tres estados
 
 <p>Git tiene tres estados principales en los que pueden residir tus archivos:</p>
 
@@ -54,20 +67,29 @@ Correcciones:
   <li><b>modified</b> (modificado): significa que has modificado el archivo pero no lo has confirmado en tu base de datos aún.</li>
   <li><b>staged</b> (indexado): significa que has marcado un archivo modificado en su versión actual para ir al siguiente estado.</li>
   <li><b>commited</b> (confirmado): significa que los datos están almacenados con seguridad en tu base de datos local.</li>
-
 </ul>
 
+
+### Los tres secciones
+
+<p>Esto nos lleva  las tres secciones principales de un proyecto de Git:</p>
+
+<ul>
+  <li><b>Directorio de trabajo</b>: es donde llevas a cabo las modificaciones. Contiene los cambios que no han sido confirmados aún.</li>
+  <li><b>Área de stage</b>: contiene los cambios que quieres que formen parte de su siguiente commit.</li>
+  <li><b>Directorio Git</b>: contiene los cambios ya confirmados en forma de capturas permanentes.</li>
+</ul>
+
+<p>Juntando estos dos elementos, el flujo de trabajo básico en Git es similar a como sigue: los archivos modificados (estado <b>modified</b>) en el <b>directorio de trabajo</b> son seleccionados para pasar al <b>área de stage</b> (estado <b>staged</b>) y luego son confirmados para ser almacenados  de forma permanente en el <b>directorio Git</b> (estado <b>commited</b>) (Figura 6).</p> 
 
 <figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
-    <img src="../../images/estados_git.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
-    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura 3. Tres estados o secciones de un proyecto de Git.</figcaption>
+    <img src="../../images/git_flujo_trabajo.svg" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura 6. Flujo de trabajo en Git.</figcaption>
   </figure>
 
-<p>El flujo de trabajo básico de Git va más o menos así:</p>
+<p> </p>
 
-<oneline>
-  
-</ul>
+Basta de teoría, ahora sabemos lo suficiente para pasar a la acción y empezar a usar Git.
 
 ## Instalación de Git
 
@@ -212,6 +234,19 @@ Vamos a utilizar la rama <code>main</code>:
 Para ver las **configuraciones** de git en el dispositivo (nombre, correo, editor de texto):
 
 <pre><code>git config -l</code></pre>
+
+## GitHub
+
+<p>Es una <b>plataforma</b> que <em>respalda todo tu proceso</em> de desarrollo de software, desde la planificación del trabajo hasta el despliegue y la operación del software.</p>
+
+<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
+    <img src="../../images/github_logo.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura 2. Logo oficial de GitHub.</figcaption>
+  </figure>
+
+<h3>Git y GitHub</h3>
+
+<p><b>GitHub</b> se contruye sobre <b>Git</b> alojando tus proyectos de Git, llamados <b>repositorios</b>, en la nube, además de añadir herramientas de planificación y colaboración que facilitan el trabajo en equipos.</p>
 
 ## Creación de repositorio en Github
 
