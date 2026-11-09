@@ -790,6 +790,65 @@ Cambios a ser confirmados:
 
     <p>Ahora ambos archivos están en el área de stage y entrarán en tu próximo commit. En este punto, supón que recuerdas un pequeño cambio que quieres hacer en <b>README.md</b> antes de hacer commit. Lo abres de nuevo, haces ese cambio y ya estás listo para hacer este commit. Sim embargo, ejecutemos <b>git status</b> una vez más:</p>
 
+    <div class="powershell-output">
+
+    <pre>En la rama main
+Tu rama está actualizada con ‘origin/main’.
+
+Cambios a ser confirmados:
+  (usa “git reset HEAD <archivo>...” para sacarlos del área de preparación)
+      nuevos archivos: ejemplo.py
+      modificados: README.md
+
+Cambios no rastreados para el commit:
+  (usa “git add <archivo>...” para actualizar lo que será confirmado)
+  (usa “git checkout -- <archivo>...” para descartar los cambios en el directorio de trabajo)
+
+      modificados: README.md</pre>    
+
+    </div>
+
+    <p>¿Qué ocurrió? Ahora README.md aparece listado en "Cambios para ser confirmados" y "Cambios no rastreados por el commit" al mismo tiempo. ¿Cómo es posible? Resulta que la versión del archivo que entrará al commit es la que estaba cuando se ejecutó <code>git add</code>, pero la versión que incluye las últimas modificaciones no ha sido rastreada aún, por lo que es necesario ejecutar <code>git add</code> de nuevo para que meter al commit los últimos cambios.</p>
+
+    <h4>Confirmar tus cambios (hacer commit)</h4>
+
+    <p>Ahora que tu área de stage contiene exactamente lo que quieres, puedes hacer commit de tus cambios con el comando <code>git commit</code>:</p>
+
+    <pre><code>git commit</code></pre>
+
+    <p>Al hacer esto, se abre el editor de tu elección. El editor muestra el siguiente texto:</p>
+
+    <div class="powershell-output">
+
+  <pre>
+
+# Por favor, escribe el mensaje de commit para tus cambios. Las líneas que empiezan 
+# con '#' serán ignoradas, y un mensaje vacío cancela el commit.
+#
+# En la rama main
+# Tu rama está actualizada con ‘origin/master’.
+#
+# Cambios a ser confirmados:
+#     nuevos archivos: ejemplo.py
+#     modified: README.md
+#
+~
+~
+~
+".git/COMMIT_EDITMSG" 9L, 283C</pre>  
+    </div>
+
+    <p>Puedes ver que el mensaje de commit predeterminado contiene la salida más reciente del comando <code>git status</code> comentada, y una línea vacía en la parte superior. Puede eliminar esots comentario y escribir tu mensaje de commit, o puedes dejarlos ahí para ayudarte a recordar qué estás confirmando.</p>
+
+    <p>Cuando sales del editor, Git crea tu commit con ese mensaje.</p>
+
+    <p>Alternativamente, puedes escribir tu mensaje de commit en la línea de comando con el comando <code>commit -m</code> de la siguiente manera:</p>
+
+    <pre><code>git commit -m "mensaje de commit"</code></pre>
+
+
+    
+
   </div>
 
 
@@ -801,75 +860,6 @@ Cambios a ser confirmados:
 
 </div>
 
-
-<p>Primero entra a la carpeta con el nombre de tu repositorio, cambiando <code>carpeta_repositorio</code> por el nombre tu carpeta:</p>
-
-
-<pre><code>cd carpeta_repositorio/</code></pre>
-
-Se entra a la carpeta de SERVIDOR y listamos el contenido, debe ser igual a lo visto en la página web de SERVIDOR en Github:
-```
-cd SERVIDOR/
-ls
-```
-Para probar su uso, creamos un archivo llamado "ejemplo.py" con el comando ***touch***:
-```
-touch ejemplo.py
-```
-Para revisar el **status** del SERVIDOR tras el nuevo cambio, se ejecuta lo siguiente:
-```
-git status
-```
-Aparece lo siguiente:
-
-<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
-    <img src="../../images/figura5.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
-    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura X. Descripción de figura.</figcaption>
-  </figure>
-
-Existen tres áreas donde pueden "estar" nuestras modificaciones y/o nuevos archivos:
-1. **Directorio de trabajo**
-2. **Área de stage** (stage area)
-3. **Commit**
-Tras hacer la primera modificación, el archivo ejemplo.py se encuentra en el **directorio de trabajo**. Para moverlo al **área de stage**:
-```
-git add ejemplo.py
-```
-Si queremos mover todo lo realizado, se utiliza un punto:
-```
-git add .
-```
-Volvemos a revisar el status y aparece lo siguiente:
-
-<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
-    <img src="../../images/figura6.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
-    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura X. Descripción de figura.</figcaption>
-  </figure>
-
-Podemos modificar el archivo con ***vim***. Una vez hecho la modificación, revisamos de nuevo el status y aparece lo siguiente:
-
-<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
-    <img src="../../images/figura7.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
-    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura X. Descripción de figura.</figcaption>
-  </figure>
-
-Para que los cambios realizados al archivo ejemplo.py estén en el **área de stage**, usamos de nuevo el comando ***git add***. Aparece lo siguiente:
-
-<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
-    <img src="../../images/figura8.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
-    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura X. Descripción de figura.</figcaption>
-  </figure>
-
-Por último, para mover el archivo ejemplo.py al **commit**:
-```
-git commit
-```
-Se abrirá un archivo donde podemos poner **detalles** de los cambios realizados. Una vez guardados los cambios aparece lo siguiente:
-
-<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
-    <img src="../../images/figura9.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
-    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura X. Descripción de figura.</figcaption>
-  </figure>
 
 Si revisamos de nuevo el status:
 
