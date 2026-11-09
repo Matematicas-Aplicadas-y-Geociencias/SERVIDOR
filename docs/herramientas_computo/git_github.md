@@ -8,10 +8,6 @@ Correcciones:
 - Investigar cómo poner salidas de terminal con css y html en vez de las imágenes
 -->
 
-<div class="alert alert-warning" role="alert">
-  🚧 <strong>Sitio en construcción</strong> — Este contenido está en desarrollo y puede cambiar.
-</div>
-
 ## Introducción
 
 <p>¿Quién ha tenido una carpeta con archivos llamados <em>"final"</em>, <em>"final2"</em> y <em>"final_ahora_sí"</em>? Quizás te ha pasado: estás trabajando en un proyecto importante (digamos, un código) y cada vez que le realizas un cambio sustancial, lo respaldas haciendo una copia del mismo, por si necesitas regresar a la versión anterior en caso de que las cosas se rompan o no funcionen.</p> 
