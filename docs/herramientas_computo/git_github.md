@@ -840,14 +840,39 @@ Cambios no rastreados para el commit:
 
     <p>Puedes ver que el mensaje de commit predeterminado contiene la salida más reciente del comando <code>git status</code> comentada, y una línea vacía en la parte superior. Puede eliminar esots comentario y escribir tu mensaje de commit, o puedes dejarlos ahí para ayudarte a recordar qué estás confirmando.</p>
 
-    <p>Cuando sales del editor, Git crea tu commit con ese mensaje.</p>
+    <p>Cuando sales del editor, Git crea tu commit con ese mensaje:</p>
+
+
+    <div class="powershell-output">
+
+    <pre>[main aaab45e] mensaje de commit
+ 2 archivos modificados, 2 inserciones(+)</pre>
+    </div> 
+
 
     <p>Alternativamente, puedes escribir tu mensaje de commit en la línea de comando con el comando <code>commit -m</code> de la siguiente manera:</p>
 
     <pre><code>git commit -m "mensaje de commit"</code></pre>
 
+    <h4>Registro de cambios</h4>
 
-    
+Si queremos ver un registro de todos los comits hechos en el repositorio:
+
+<pre><code>git log</code></pre>
+
+<h4>Subir cambios a GitHub</h4>
+
+Para subir los cambios al repositorio de Github en la nube:
+
+<pre><code>git push origin main</code></pre>
+
+<h4>Bajar el repositorio</h4>
+
+ Para bajar los cambios hechos por otras personas en el repositorio:
+
+<pre><code>git pull</code></pre>
+
+
 
   </div>
 
@@ -856,125 +881,226 @@ Cambios no rastreados para el commit:
 
   <div role="tabpanel" class="tab-pane" id="linux_tutorial">
 
+ <p> </p>
+
+    <p>Primero entra a la carpeta con el nombre de tu repositorio, cambiando <code>carpeta_repositorio</code> por el nombre tu carpeta:</p>
+
+    <pre><code>cd carpeta_repositorio</code></pre>
+
+    <h4>Revisar el estado de tus archivos</h4>
+
+    <p>La herramienta principal que se usa para determinar qué archivos están en qué estado es el comando <code>git status</code>. Si ejecutas este comando después de una clonación, deberías ver algo como esto:</p>
+
+    <div class="terminal-output" markwdown="0">
+  
+    <pre>En la rama main
+Tu rama está actualizada con ‘origin/main’.
+
+nada para hacer commit, el árbol de trabajo está limpio</pre>
+    </div>
+
+    <p>Esto significa que tienes un directorio de trabajo limpio; en otras palabras, ninguno de tus archivos rastreados han sido modificados. Por otra parte, no te muestra ningún archivo sin rastrear, o de lo contrario estaría listado aquí. Finalmente el comando te dice en cual rama estás y te informa que no ha divergido de la misma rama en el servidor. Por ahora la rama por defecto es <code>main</code>.</p>
+
+    <p>Ahora vamos a agregar un nuevo archivo a tu proyecto:</p>
+    
+    <pre><code>New-Item "ejemplo.py" -ItemType File</code></pre>
+
+    <p>Dado que el archivo no existía antes, si corres de nuevo el comando <code>git status</code>, verás tu archivo sin rastrear como sigue:</p>
+
+<div class="terminal-output" markwdown="0">
+
+    <pre>En la rama main
+Tu rama está actualizada con ‘origin/main’.
+
+Archivos sin seguimiento:
+  (usa “git add <archivo>...” para incluirlos en lo que será confirmado)
+      ejemplo.py
+
+no hay nada agregado para hacer commit, pero hay archivos sin seguimiento presentes (usa “git add” para hacerles seguimiento)</pre>
+    </div>
+
+    <p>Puedes ver que tu nuevo archivo <b>ejemplo.py</b> no tiene seguimiento, porque aparece bajo el encabezado "Archivos sin seguimiento" en la salida del status. Git no dará seguimiento a tu archivo en el siguiente commit hasta que se lo indiques explícitamente.</p>
+
+    <h4>Seguimiento de archivos nuevos</h4>
+
+    <p>Para comenzar a darle seguimiento a un archivo nuevo, se usa el comando <code>git add</code>:</p>
+
+    <pre><code>git add ejemplo.py</code></pre>
+
+    <p>Si corres el comando <code>git status</code> de nuevo, verás que archivo <b>ejemplo.py</b> está ahora con seguimiento y en el <b>área de stage</b>, listo para para ser confirmado en el siguiente commit:</p>
+
+
+    <div class="terminal-output" markdown="0">
+
+    <pre>En la rama main
+Tu rama está actualizada con ‘origin/main’.
+
+Cambios a ser confirmados:
+  (usa “git restore --staged <archivo>...” para sacarlos del área de stage)
+      nuevos archivos: ejemplo.py</pre>
+
+    </div>
+
+    <p>Puedes saber que está en el área de stage porque aparece bajo el encabezado "Cambios a ser confirmados". Si haces commit en este momento, la versión del archivo que existía cuando ejecutaste <code>git add</code> es la que quedará en el commit posterior.</p>
+
+    <h4>Mover archivos modificados al área de stage</h4>
+
+    <p>Vamos a modificar un archivo que ya tenía seguimiento, por ejemplo, el archivo <b>README.md</b>. Si lo modificas y luego ejecutas el comando <code>git status</code>, obtendrás algo que se ve así:</p>
+
+    <div class="terminal-output" markdown="0">
+      
+    <pre>En la rama main
+Tu rama está actualizada con ‘origin/main’.
+
+Cambios a ser confirmados:
+  (usa “git reset HEAD <archivo>...” para sacarlos del área de preparación)
+
+      nuevos archivos: ejemplo.py
+
+Cambios no rastreados para el commit:
+  (usa “git add <archivo>...” para actualizar lo que será confirmado)
+  (usa “git checkout -- <archivo>...” para descartar los cambios en el directorio de trabajo)
+
+      modificados:    README.md</pre>
+
+    </div>
+
+    <p>El archivo <b>README.md</b> aparece bajo la sección llamada "Cambios no rastreados pra el commit", lo que significa que un archivo con seguimiento ha sido modificado en el directorio de trabajo, pero todavía no ha sido movido al área de stage. Para hacerlo, ejecuta el comando <code>git add</code>:</p>
+
+    <pre><code>git add README.md</code></pre>
+
+    <p>Ejecutamos <code>git status</code> de nuevo:</p>
+
+    <div class="terminal-output" markdown="0">
+    
+    <pre>En la rama main
+Tu rama está actualizada con ‘origin/main’.
+
+Cambios a ser confirmados:
+  (usa “git reset HEAD <archivo>...” para sacarlos del área de preparación)
+      nuevos archivos: ejemplo.py
+      modificados: README.md</pre>
+    
+    </div>
+
+    <p>Ahora ambos archivos están en el área de stage y entrarán en tu próximo commit. En este punto, supón que recuerdas un pequeño cambio que quieres hacer en <b>README.md</b> antes de hacer commit. Lo abres de nuevo, haces ese cambio y ya estás listo para hacer este commit. Sim embargo, ejecutemos <b>git status</b> una vez más:</p>
+
+    <div class="terminal-output" markdown="0">
+
+    <pre>En la rama main
+Tu rama está actualizada con ‘origin/main’.
+
+Cambios a ser confirmados:
+  (usa “git reset HEAD <archivo>...” para sacarlos del área de preparación)
+      nuevos archivos: ejemplo.py
+      modificados: README.md
+
+Cambios no rastreados para el commit:
+  (usa “git add <archivo>...” para actualizar lo que será confirmado)
+  (usa “git checkout -- <archivo>...” para descartar los cambios en el directorio de trabajo)
+
+      modificados: README.md</pre>    
+
+    </div>
+
+    <p>¿Qué ocurrió? Ahora README.md aparece listado en "Cambios para ser confirmados" y "Cambios no rastreados por el commit" al mismo tiempo. ¿Cómo es posible? Resulta que la versión del archivo que entrará al commit es la que estaba cuando se ejecutó <code>git add</code>, pero la versión que incluye las últimas modificaciones no ha sido rastreada aún, por lo que es necesario ejecutar <code>git add</code> de nuevo para que meter al commit los últimos cambios.</p>
+
+    <h4>Confirmar tus cambios (hacer commit)</h4>
+
+    <p>Ahora que tu área de stage contiene exactamente lo que quieres, puedes hacer commit de tus cambios con el comando <code>git commit</code>:</p>
+
+    <pre><code>git commit</code></pre>
+
+    <p>Al hacer esto, se abre el editor de tu elección. El editor muestra el siguiente texto:</p>
+
+    <div class="terminal-output" markdown="0">
+
+  <pre>
+
+# Por favor, escribe el mensaje de commit para tus cambios. Las líneas que empiezan 
+# con '#' serán ignoradas, y un mensaje vacío cancela el commit.
+#
+# En la rama main
+# Tu rama está actualizada con ‘origin/master’.
+#
+# Cambios a ser confirmados:
+#     nuevos archivos: ejemplo.py
+#     modified: README.md
+#
+~
+~
+~
+".git/COMMIT_EDITMSG" 9L, 283C</pre>  
+    </div>
+
+    <p>Puedes ver que el mensaje de commit predeterminado contiene la salida más reciente del comando <code>git status</code> comentada, y una línea vacía en la parte superior. Puede eliminar esots comentario y escribir tu mensaje de commit, o puedes dejarlos ahí para ayudarte a recordar qué estás confirmando.</p>
+
+    <p>Cuando sales del editor, Git crea tu commit con ese mensaje:</p>
+
+
+    <div class="terminal-output" markdown="0">
+
+    <pre>[main aaab45e] mensaje de commit
+ 2 archivos modificados, 2 inserciones(+)</pre>
+    </div> 
+
+
+    <p>Alternativamente, puedes escribir tu mensaje de commit en la línea de comando con el comando <code>commit -m</code> de la siguiente manera:</p>
+
+    <pre><code>git commit -m "mensaje de commit"</code></pre>
+
+    <h4>Registro de cambios</h4>
+
+Si queremos ver un registro de todos los comits hechos en el repositorio:
+
+<pre><code>git log</code></pre>
+
+<h4>Subir cambios a GitHub</h4>
+
+Para subir los cambios al repositorio de Github en la nube:
+
+<pre><code>git push origin main</code></pre>
+
+<h4>Bajar el repositorio</h4>
+
+ Para bajar los cambios hechos por otras personas en el repositorio:
+
+<pre><code>git pull</code></pre>
+
+
+
   </div>
 
 </div>
-
-
-Si revisamos de nuevo el status:
-
-<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
-    <img src="../../images/figura10.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
-    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura X. Descripción de figura.</figcaption>
-  </figure>
-
-Si queremos ver un **registro** de todos los cambios hechos en el repositorio:
-```
-git log
-```
-
-<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
-    <img src="../../images/figura11.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
-    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura X. Descripción de figura.</figcaption>
-  </figure>
-
- Los código alfanuméricos largos en color café son números **hash**, y son identificadores únicos de cada cambio realizado. 
-
-Para **subir** los cambios a la nube:
-```
-git push origin main
-```
-
-<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
-    <img src="../../images/figura12.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
-    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura X. Descripción de figura.</figcaption>
-  </figure>
  
- Para **bajar** los cambios hechos por otras personas:
-```
- git pull
-```
+<h4>Creación de ramas</h4>
 
-<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
-    <img src="../../images/figura13.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
-    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura X. Descripción de figura.</figcaption>
-  </figure>
+ Se pueden crear ramas de la rama principal main. Para visualizar todas las ramas:
 
-Para regresar a un commit anterior o cambiar de ramas:
-```
-git checkout "insertar número hash"
-```
-Ejemplo:
+<pre><code>git log --oneline --graph --decorate</code></pre>
 
-<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
-    <img src="../../images/figura14.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
-    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura X. Descripción de figura.</figcaption>
-  </figure>
-
-Si queremos ver un archivo sin editarlo, usamos el comando ***cat***:
-```
-cat ejemplo.py
-```
-Para **regresar** un archivo al **área de trabajo** (siempre que no se haya subido al repositorio):
-```
-git restore --staged ejemplo.py
-```
-
-### Creación de ramas
-Se pueden crear **ramas** de **main**. Para visualizar todas las ramas:
-```
-git log --oneline --graph --decorate
-```
-**NOTA**: las ramas se ven en la terminal como la imagen de abajo, pero girado hacia la izquierda.
+<b>NOTA</b>: las ramas se ven en la terminal como la imagen de abajo, pero girado hacia la izquierda.
 
 <figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
     <img src="../../images/figura15.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
-    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura X. Descripción de figura.</figcaption>
+    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;"></figcaption>
   </figure>
 
 Para ver en cuál rama estamos:
-```
-git branch
-```
 
-Para la creación de ramas, primero vamos al reservorio de SERVIDOR en la web de Github y creamos un nuevo "**Issue**", lo asignamos a nosotros, guardamos y le damos clic a crear rama. Copiamos el **código** y lo ejecutamos en la terminal. Por ejemplo, para la nueva rama "crear nuevo programa en python":
-```
-git fetch origin
-git checkout 1-crear-nuevo-programa-en-python
-```
+<pre><code>git branch</code></pre>
 
-<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
-    <img src="../../images/figura16.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
-    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura X. Descripción de figura.</figcaption>
-  </figure>
+Para la creación de ramas, primero vamos a nuestro repositorio en Github y creamos un nuevo "**Issue**", lo asignamos a nosotros, guardamos y le damos clic a crear rama. Copiamos el **código** y lo ejecutamos en la terminal. Por ejemplo, para la nueva rama "crear nuevo programa en python":
+
+<pre><code>git fetch origin
+git checkout 1-crear-nuevo-programa-en-python</code></pre>
 
 Al ejecutarlo, automáticamente nos cambia a la nueva rama, lo que se puede corroborar con ***git branch***. Una vez se hagan las ediciones correspondientes, se sube la rama al repositorio:
-```
-git push origin 1-crear-nuevo-programa-en-python
-```
-==**IMPORTANTE**: Después de este paso hay que ir al reservorio web y hacer un "**Pull request**" dirigido al profesor, quien revisará los cambios y decidirá si la rama se incluirá al main. Si acepta, podemos bajar el reservorio ya actualizado y las ramas se verían así:==
 
-<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
-    <img src="../../images/figura17.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
-    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura X. Descripción de figura.</figcaption>
-  </figure>
+<pre><code>git push origin 1-crear-nuevo-programa-en-python</code></pre>
 
-Para **eliminar** una rama:
-```
-git branch -D 1-crear-nuevo-programa-en-python
-```
 
----
-Regresa al área de stage:
 
-```
-git reset --soft HEAD-1
-```
-Regresa al directorio de trabajo:
-
-```
-git reset --hard HEAD-1
-```
 
 
 
