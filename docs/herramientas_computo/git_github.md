@@ -133,6 +133,8 @@ Basta de teoría, ahora sabemos lo suficiente para pasar a la acción y empezar 
   
     <p> </p>
 
+    <p><em>Nota</em>: aplica para distribuciones basadas en Debian (Ubuntu, MX Linux, Kali Linux, etc.).</p>
+
     <p>Abre una <b>terminal</b> y ejecuta lo siguiente:</p>
 
     <pre><code>sudo apt update
@@ -235,18 +237,34 @@ Para ver las **configuraciones** de git en el dispositivo (nombre, correo, edito
 
 <pre><code>git config -l</code></pre>
 
+## Obtención de un repositorio de Git
+
+<p>Normalmente se obtiene un repositorio de Git de una de estas dos maneras:</p>
+
+<ol>
+  <li>Puedes tomar un directorio local que actualmente no está bajo control de versiones y convertirlo en un repositorio de Git, o</li>
+  <li>Puedes clonar un repositorio de Git existente desde otro lugar.</li>
+</ol>
+
+Aquí vamos a explorar la segunda opción con la ayuda de <b>GitHub</b>.
+
 ## GitHub
 
-<p>Es una <b>plataforma</b> que <em>respalda todo tu proceso</em> de desarrollo de software, desde la planificación del trabajo hasta el despliegue y la operación del software.</p>
+<p>Es una <b>plataforma</b> que <em>respalda todo tu proceso</em> de desarrollo de software, desde la planificación del trabajo hasta el despliegue y la operación del software (Figura 7).</p>
 
 <figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
     <img src="../../images/github_logo.png" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
-    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura 2. Logo oficial de GitHub.</figcaption>
+    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura 7. Logo oficial de GitHub.</figcaption>
   </figure>
 
-<h3>Git y GitHub</h3>
+### Git y GitHub
 
-<p><b>GitHub</b> se contruye sobre <b>Git</b> alojando tus proyectos de Git, llamados <b>repositorios</b>, en la nube, además de añadir herramientas de planificación y colaboración que facilitan el trabajo en equipos.</p>
+<p><b>GitHub</b> se contruye sobre <b>Git</b> alojando tus proyectos de Git, llamados <b>repositorios</b>, en la nube, además de añadir herramientas de planificación y colaboración que facilitan el trabajo en equipos (Figura 8).</p>
+
+<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
+    <img src="../../images/git_github.svg" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura 8. Cada desarrollador trabaja en su repositorio local y lo sincroniza con GitHub.</figcaption>
+  </figure>
 
 ## Creación de repositorio en Github
 
@@ -559,7 +577,7 @@ Press Enter to open https://github.com/login/device in your browser...</pre>
 
     <pre><code>cd
 mkdir repositorios
-cd repositorios/</code></pre>
+cd repositorios</code></pre>
 
     <p>Ve a tu repositorio en <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a> y sigue los pasos siguientes: </p>
 
@@ -592,7 +610,7 @@ remote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
 Recibiendo objetos: 100% (4/4), 12.78 KiB | 12.78 MiB/s, listo.</pre>
     </div>
 
-    <p>¡Felicidades! Haz creado una carpeta con el nombre de tu repositorio que contiene todo el contenido de tu repositorio de GitHub. Para verificar que sí se creo la carpeta, sólo ejecuta el comando <code>ls</code>.</p> 
+    <p>¡Felicidades! Haz creado una carpeta con el nombre de tu repositorio que contiene todo el contenido de tu repositorio de GitHub. Para verificar que sí se creo la carpeta, sólo ejecuta el comando <code>dir</code>.</p> 
 
 
   </div>
@@ -642,6 +660,142 @@ Recibiendo objetos: 100% (4/4), 12.78 KiB | 12.78 MiB/s, listo.</pre>
     </div>
 
     <p>¡Felicidades! Haz creado una carpeta con el nombre de tu repositorio que contiene todo el contenido de tu repositorio de GitHub. Para verificar que sí se creo la carpeta, sólo ejecuta el comando <code>ls</code>.</p> 
+
+  </div>
+
+</div>
+
+## Tutorial básico de Git y GitHub
+
+<p>Cada archivo de tu <b>directorio de trabajo</b> puede estar en uno de los dos estados siguentes:</p>
+
+<ul>
+  <li><b>rastreados</b> (tracked): son los archivos que estaban en tu última captura, así como cualquier archivo recién promovido al área de stage. En resumen, son los archivos que Git conoce. Cuando clonas un repositorio por primera vez, todos tus archivos estarán rastreados.</li>
+  <li><b>sin seguimiento</b> (untracked): cualquier archivo que no estaba en tu última captura y que no está en tu área de stage. Son archivos que recién has agregado a tu repositorio.</li>
+</ul>
+
+<!-- CODIGO PARA SECCIONES WINDOWS Y LINUX -->
+
+<ul class="nav nav-tabs" role="tablist">
+  <li role="presentation" class="active"><a href="#windows_tutorial" aria-controls="windows" role="tab" data-toggle="tab">Windows</a></li>
+  <li role="presentation"><a href="#linux_tutorial" aria-controls="linux" role="tab" data-toggle="tab">Linux</a></li>
+</ul>
+
+
+ <!-- SECCION WINDOWS-->
+
+<div class="tab-content">
+
+  <div role="tabpanel" class="tab-pane active" id="windows_tutorial">
+  
+    <p> </p>
+
+    <p>Primero entra a la carpeta con el nombre de tu repositorio, cambiando <code>carpeta_repositorio</code> por el nombre tu carpeta:</p>
+
+    <pre><code>cd carpeta_repositorio</code></pre>
+
+    <h4>Revisar el estado de tus archivos</h4>
+
+    <p>La herramienta principal que se usa para determinar qué archivos están en qué estado es el comando <code>git status</code>. Si ejecutas este comando después de una clonación, deberías ver algo como esto:</p>
+
+    <div class="powershell-output">
+  
+    <pre>En la rama main
+Tu rama está actualizada con ‘origin/main’.
+
+nada para hacer commit, el árbol de trabajo está limpio</pre>
+    </div>
+
+    <p>Esto significa que tienes un directorio de trabajo limpio; en otras palabras, ninguno de tus archivos rastreados han sido modificados. Por otra parte, no te muestra ningún archivo sin rastrear, o de lo contrario estaría listado aquí. Finalmente el comando te dice en cual rama estás y te informa que no ha divergido de la misma rama en el servidor. Por ahora la rama por defecto es <code>main</code>.</p>
+
+    <p>Ahora vamos a agregar un nuevo archivo a tu proyecto:</p>
+    
+    <pre><code>New-Item "ejemplo.py" -ItemType File</code></pre>
+
+    <p>Dado que el archivo no existía antes, si corres de nuevo el comando <code>git status</code>, verás tu archivo sin rastrear como sigue:</p>
+
+    <div class="powershell-output">
+
+    <pre>En la rama main
+Tu rama está actualizada con ‘origin/main’.
+
+Archivos sin seguimiento:
+  (usa “git add <archivo>...” para incluirlos en lo que será confirmado)
+      ejemplo.py
+
+no hay nada agregado para hacer commit, pero hay archivos sin seguimiento presentes (usa “git add” para hacerles seguimiento)</pre>
+    </div>
+
+    <p>Puedes ver que tu nuevo archivo <b>ejemplo.py</b> no tiene seguimiento, porque aparece bajo el encabezado "Archivos sin seguimiento" en la salida del status. Git no dará seguimiento a tu archivo en el siguiente commit hasta que se lo indiques explícitamente.</p>
+
+    <h4>Seguimiento de archivos nuevos</h4>
+
+    <p>Para comenzar a darle seguimiento a un archivo nuevo, se usa el comando <code>git add</code>:</p>
+
+    <pre><code>git add ejemplo.py</code></pre>
+
+    <p>Si corres el comando <code>git status</code> de nuevo, verás que archivo <b>ejemplo.py</b> está ahora con seguimiento y en el <b>área de stage</b>, listo para para ser confirmado en el siguiente commit:</p>
+
+    <div class="powershell-output">
+    <pre>En la rama main
+Tu rama está actualizada con ‘origin/main’.
+
+Cambios a ser confirmados:
+  (usa “git restore --staged <archivo>...” para sacarlos del área de stage)
+      nuevos archivos: ejemplo.py</pre>
+
+    </div>
+
+    <p>Puedes saber que está en el área de stage porque aparece bajo el encabezado "Cambios a ser confirmados". Si haces commit en este momento, la versión del archivo que existía cuando ejecutaste <code>git add</code> es la que quedará en el commit posterior.</p>
+
+    <h4>Mover archivos modificados al área de stage</h4>
+
+    <p>Vamos a modificar un archivo que ya tenía seguimiento, por ejemplo, el archivo <b>README.md</b>. Si lo modificas y luego ejecutas el comando <code>git status</code>, obtendrás algo que se ve así:</p>
+
+    <div class="powershell-output">
+      
+    <pre>En la rama main
+Tu rama está actualizada con ‘origin/main’.
+
+Cambios a ser confirmados:
+  (usa “git reset HEAD <archivo>...” para sacarlos del área de preparación)
+
+      nuevos archivos: ejemplo.py
+
+Cambios no rastreados para el commit:
+  (usa “git add <archivo>...” para actualizar lo que será confirmado)
+  (usa “git checkout -- <archivo>...” para descartar los cambios en el directorio de trabajo)
+
+      modificados:    README.md</pre>
+
+    </div>
+
+    <p>El archivo <b>README.md</b> aparece bajo la sección llamada "Cambios no rastreados pra el commit", lo que significa que un archivo con seguimiento ha sido modificado en el directorio de trabajo, pero todavía no ha sido movido al área de stage. Para hacerlo, ejecuta el comando <code>git add</code>:</p>
+
+    <pre><code>git add README.md</code></pre>
+
+    <p>Ejecutamos <code>git status</code> de nuevo:</p>
+
+    <div class="powershell-output">
+    
+    <pre>En la rama main
+Tu rama está actualizada con ‘origin/main’.
+
+Cambios a ser confirmados:
+  (usa “git reset HEAD <archivo>...” para sacarlos del área de preparación)
+      nuevos archivos: ejemplo.py
+      modificados: README.md</pre>
+    
+    </div>
+
+    <p>Ahora ambos archivos están en el área de stage y entrarán en tu próximo commit. En este punto, supón que recuerdas un pequeño cambio que quieres hacer en <b>README.md</b> antes de hacer commit. Lo abres de nuevo, haces ese cambio y ya estás listo para hacer este commit. Sim embargo, ejecutemos <b>git status</b> una vez más:</p>
+
+  </div>
+
+
+ <!-- SECCION LINUX -->
+
+  <div role="tabpanel" class="tab-pane" id="linux_tutorial">
 
   </div>
 
