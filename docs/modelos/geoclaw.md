@@ -280,7 +280,7 @@ conda activate clawpack</code></pre>
 
 <ul>
   <li><code>conda env config vars set ...</code> guarda las variables del entorno <b>clawpack</b>. Sólo existen mientran el entorno está activo y no modifican tu <code>~/.bashrc</code> ni afectan otras terminales.</li>
-  <li><code>conda deactivate</code> y <code>conda activate clawpack</code> salen y vuelven a entrar al entorno. Es necesario porque COnda sólo aplica las variable nuevas al activar el entorno.</li>
+  <li><code>conda deactivate</code> y <code>conda activate clawpack</code> salen y vuelven a entrar al entorno. Es necesario porque Conda sólo aplica las variables nuevas al activar el entorno.</li>
 </ul>
 
 <p>Si de casualidad Conda muestra <em>WARNING: overwriting environment variables set in the machine</em>, no es un error. Significa que <code>CLAW</code> y <code>FC</code> ya existían en tu sistema (por ejemplo, de una instalación anterior) y el entorno las remplaza mientras esté activo. Al hacer <code>conda deactivate</code>, vuelven los valores anteriores.</p>
@@ -332,6 +332,51 @@ geoclaw.surge OK
     <li>La segunda línea importa la clase <code>Storm</code> del módulo de marea de tormenta de GeoClaw. Ese módulo usa <b>pandas</b>, así que si imprime <em>geoclaw.surge OK</em>, las dependencias necearias para correr GeoClaw están instaladas.</li>
 </ul>
 
+## ¡Pon a prueba GeoClaw!
+
+<p>Vamos a simular uno de los casos de ejemplo que vienen por defecto con la instalación de GeoClaw: la <b>marea de tormenta del huracán Ike</b>.</p>
+
+<h4>Huracán Ike</h4>
+
+<p>Fue un huracán categoría 4 que se formó el 1 de septiembre de 2008 cerca de Cabo Verde (frente a la costa occidental de África) y alcanzó su máximo el 4 de septiembre (~230 km/h, 935 hPa). Afectó Turcas y Caicos, Bahamas, Haití y Cuba, y el 13 de septiembre tocó tierra cerca de Galveston, Texas, como categoría 2 (~175 km/h) (Figura 3). Su enorme campo de vientos generó una marea de tormenta de 4-6 m, desproporcionada para su categoría. Desafortunadamente dejó más de 200 fallecidos y unos 38,000 millones de dólares en daños.</p>
+
+<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
+    <img src="../../images/geoclaw_ike_trayectoria.gif" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura 3. Trayectoria del huracán Ike en septiembre de 2008.</figcaption>
+  </figure>
+
+<p> </p>
+
+<p>Vamos a modelar la marea de tormenta provocada por el huracán Ike en las costas de Galveston, Texas, el 13 de septiembre de 2008.</p>
+
+<h4>Copia el ejemplo a una carpeta de trabajo</h4>
+
+<p>Conviene crear una carpeta para simulaciones, por ejemplo, la carpeta <code>clawruns</code>:</h4>
+
+<pre><code>mkdir -p ~/clawruns</code></pre>
+
+<p>No se recomienda trabajar dentro de $CLAW (<em>/home/tu-usuario/clawpack_src/clawpack</em>): cada simulación debe vivir en su propia carpeta.</p>
+
+<p>Copiamos el ejemplo del huracán Ike a la nueva carpeta:</p>
+
+<pre><code>cp -r $CLAW/geoclaw/examples/storm-surge/ike ~/clawruns/</code></pre>
+
+<p>Nos movemos a la nueva carpeta de trabajo y listamos su contenido:</p>
+
+<pre><code>cd ~/clawruns/ike
+ls</code></pre>
+
+<p>Aparecerá lo siguiente:</p>
+
+<div class="terminal-output" markdown="0">
+
+<pre>adjoint.data  fgmax_grids.data  gauges.data   multilayer.data    README.rst       setplot.py
+amr.data      fgout_grids.data  geoclaw.data  plot_num_grids.py  refinement.data  setrun.py
+claw.data     flagregions.data  ike.storm     __pycache__        regions.data     surge.data
+dtopo.data    friction.data     Makefile      qinit.data         setplot_kml.py   topo.data
+</pre>
+
+</div>
 
 
 
