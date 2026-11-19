@@ -4,7 +4,48 @@
 
 # Introducción
 
+<h4>GeoClaw</h4>
+
+<p>Es un <em>software de código abierto</em> que simula <b>flujos de agua poco profunda</b> sobre topografía y batimetría reales (Figura 1). Se usa para modelar tsunamis, mareas de tormenta (<em>storm surge</em>), inundaciones, rompimientos de presas y otros fenómenos en lo que una masa de agua se mueve y se desborda sobre el terreno.</p>
+
+<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
+    <img src="../../images/geoclaw_logo.jpg" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura 1. Logo oficial de GeoClaw.</figcaption>
+  </figure>
+
+<p> </p>
+
+Forma parte de <b>Clawpack</b> ("Conservation Laws Package") (Figura 2), un conjunto de herramientas diseñado para resolver <em>ecuaciones diferenciales parciales hiperbólicas</em>, desarrollado desde los años 90 principalmente por Randall LeVeque, David George, Marsha Berger y Kyle Mandli.
+
+<figure style="display: block; margin: 0 auto; max-width: 100%; text-align: center;">
+    <img src="../../images/clawpack_logo.jpg" alt="Texto alternativo para SEO" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+    <figcaption style="margin-top: 10px; font-size: 14px; color: #555;">Figura 2. Logo oficial de Clawpack.</figcaption>
+  </figure>
+
+<h4>Cómo funciona</h4>
+
+<p><strong><em>Ecuaciones.</em></strong> Resuelve las <b>ecuaciones de aguas someras</b> (<em>shallow water equations</em>) que describen el flujo de un fluido cuya profundidad es pequeña comparada con la escala horizontal del fenómeno. Esto aplica, por ejemplo, a una onda de tsunami, cuya longitud de onda es de decenas o cientos de kilómetros frente a una profundidad oceánica de pocos kilómetros. Se promedian las ecuaciones en la vertical, por lo que el modelo es 2D horizontal.</p>
+
+<p><strong><em>Método numérico.</em></strong> Usa <b>volúmenes finitos</b> con algoritmos de propagación de onda y solucionadores de Riemann. Está diseñado para conservar masa, mantener el balance entre gradiente de presión y topografía, y manejar de forma robusta el avance y retroceso de la línea de costa, esencial para calcular la inundación en tierra.</p>
+
+<p><strong><em>Refinamiento de malla adaptativo (AMR).</em></strong> Es su rasgo más distintivo. En lugar de una malla uniforme, GeoClaw usa mallas anidadas que se refinan sólo donde y cuando hace falta, por ejemplo, siguiendo el frente de onda o la zona costera. Así se simula un océano entero con baja resolución y se refina hasta llegar a decenas de metros cerca de la costa sin un costo computacional excesivo.</p>
+
+<h4>Aplicaciones</h4>
+
+<ul>
+    <li><b>Tsunamis:</b> propagación en océano abierto e inundación costera. Está validado con los <em>benchmarks</em> del programa NTHMP de EE. UU. y se usa en evaluación de peligro.</li>
+    <li><b>Marea de tormenta (<em>storm surge</em>)</b>: con forzamiento de viento y presión atmosférica de un ciclón tropical.</li>
+    <li><b>Otros flujos:</b> inundaciones, rompimientos de presas, avalanchas y deslizamientos que generan olas, entre otros.</li>
+</ul>
+
+<h4>Lenguajes de programación</h4>
+
+<p>El núcleo numérico de GeoClaw está escrito en <b>Fortran</b> por rendimiento, y la configuración se hace en <b>Python</b>: se definen el dominio, los datos de topografía/batimetría, los forzamientos (sismo, deslizamiento, huracán), los niveles de refinamiento y las salidas. Los resultados se visualizan con las herramientas de Clawpack (visclaw) o con otras en Python.</p>
+
+
 # Instalación de GeoClaw
+
+<p>Dado que GeoClaw forma parte de Clawpack, es necesario instalar este último para poder utilizarlo.</p>
 
 ## Requisitos previos
 
